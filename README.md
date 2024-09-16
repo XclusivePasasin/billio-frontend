@@ -45,3 +45,5 @@ Swal.fire({
 --Dependencias para el FrontEnd--
 1- Se utilizara la siguiente biblioteca de iconos.
 ´npm install lucide-vue-next´
+=======
+
