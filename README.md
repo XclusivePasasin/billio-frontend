@@ -1,49 +1,98 @@
-# billio-frontend
+
+# Billio-Frontend
 Billio: Sistema automatizado para gestionar, organizar y procesar facturas electrónicas recibidas por correo. Almacena, extrae información clave, y facilita la visualización y análisis financiero con una interfaz amigable.
 
-Primeramente para comenzar, en el frontEnd del proyecto se utilizara VUE, y Axios para comunicarse con el backEnd...
+## Instalación y Configuración del Entorno Frontend
 
---INSTALANDO VUE--
+### Prerrequisitos
+Para desarrollar el frontend del proyecto **Billio**, se utiliza **Vue.js** como framework principal y **Axios** para la comunAicación con el backend.
 
-1-Para crear el proyecto en vue se utilizo el comando:
-´vue create proyecto-planes-de-negocio´
+### 1. Instalación de Vue.js
 
-2-Luego, usaremos las siguientes caracteristicas de vue: -Babel, -Router(para las rutas de vue), Linter(Para deteccion de errores)
+Si aún no tienes instalado Vue CLI, instálalo con el siguiente comando:
 
-3-Cuando pregunte "Use history mode for router? (Requires proper server setup for index fallback in production) Yes/No" Reponderemos 'Yes'
+```bash
+npm install -g @vue/cli
+```
 
-4-Para poder visualizar el proyecto utilizaremos el comando
-´vue serve´
+### 2. Creación del Proyecto Vue
 
---INSTALANDO AXIOS--
-1-Acceder a la ruta del proyecto, por ejemplo
-´C:\Users\usuariox\OneDrive\Documentos\GitHub\taskify-frontend\proyecto-planes-de-negocio>´
+Para crear el proyecto, utiliza el siguiente comando:
 
-2-Para instalar axios se ejecutara el siguiente comando
-´npm install axios´
+```bash
+vue create billio-frontend
+```
 
-2.1-En Caso que ya se encuentre instalado, instalar las dependencias del proyecto en package.json utilizando
-´npm install´
+Selecciona las siguientes características durante la creación del proyecto:
+- **Babel**
+- **Router** (para manejar las rutas dentro del proyecto)
+- **Linter** (para detectar errores y aplicar buenas prácticas)
 
---INSTALANDO SWEETALERT2--
-1-Para instalr SweetAlert2 ejecutaremos el siguiente comando
-´npm i sweetalert2´
+Cuando aparezca la pregunta "Use history mode for router? (Requires proper server setup for index fallback in production)", responde con `Yes`.
 
-2-Para su utilizacion, iremos a donde lo queremos utilizar, por ejemplo en App.vue, nos tendremos que ir a la
-parte de Script, y ahi lo importaremos o llamaremos con el siguiente comando
-´import Swal from 'sweetalert2';´
-y simplemente para comanzar a usarlo, lo invocamos con 'Swal.fire', y luego las propiedades del mensaje por ejemplo:
-'
+### 3. Inicialización y Visualización del Proyecto
+
+Para iniciar el servidor de desarrollo y visualizar el proyecto en tu navegador, usa el siguiente comando:
+
+```bash
+npm run serve
+```
+
+### 4. Instalación de Axios
+
+Accede al directorio del proyecto y ejecuta el siguiente comando para instalar Axios, que se usará para realizar solicitudes HTTP al backend:
+
+```bash
+npm install axios
+```
+
+Si ya tienes Axios instalado, asegúrate de instalar todas las dependencias listadas en el archivo `package.json` con:
+
+```bash
+npm install
+```
+
+### 5. Instalación de SweetAlert2
+
+**SweetAlert2** se utilizará para mostrar alertas y mensajes interactivos. Instálalo con:
+
+```bash
+npm install sweetalert2
+```
+
+Para utilizarlo en tu proyecto, importa la biblioteca en los componentes donde lo necesites, por ejemplo, en `App.vue`:
+
+```js
+import Swal from 'sweetalert2';
+```
+
+Para mostrar una alerta, usa la siguiente estructura:
+
+```js
 Swal.fire({
   title: 'Error!',
   text: 'Do you want to continue',
   icon: 'error',
   confirmButtonText: 'Cool'
-})
-'
+});
+```
 
---Dependencias para el FrontEnd--
-1- Se utilizara la siguiente biblioteca de iconos.
-´npm install lucide-vue-next´
-=======
+### 6. Instalación de Iconos
 
+Se utilizará la biblioteca de iconos **Lucide Vue Next**. Instálala con:
+
+```bash
+npm install lucide-vue-next
+```
+
+### 7. Instalación de Dependencias del Proyecto
+
+Si has clonado el repositorio del proyecto, asegúrate de instalar todas las dependencias necesarias ejecutando:
+
+```bash
+npm install
+```
+
+---
+
+¡Con estos pasos, tendrás el frontend de Billio configurado y listo para trabajar!
