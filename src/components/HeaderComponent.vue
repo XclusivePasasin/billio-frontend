@@ -42,7 +42,7 @@ onMounted(async () => {
         const storedUser = JSON.parse(localStorage.getItem('user'));
         if (storedUser && (storedUser.correo || storedUser.usuario)) {
             // Obtener los datos del usuario usando el correo o nombre de usuario
-            const userData = await UserService.getUser({
+            const userData = await UserService.get_user_by_identifier({
                 correo: storedUser.correo || '',
                 usuario: storedUser.usuario || ''
             });

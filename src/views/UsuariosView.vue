@@ -29,6 +29,9 @@
                                     Nombre del Usuario
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                    Correo
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Nombre de Usuario
                                 </th>
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -43,9 +46,6 @@
                                 <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
                                     Eliminar
                                 </th>
-                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Accesos
-                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,6 +58,9 @@
                                             </p>
                                         </div>
                                     </div>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
+                                    <p class="text-gray-900 whitespace-no-wrap">{{ user.correo }}</p>
                                 </td>
                                 <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
                                     <p class="text-gray-900 whitespace-no-wrap">{{ user.usuario }}</p>
@@ -83,11 +86,6 @@
                                         <TrashIcon class="h-5 w-5" />
                                     </button>
                                 </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-center">
-                                    <button @click="manageAccess(user)" class="text-green-600 hover:text-green-900" title="Accesos">
-                                        <KeyIcon class="h-5 w-5" />
-                                    </button>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -100,7 +98,7 @@
 <script>
 import { ref, onMounted, computed } from 'vue';
 import SideBar from '../components/SideBar.vue';
-import { SearchIcon, PlusIcon, EditIcon, TrashIcon, KeyIcon } from 'lucide-vue-next';
+import { SearchIcon, PlusIcon, EditIcon, TrashIcon } from 'lucide-vue-next';
 import HeaderComponent from '../components/HeaderComponent.vue';
 import UserService from '@/services/UsersService';
 
@@ -170,7 +168,4 @@ const deleteUser = (user) => {
     console.log('Eliminar usuario:', user);
 };
 
-const manageAccess = (user) => {
-    console.log('Gestionar accesos para:', user);
-};
 </script>
