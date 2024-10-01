@@ -34,7 +34,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
 // Usamos un guard de navegación global para proteger las rutas
 router.beforeEach((to, from, next) => {
@@ -50,4 +50,4 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-export default router
+export default router;

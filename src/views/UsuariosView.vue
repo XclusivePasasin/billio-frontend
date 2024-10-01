@@ -90,6 +90,71 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- Modal de creación de usuario-->
+                <div v-if="isModalOpen" class="fixed inset-0 flex items-center justify-center z-50">
+                <!-- Fondo oscuro sin desenfoque -->
+                <div class="bg-black bg-opacity-50 absolute inset-0"></div>
+                
+                <!-- Contenedor del modal -->
+                <div class="bg-white p-8 rounded-3xl shadow-2xl z-50 relative max-w-lg w-full">
+                    <!-- Título del modal -->
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Crear Nuevo Usuario</h2>
+
+                    <!-- Formulario de creación de usuario -->
+                    <form @submit.prevent="createUser">
+                    <!-- Campo Nombre -->
+                    <div class="mb-6 relative">
+                        <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                        Nombre
+                        </label>
+                        <input type="text" v-model="newUser.nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                    </div>
+                    <!-- Campo Apellido -->
+                    <div class="mb-6 relative">
+                        <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                        Apellido
+                        </label>
+                        <input type="text" v-model="newUser.apellido" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                    </div>
+                    <!-- Campo Correo -->
+                    <div class="mb-6 relative">
+                        <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                        Correo
+                        </label>
+                        <input type="email" v-model="newUser.correo" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                    </div>
+                    <!-- Campo Usuario -->
+                    <div class="mb-6 relative">
+                        <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                        Usuario
+                        </label>
+                        <input type="text" v-model="newUser.usuario" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                    </div>
+                    <!-- Campo Contraseña -->
+                    <div class="mb-6 relative">
+                        <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                        Contraseña
+                        </label>
+                        <input type="password" v-model="newUser.clave" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                    </div>
+
+                    <!-- Botones de Acción -->
+                    <div class="flex justify-end space-x-4">
+                        <!-- Botón Cancelar -->
+                        <button type="button" @click="closeCreateUserModal"
+                                class="px-5 py-2 bg-gray-200 text-gray-700 rounded-full shadow hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all duration-300 ease-in-out">
+                        Cancelar
+                        </button>
+
+                        <!-- Botón Crear -->
+                        <button type="submit"
+                                class="px-5 py-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out">
+                        Crear
+                        </button>
+                    </div>
+                    </form>
+                </div>
+                </div>
             </div>
         </div>
     </div>
@@ -100,7 +165,8 @@ import { ref, onMounted, computed } from 'vue';
 import SideBar from '../components/SideBar.vue';
 import { SearchIcon, PlusIcon, EditIcon, TrashIcon } from 'lucide-vue-next';
 import HeaderComponent from '../components/HeaderComponent.vue';
-import UserService from '@/services/UsersService';
+import UserService from '../services/UsersService';
+
 
 export default {
     name: 'UsuariosView',
@@ -115,6 +181,14 @@ export default {
 const allUsers = ref(true);
 const searchQuery = ref('');
 const users = ref([]);
+const isModalOpen = ref(false);  // Controla si el modal está abierto o cerrado
+const newUser = ref({
+  nombre: '',
+  apellido: '',
+  correo: '',
+  usuario: '',
+  clave: ''
+});
 
 const fetchUsers = async () => {
     try {
@@ -155,9 +229,35 @@ const getUserType = (tipo) => {
             return 'Desconocido';
     }
 };
-
+// MODAL CREAR USUARIOS
 const openCreateUserModal = () => {
-    console.log('Abrir modal de creación de usuario');
+  isModalOpen.value = true;  // Abrir modal
+};
+
+const closeCreateUserModal = () => {
+  isModalOpen.value = false;  // Cerrar modal
+  resetForm();  // Limpiar el formulario al cerrar
+};
+
+const createUser = async () => {
+  try {
+    await UserService.createUser(newUser.value);
+    // Actualizar la lista de usuarios después de crear uno nuevo
+    fetchUsers();
+    closeCreateUserModal();  // Cerrar el modal después de crear el usuario
+  } catch (error) {
+    console.error('Error al crear el usuario:', error);
+  }
+};
+
+const resetForm = () => {
+  newUser.value = {
+    nombre: '',
+    apellido: '',
+    correo: '',
+    usuario: '',
+    clave: ''
+  };
 };
 
 const editUser = (user) => {
