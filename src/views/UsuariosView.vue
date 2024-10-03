@@ -97,7 +97,11 @@
                     </table>
                 </div>
 
+
                 <!-- Modal de creación de usuario -->
+
+                <!---------------------------------------------------------------------------------------->
+                
                 <div v-if="isModalOpen" class="fixed inset-0 flex items-center justify-center z-50">
                     <!-- Fondo oscuro -->
                     <div class="bg-black bg-opacity-50 absolute inset-0"></div>
