@@ -217,11 +217,10 @@ const errors = ref({
   rol: '' // Campo de error para el rol
 });
 
-// Lista de roles disponibles
+// Lista de roles disponibles, eliminando "Usuario"
 const roles = ref([
   { value: 'A', text: 'Administrador' },
-  { value: 'C', text: 'Contador' },
-  { value: 'U', text: 'Usuario' }
+  { value: 'C', text: 'Contador' }
 ]);
 
 // Regex para validaciones
@@ -263,14 +262,12 @@ const filteredUsers = computed(() => {
 
 // Función para obtener el tipo de usuario
 const getUserType = (tipo) => {
-    switch (tipo) {
-        case 'A':
-            return 'Administrador';
-        case 'C':
-            return 'Contador';
-        default:
-            return 'Desconocido';
+    if (tipo === 'A') {
+        return 'Administrador';
+    } else if (tipo === 'C') {
+        return 'Contador';
     }
+    return 'Desconocido'; // Para cualquier tipo que no esté contemplado
 };
 
 // Funciones para abrir y cerrar el modal
