@@ -99,9 +99,6 @@
 
 
                 <!-- Modal de creación de usuario -->
-
-                <!---------------------------------------------------------------------------------------->
-                
                 <div v-if="isModalOpen" class="fixed inset-0 flex items-center justify-center z-50">
                     <!-- Fondo oscuro -->
                     <div class="bg-black bg-opacity-50 absolute inset-0"></div>
@@ -185,6 +182,93 @@
                         </form>
                     </div>
                 </div>
+                <!--Modal Editar Usuario-->
+                <!-- Modal de edición de usuario -->
+                <div v-if="isEditModalOpen" class="fixed inset-0 flex items-center justify-center z-50">
+                    <!-- Fondo oscuro -->
+                    <div class="bg-black bg-opacity-50 absolute inset-0"></div>
+
+                    <!-- Contenedor del modal -->
+                    <div class="bg-white p-8 rounded-3xl shadow-2xl z-50 relative max-w-lg w-full">
+                        <!-- Título del modal -->
+                        <h2 class="text-3xl font-bold mb-6 text-gray-800">Editar Usuario</h2>
+
+                        <!-- Formulario de edición de usuario -->
+                        <form @submit.prevent="updateUser">
+                            <!-- Campo Nombre -->
+                            <div class="mb-6 relative">
+                                <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                                    Nombre
+                                </label>
+                                <input type="text" v-model="selectedUser.nombre" :class="{'border-red-500': errors.nombre}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                                <p v-if="errors.nombre" class="text-red-500 text-sm">{{ errors.nombre }}</p>
+                            </div>
+
+                            <!-- Campo Apellido -->
+                            <div class="mb-6 relative">
+                                <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                                    Apellido
+                                </label>
+                                <input type="text" v-model="selectedUser.apellido" :class="{'border-red-500': errors.apellido}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                                <p v-if="errors.apellido" class="text-red-500 text-sm">{{ errors.apellido }}</p>
+                            </div>
+
+                            <!-- Campo Correo -->
+                            <div class="mb-6 relative">
+                                <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                                    Correo
+                                </label>
+                                <input type="email" v-model="selectedUser.correo" :class="{'border-red-500': errors.correo}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                                <p v-if="errors.correo" class="text-red-500 text-sm">{{ errors.correo }}</p>
+                            </div>
+
+                            <!-- Campo Usuario -->
+                            <div class="mb-6 relative">
+                                <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                                    Usuario
+                                </label>
+                                <input type="text" v-model="selectedUser.usuario" :class="{'border-red-500': errors.usuario}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none" />
+                                <p v-if="errors.usuario" class="text-red-500 text-sm">{{ errors.usuario }}</p>
+                            </div>
+
+                            <!-- Campo Estado -->
+                            <div class="mb-6 relative">
+                                <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                                    Estado
+                                </label>
+                                <select v-model="selectedUser.estado" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none">
+                                    <option value="A">Activo</option>
+                                    <option value="I">Inactivo</option>
+                                </select>
+                            </div>
+
+                            <!-- Campo Rol -->
+                            <div class="mb-6 relative">
+                                <label class="absolute text-lg font-bold text-gray-500 transform -translate-y-3 scale-75 origin-[0] px-2 bg-white left-2 transition-all focus-within:text-blue-500">
+                                    Rol
+                                </label>
+                                <select v-model="selectedUser.rol" :class="{'border-red-500': errors.rol}" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-300 transition-all ease-in-out outline-none">
+                                    <option disabled value="">Selecciona un rol</option>
+                                    <option v-for="rol in roles" :key="rol.value" :value="rol.value">{{ rol.text }}</option>
+                                </select>
+                                <p v-if="errors.rol" class="text-red-500 text-sm">{{ errors.rol }}</p>
+                            </div>
+
+                            <!-- Botones de Acción -->
+                            <div class="flex justify-end space-x-4">
+                                <button type="button" @click="closeEditUserModal"
+                                        class="px-5 py-2 bg-gray-200 text-gray-700 rounded-full shadow hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all duration-300 ease-in-out">
+                                    Cancelar
+                                </button>
+
+                                <button type="submit"
+                                        class="px-5 py-2 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out">
+                                    Guardar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -202,6 +286,7 @@ const allUsers = ref(true);
 const searchQuery = ref('');
 const users = ref([]);
 const isModalOpen = ref(false);  // Controla si el modal está abierto o cerrado
+const isEditModalOpen = ref(false);  
 const newUser = ref({
   nombre: '',
   apellido: '',
@@ -219,6 +304,15 @@ const errors = ref({
   usuario: '',
   clave: '',
   rol: '' // Campo de error para el rol
+});
+
+const selectedUser = ref({
+  nombre: '',
+  apellido: '',
+  correo: '',
+  usuario: '',
+  estado: '',
+  rol: ''
 });
 
 // Lista de roles disponibles, eliminando "Usuario"
@@ -245,6 +339,26 @@ const fetchUsers = async () => {
         console.error('Error al obtener los usuarios:', error);
     }
 };
+
+const fetchUserByIdentifier = async (identifier) => {
+  try {
+    const response = await UserService.get_user_by_identifier( { 'correo': identifier }, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    console.log(response)
+    
+    // Actualiza el usuario seleccionado con los datos obtenidos del backend
+    selectedUser.value = response.data;
+    openUpdateUserModal(); // Abre el modal de edición
+
+  } catch (error) {
+    console.log('Error al obtener el usuario:', error);
+    errors.value = { general: 'Hubo un error al obtener el usuario.' };
+  }
+};
+
 
 // Ejecutar fetchUsers al montar el componente
 onMounted(() => {
@@ -279,9 +393,28 @@ const openCreateUserModal = () => {
   isModalOpen.value = true;  // Abrir modal
 };
 
+const openUpdateUserModal = () => {
+    isEditModalOpen.value = true;  
+};
+
 const closeCreateUserModal = () => {
   isModalOpen.value = false;  // Cerrar modal
   resetForm();  // Limpiar el formulario al cerrar
+};
+
+
+// Función para cerrar el modal de edición
+const closeEditUserModal = () => {
+  isEditModalOpen.value = false; // Cierra el modal de edición
+  // Limpia los datos de selectedUser cuando se cierra el modal
+  selectedUser.value = {
+    nombre: '',
+    apellido: '',
+    correo: '',
+    usuario: '',
+    estado: '',
+    rol: ''
+  };
 };
 
 // Función para resetear el formulario
@@ -300,7 +433,7 @@ const resetForm = () => {
     correo: '',
     usuario: '',
     clave: '',
-    rol: '' // Resetea el error del rol también
+    rol: '' 
   };
 };
 
@@ -408,10 +541,21 @@ const createUser = async () => {
   }
 };
 
-// Funciones para editar y eliminar usuarios
-const editUser = (user) => {
-    console.log('Editar usuario:', user);
+// Función para abrir el modal de edición y cargar los datos del usuario
+const editUser = async (user) => {
+  try {
+    // Espera a que la función fetchUserByIdentifier termine antes de continuar
+    await fetchUserByIdentifier(user.correo);
+    console.log(user.correo)
+    
+    // Si fetchUserByIdentifier se ejecutó correctamente y los datos están en selectedUser, abre el modal
+    isEditModalOpen.value = true;
+  } catch (error) {
+    console.error("Error al editar el usuario:", error);
+    // Puedes agregar lógica aquí para manejar errores, como mostrar un mensaje de error en la UI
+  }
 };
+
 
 const deleteUser = (user) => {
     console.log('Eliminar usuario:', user);

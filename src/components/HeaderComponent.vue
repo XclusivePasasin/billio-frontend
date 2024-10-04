@@ -40,13 +40,25 @@ onMounted(async () => {
     try {
         // Obtener los datos del usuario desde LocalStorage
         const storedUser = JSON.parse(localStorage.getItem('user'));
+        
+        // Verifica si hay datos almacenados y si contienen correo o usuario
         if (storedUser && (storedUser.correo || storedUser.usuario)) {
             // Obtener los datos del usuario usando el correo o nombre de usuario
-            const userData = await UserService.get_user_by_identifier({
-                correo: storedUser.correo || '',
-                usuario: storedUser.usuario || ''
+            const response = await UserService.get_user_by_identifier({
+                'correo': storedUser.correo || '',
+                'usuario': storedUser.usuario || ''
             });
-            user.value = userData; // Actualizar el estado del usuario con los datos recibidos
+            console.log('Test dashboard"', response)
+
+            // Asegúrate de que la respuesta sea válida y que contenga el array data
+            if (response.data && response.data && response.data.length > 0) {
+                const userData = response.data[0]; // Obtiene el primer elemento del array data
+                console.log('UserData:',userData)
+                user.value = userData; // Actualiza el estado del usuario con los datos recibidos
+                console.log(user.value)
+            } else {
+                console.error('No se encontraron datos de usuario en la respuesta.');
+            }
         } else {
             console.error('No se encontró el correo o nombre de usuario en LocalStorage');
         }
@@ -54,7 +66,6 @@ onMounted(async () => {
         console.error('Error al obtener los datos del usuario:', error);
     }
 });
-
 // Título dinámico basado en la ruta
 const route = useRoute()
 const pageTitle = route.name
