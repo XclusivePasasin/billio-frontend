@@ -92,6 +92,18 @@ Si has clonado el repositorio del proyecto, asegúrate de instalar todas las dep
 ```bash
 npm install
 ```
+### 8. Recursos de Frontend
+
+El proyecto **Billio** utiliza recursos como imágenes, archivos de CSS y JavaScript para la creación de la interfaz de usuario.
+
+```bash
+Colors:
+https://tailwindcss.com/docs/customizing-colors
+```
+```bash
+Iconos:
+https://lucide.dev/icons/
+```
 
 ---
 

@@ -13,7 +13,7 @@
                         <label for="email-address" class="sr-only">Email Address</label>
                         <input id="email-address" name="email" type="text" autocomplete="email" required
                             class="relative block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-orange-500 focus:outline-none focus:ring-orange-500 sm:text-sm"
-                            placeholder="Email Address or User" v-model="correo_o_usuario">
+                            placeholder="Enter your email or username" v-model="correo_o_usuario">
                     </div>
                     <div>
                         <label for="password" class="sr-only">Password</label>

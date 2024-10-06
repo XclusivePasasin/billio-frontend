@@ -4,7 +4,12 @@
         <h1 class="text-2xl font-semibold text-gray-900">{{ pageTitle }}</h1>
         <div class="relative">
             <button class="flex items-center space-x-2 focus:outline-none" @click="toggleDropdown">
-                <UserIcon class="h-6 w-6 text-gray-500" />
+                <!-- Reemplaza el icono con una imagen de avatar -->
+                <img 
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdyelRKXB0fBw4IF63mtC_KYWpNv9ZchPyPw&s" 
+                  alt="Avatar" 
+                  class="h-10 w-10 rounded-full object-cover" 
+                />
                 <div class="text-right">
                     <p class="text-sm text-left font-semibold">{{ user.usuario }}</p>
                     <p class="text-xs text-gray-500">{{ user.correo }}</p>
@@ -23,7 +28,6 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { UserIcon } from 'lucide-vue-next'
 import LoginService from '@/services/LoginService'
 import UserService from '@/services/UsersService';
 
@@ -40,13 +44,25 @@ onMounted(async () => {
     try {
         // Obtener los datos del usuario desde LocalStorage
         const storedUser = JSON.parse(localStorage.getItem('user'));
+        
+        // Verifica si hay datos almacenados y si contienen correo o usuario
         if (storedUser && (storedUser.correo || storedUser.usuario)) {
             // Obtener los datos del usuario usando el correo o nombre de usuario
-            const userData = await UserService.get_user_by_identifier({
-                correo: storedUser.correo || '',
-                usuario: storedUser.usuario || ''
+            const response = await UserService.get_user_by_identifier({
+                'correo': storedUser.correo || '',
+                'usuario': storedUser.usuario || ''
             });
-            user.value = userData; // Actualizar el estado del usuario con los datos recibidos
+            console.log('Test dashboard"', response)
+
+            // Asegúrate de que la respuesta sea válida y que contenga el array data
+            if (response.data && response.data && response.data.length > 0) {
+                const userData = response.data[0]; // Obtiene el primer elemento del array data
+                console.log('UserData:',userData)
+                user.value = userData; // Actualiza el estado del usuario con los datos recibidos
+                console.log(user.value)
+            } else {
+                console.error('No se encontraron datos de usuario en la respuesta.');
+            }
         } else {
             console.error('No se encontró el correo o nombre de usuario en LocalStorage');
         }
@@ -54,7 +70,6 @@ onMounted(async () => {
         console.error('Error al obtener los datos del usuario:', error);
     }
 });
-
 // Título dinámico basado en la ruta
 const route = useRoute()
 const pageTitle = route.name
