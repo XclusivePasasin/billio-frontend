@@ -3,6 +3,7 @@ import LoginView from '../views/LoginView.vue'
 import DashBoardView from '../views/DashBoard.vue'
 import LoginService from '../services/LoginService'
 import UsuariosView from '../views/UsuariosView.vue'
+import FacturasView from '@/views/FacturasView.vue'
 
 const routes = [
   {
@@ -28,6 +29,11 @@ const routes = [
     path: '/usuarios',
     name: 'Usuarios',
     component: UsuariosView,
+  },
+  {
+    path: '/facturas',
+    name: 'Facturas',
+    component: FacturasView,
   }
 ];
 

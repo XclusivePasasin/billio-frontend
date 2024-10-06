@@ -26,9 +26,25 @@
               <!-- Botón para abrir modal de crear usuario -->
               <button
                 @click="openCreateUserModal"
-                class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                class="px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center"
               >
-                <PlusIcon class="h-5 w-5 inline-block mr-2" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-user-round-plus h-5 w-5 mr-2"
+                >
+                  <path d="M2 21a8 8 0 0 1 13.292-6" />
+                  <circle cx="10" cy="8" r="5" />
+                  <path d="M19 16v6" />
+                  <path d="M22 19h-6" />
+                </svg>
                 Crear Usuario
               </button>
             </div>
@@ -40,40 +56,40 @@
           class="bg-white shadow-md rounded-lg max-h-[500px] overflow-y-auto"
         >
           <table class="min-w-full leading-normal">
-            <thead>
+            <thead class="sticky top-0 bg-gray-100 z-10">
               <tr>
                 <th
-                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  class="px-5 py-3 border-b-2 border-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
                   Nombre del Usuario
                 </th>
                 <th
-                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  class="px-5 py-3 border-b-2 border-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
                   Correo
                 </th>
                 <th
-                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  class="px-5 py-3 border-b-2 border-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
                   Nombre de Usuario
                 </th>
                 <th
-                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  class="px-5 py-3 border-b-2 border-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
                   Rol
                 </th>
                 <th
-                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  class="px-5 py-3 border-b-2 border-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
                   Estado
                 </th>
                 <th
-                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  class="px-5 py-3 border-b-2 border-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
                   Editar
                 </th>
                 <th
-                  class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                  class="px-5 py-3 border-b-2 border-gray-200 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
                 >
                   Eliminar
                 </th>
@@ -136,7 +152,24 @@
                     class="text-blue-600 hover:text-blue-900"
                     title="Editar"
                   >
-                    <EditIcon class="h-5 w-5" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-user-round-pen"
+                    >
+                      <path d="M2 21a8 8 0 0 1 10.821-7.487" />
+                      <path
+                        d="M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
+                      />
+                      <circle cx="10" cy="8" r="5" />
+                    </svg>
                   </button>
                 </td>
                 <td
@@ -147,7 +180,22 @@
                     class="text-red-600 hover:text-red-900"
                     title="Eliminar"
                   >
-                    <TrashIcon class="h-5 w-5" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-user-round-minus"
+                    >
+                      <path d="M2 21a8 8 0 0 1 13.292-6" />
+                      <circle cx="10" cy="8" r="5" />
+                      <path d="M22 19h-6" />
+                    </svg>
                   </button>
                 </td>
               </tr>
@@ -391,7 +439,6 @@
                   {{ errors.clave }}
                 </p>
               </div>
-                
 
               <!-- Campo Estado -->
               <div class="mb-6 relative">
@@ -446,7 +493,8 @@
               ¿Estás seguro de que quieres eliminar este usuario?
             </h2>
             <p class="text-gray-600">Esta acción no se puede deshacer.</p>
-            <div class="mt-4 flex justify-end space-x-4">
+            <!-- Botones centrados -->
+            <div class="mt-6 flex justify-center space-x-4">
               <button
                 @click="closeDeleteUserModal"
                 class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 focus:outline-none"
@@ -471,7 +519,6 @@
 import { ref, onMounted, computed } from "vue";
 import SideBar from "../components/SideBar.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
-import { SearchIcon, PlusIcon, EditIcon, TrashIcon } from "lucide-vue-next";
 import UserService from "../services/UsersService";
 
 // Variables reactivas
@@ -541,7 +588,7 @@ const updateUser = async () => {
     console.log(response);
   } catch (error) {
     console.error("Error al actualizar el usuario:", error);
-    
+
     // Manejar errores específicos del backend para mostrar en el modal
     if (error.response && error.response.data && error.response.data.error) {
       const errorMessage = error.response.data.error;
@@ -551,14 +598,17 @@ const updateUser = async () => {
       if (errorMessage.includes("correo")) {
         errors.value.correo = "El correo ya está registrado.";
       }
-      if (errorMessage.includes("La contraseña no cumple con los requisitos de seguridad")) {
-        errors.value.clave = "La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula, un número y un carácter especial.";
+      if (
+        errorMessage.includes(
+          "La contraseña no cumple con los requisitos de seguridad"
+        )
+      ) {
+        errors.value.clave =
+          "La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula, un número y un carácter especial.";
       }
     }
   }
 };
-
-
 
 const fetchUserByIdentifier = async (identifier) => {
   try {
@@ -644,8 +694,8 @@ const closeEditUserModal = () => {
     usuario: "",
     estado: "",
   };
-   // Limpiar la lista de errores al cerrar el modal
-   errors.value = {
+  // Limpiar la lista de errores al cerrar el modal
+  errors.value = {
     nombre: "",
     apellido: "",
     correo: "",
@@ -799,7 +849,7 @@ const editUser = async (user) => {
     if (userData && userData.id) {
       // Asigna los datos completos del usuario a selectedUser
       selectedUser.value = { ...userData }; // Asegúrate de incluir el 'id' en selectedUser
-      
+
       // Abre el modal de edición
       isEditModalOpen.value = true;
     } else {
@@ -834,8 +884,6 @@ const deleteUser = (user) => {
   console.log("Eliminar Usuario:", user);
   openDeleteUserModal(user);
 };
-
-
 </script>
 
 <style scoped>
