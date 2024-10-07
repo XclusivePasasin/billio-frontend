@@ -15,4 +15,25 @@ export default {
             }
         }).then(response => response.data);
     },
-}
+    createUser(userData) {
+        return api.post('users/create_user', userData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.data);
+    },
+    updateUser(userData) {
+        return api.post('users/update_user', userData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.data);
+    },  
+    deleteUser(userData) {
+        return api.post('users/delete_user', userData, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.data);
+    }
+};
