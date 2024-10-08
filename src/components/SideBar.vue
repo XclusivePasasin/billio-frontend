@@ -56,7 +56,7 @@ const menuItems = [
   { name: "Inicio", icon: HomeIcon, href: "/dashboard" },
   { name: "Facturas", icon: File, href: "/facturas" },
   { name: "Usuarios", icon: UserRound, href: "/usuarios" },
-  { name: "Configuracion", icon: Settings2, href: "#" },
+  { name: "Configuracion", icon: Settings2, href: "/configuracion" },
 ];
 
 const isOpen = ref(false);

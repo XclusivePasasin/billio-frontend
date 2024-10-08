@@ -4,6 +4,7 @@ import DashBoardView from '../views/DashBoard.vue'
 import LoginService from '../services/LoginService'
 import UsuariosView from '../views/UsuariosView.vue'
 import FacturasView from '@/views/FacturasView.vue'
+import ConfiguracionView from '@/views/ConfiguracionView.vue'
 
 const routes = [
   {
@@ -34,7 +35,12 @@ const routes = [
     path: '/facturas',
     name: 'Facturas',
     component: FacturasView,
-  }
+  },
+  {
+    path: '/configuracion',
+    name: 'Configuracion',
+    component: ConfiguracionView,
+  },
 ];
 
 const router = createRouter({
