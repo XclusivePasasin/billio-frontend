@@ -5,6 +5,7 @@
     <div class="flex-1 flex flex-col overflow-hidden">
       <!-- Header Component -->
       <HeaderComponent />
+      <!--Filtros de busqueda-->
       <div class="container mx-auto p-6 flex-1 flex flex-col overflow-y-auto">
         <div class="flex space-x-4 mb-6">
           <input
@@ -78,54 +79,34 @@
           <table class="w-full bg-white shadow-md rounded-lg overflow-y-auto">
             <thead class="bg-gray-100 sticky top-0 z-10">
               <tr>
-                <th
-                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Nombre de emisor
                 </th>
-                <th
-                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                   NRC Emisor
                 </th>
-                <th
-                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                   NIT Emisor
                 </th>
-                <th
-                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Fecha
                 </th>
-                <th
-                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Número de control
                 </th>
-                <th
-                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Código Generación
                 </th>
-                <th
-                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Sello de Recepción
                 </th>
-                <th
-                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Monto
                 </th>
-                <th
-                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Procesar
                 </th>
-                <th
-                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
+                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Acciones
                 </th>
               </tr>
@@ -163,21 +144,14 @@
                   {{ item.monto }}
                 </td>
                 <td class="px-4 py-4 text-sm text-gray-900">
-                  <input
-                    type="checkbox"
-                    class="form-checkbox h-5 w-5"
-                  />
+                  <input type="checkbox" class="form-checkbox h-5 w-5" />
                 </td>
                 <td class="px-4 py-4 text-sm text-gray-900">
                   <div class="flex flex-col space-y-2">
-                    <button
-                      class="px-4 py-2 bg-sky-600 text-white rounded-full hover:bg-sky-700"
-                    >
+                    <button class="px-4 py-2 bg-sky-600 text-white rounded-full hover:bg-sky-700">
                       PDF
                     </button>
-                    <button
-                      class="px-4 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
-                    >
+                    <button class="px-4 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700">
                       DTE
                     </button>
                   </div>
@@ -213,52 +187,52 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch, computed } from "vue";
+import { useStore } from "vuex";
 import SideBar from "../components/SideBar.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
-import InvoiceService from "../services/InvoiceService"; // Asegúrate de que tienes el servicio configurado
 
-// Variables reactivas
+// Acceder al store de Vuex
+const store = useStore();
+
+// Variables reactivas vinculadas al store
 const query = ref("");
 const startDate = ref("");
 const endDate = ref("");
-const tableData = ref([]);
+const tableData = computed(() => store.getters['facturas/invoices']);
+const pagination = computed(() => store.getters['facturas/pagination']);
 const page = ref(1); // Página actual
-const pagination = ref({
-  total: 0,
-  per_page: 15,
-  pages: 0,
-});
 
 // Función para obtener las facturas desde el backend
 const fetchFacturas = async () => {
   try {
-    const response = await InvoiceService.getFacturas({
-      query: query.value,
-      startDate: startDate.value,
-      endDate: endDate.value,
-      page: page.value, // Enviar página actual
-    });
-    tableData.value = response.data.invoices;
-    pagination.value = response.data.pagination; // Actualiza la información de la paginación
+    await store.dispatch('facturas/fetchFacturas');
   } catch (error) {
     console.error("Error fetching facturas:", error);
   }
 };
 
-// Cambiar a la página anterior
+// Watchers para filtros en tiempo real
+watch([query, startDate, endDate], ([newQuery, newStartDate, newEndDate]) => {
+  store.dispatch('facturas/updateFilters', {
+    query: newQuery,
+    startDate: newStartDate,
+    endDate: newEndDate,
+  });
+});
+
+// Funciones para paginación
 const prevPage = () => {
   if (page.value > 1) {
     page.value -= 1;
-    fetchFacturas();
+    store.dispatch('facturas/changePage', page.value);
   }
 };
 
-// Cambiar a la página siguiente
 const nextPage = () => {
   if (page.value < pagination.value.pages) {
     page.value += 1;
-    fetchFacturas();
+    store.dispatch('facturas/changePage', page.value);
   }
 };
 
@@ -276,5 +250,4 @@ onMounted(() => {
   -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
 }
-
 </style>
