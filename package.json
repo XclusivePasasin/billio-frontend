@@ -13,7 +13,8 @@
     "lucide-vue-next": "^0.441.0",
     "sweetalert2": "^11.14.1",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
