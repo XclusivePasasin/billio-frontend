@@ -9,5 +9,11 @@ export default {
       params,
       responseType: 'blob' // Asegúrate de que esto esté dentro del mismo objeto de configuración
     });
+  },
+  updateFacturas(id_list) {
+    return api.post("facturas/actualizar-facturas", { id_list });
+  },
+  getDteSummary() {
+    return api.get("facturas/dte/summary");
   }
 };

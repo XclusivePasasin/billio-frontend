@@ -1,4 +1,3 @@
-// src/store/modules/facturas.js
 import InvoiceService from '../../services/InvoiceService'; // Ajusta la ruta según tu estructura de carpetas
 
 const state = {
@@ -12,7 +11,7 @@ const state = {
   codigoGeneracion: '',
   selloRecepcion: '',
   tipoDocumento: '',
-  procesamiento: 'todas', // Valor predeterminado
+  procesamiento: '', // Valor predeterminado: 'todas' (puede ser '0', '1', o 'todas')
   tipoDte: '',
   estadoFacturas: '',
   tableData: [],
@@ -22,6 +21,9 @@ const state = {
     per_page: 15,
     pages: 0,
   },
+  totalDTE: 0,
+  processedDTE: 0,
+  unprocessedDTE: 0,
 };
 
 const mutations = {
@@ -76,12 +78,26 @@ const mutations = {
   SET_PAGE(state, page) {
     state.page = page;
   },
+  SET_DTE_SUMMARY(state, summary) {
+    state.totalDTE = summary.totalDTE;
+    state.processedDTE = summary.processedDTE;
+    state.unprocessedDTE = summary.unprocessedDTE;
+  }
 };
 
 const actions = {
   // Acción para obtener las facturas desde el backend
   async fetchFacturas({ commit, state }) {
     try {
+      // Determinar el valor del filtro de procesamiento ('0' para no procesadas, '1' para procesadas, '' para todas)
+      let estadoFiltro = '';
+      if (state.procesamiento === '1') {
+        estadoFiltro = '1';
+      } else if (state.procesamiento === '0') {
+        estadoFiltro = '0';
+      }
+      // Si es 'todas', dejamos el filtro vacío
+
       const response = await InvoiceService.getFacturas({
         query: state.query,
         startDate: state.startDate,
@@ -93,11 +109,11 @@ const actions = {
         codigoGeneracion: state.codigoGeneracion,
         selloRecepcion: state.selloRecepcion,
         tipoDocumento: state.tipoDocumento,
-        procesamiento: state.procesamiento,
+        estado: estadoFiltro,  // Enviar el estado (procesamiento)
         tipoDte: state.tipoDte,
-        estadoFacturas: state.estadoFacturas,
         page: state.page,
       });
+
       commit('SET_FACTURAS', response.data);
     } catch (error) {
       console.error('Error fetching facturas:', error);
@@ -122,11 +138,14 @@ const actions = {
     commit('SET_CODIGO_GENERACION', filters.codigoGeneracion || '');
     commit('SET_SELLO_RECEPCION', filters.selloRecepcion || '');
     commit('SET_TIPO_DOCUMENTO', filters.tipoDocumento || '');
+    
+    // Asegurarse de que 'procesamiento' sea un valor aceptado: '0', '1' o vacío para todas
     commit('SET_PROCESAMIENTO', filters.procesamiento || 'todas');
+    
     commit('SET_TIPO_DTE', filters.tipoDte || '');
     commit('SET_ESTADO_FACTURAS', filters.estadoFacturas || '');
-    commit('SET_PAGE', 1); // Reiniciar a la primera página al aplicar filtros
-    dispatch('fetchFacturas');
+    commit('SET_PAGE', 1);  // Reiniciar a la primera página al aplicar filtros
+    dispatch('fetchFacturas');  // Volver a cargar las facturas con los filtros aplicados
   },
 
   // Acción para actualizar filtros avanzados en tiempo real (si es necesario)
@@ -141,7 +160,6 @@ const actions = {
     commit('SET_PROCESAMIENTO', filters.procesamiento);
     commit('SET_TIPO_DTE', filters.tipoDte);
     commit('SET_ESTADO_FACTURAS', filters.estadoFacturas);
-    // No llamar a fetchFacturas aquí para mantener el control manual
   },
 
   // Acción para cambiar la página
@@ -168,11 +186,22 @@ const actions = {
     commit('SET_PAGE', 1); // Reiniciar a la primera página al limpiar filtros
     dispatch('fetchFacturas');
   },
+  async fetchDteSummary({ commit }) {
+    try {
+      const response = await InvoiceService.getDteSummary();
+      commit('SET_DTE_SUMMARY', response.data);
+    } catch (error) {
+      console.error('Error fetching DTE summary:', error);
+    }
+  }
 };
 
 const getters = {
   invoices: (state) => state.tableData,
   pagination: (state) => state.pagination,
+  totalDTE: (state) => state.totalDTE,
+  processedDTE: (state) => state.processedDTE,
+  unprocessedDTE: (state) => state.unprocessedDTE,
 };
 
 export default {
