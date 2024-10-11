@@ -1,0 +1,195 @@
+{
+  "identificacion": {
+    "version": 3,
+    "ambiente": "01",
+    "tipoDte": "03",
+    "numeroControl": "DTE-03-S003P003-000000000000604",
+    "codigoGeneracion": "8111CD80-71D4-4AB2-A531-AB200CD295DA",
+    "tipoModelo": 1,
+    "tipoOperacion": 1,
+    "tipoContingencia": null,
+    "motivoContin": null,
+    "fecEmi": "2024-08-19",
+    "horEmi": "12:15:21",
+    "tipoMoneda": "USD",
+    "fecAnula": null,
+    "horAnula": null
+  },
+  "documentoRelacionado": null,
+  "emisor": {
+    "nit": "06140307951051",
+    "nrc": "1116126",
+    "numFacturador": null,
+    "nombre": "ROCELI CONSULTORES S.A. DE C.V.",
+    "codActividad": "47300",
+    "descActividad": "Venta de combustibles, lubricantes y otros (gasolineras)",
+    "actividad1": null,
+    "actividad2": null,
+    "nombreComercial": "TEXACO SERVITEX",
+    "tipoEstablecimiento": "01",
+    "nomEstablecimiento": null,
+    "telefono": "22336800",
+    "codEstableMH": null,
+    "codEstable": "S003",
+    "codPuntoVentaMH": null,
+    "codPuntoVenta": "P003",
+    "codigoMH": null,
+    "codigo": null,
+    "puntoVentaMH": null,
+    "puntoVenta": null,
+    "correo": "facturacion.stx@roceli.com",
+    "direccion": {
+      "departamento": "06",
+      "municipio": "14",
+      "complemento": "4A C OTE KM11 19AV SUR ENTRE CARRILES NTE Y SUR C. PANAMERIC"
+    },
+    "categoria": 0,
+    "sucursal": null,
+    "medico": null,
+    "fecSujExcl": null,
+    "cartaVenta": null
+  },
+  "receptor": {
+    "tipoDocumento": null,
+    "numDocumento": null,
+    "nit": "036182458",
+    "nrc": "1807166",
+    "numFacturador": null,
+    "nombre": "WALTER ALEXANDER AR�VALO SERRATO",
+    "codactividad": "56108",
+    "descActividad": "Comedores",
+    "actividad": null,
+    "nombreComercial": "COLOMBIPOLLOS",
+    "direccion": {
+      "departamento": "05",
+      "municipio": "11",
+      "complemento": "Calle Daniel Hern�ndez local 1-2"
+    },
+    "categoria": 0,
+    "telefono": "76818065",
+    "correo": "elmerguevara60@gmail.com",
+    "fecSujExcl": null,
+    "numExencion": null
+  },
+  "sujetoexcluido": null,
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "tipoDte": null,
+      "tipoDoc": 0,
+      "numDocumento": null,
+      "fechaEmision": null,
+      "montoSujetoGrav": 0.0,
+      "codigoRetencionMH": null,
+      "ivaRetenido": 0.0,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codigo": "0022",
+      "codTributo": null,
+      "descripcion": "REGULAR C/TECHRON S.S./AUTOSERVICIO",
+      "cantidad": 7.407,
+      "uniMedida": 22,
+      "precioUni": 3.319,
+      "montoDescu": 0.00,
+      "ventaNoSuj": 0.00,
+      "ventaExenta": 0.00,
+      "ventaGravada": 24.58,
+      "noGravado": 0.00,
+      "tributos": [
+        "20",
+        "D1",
+        "C8"
+      ],
+      "psv": 0.0
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0.00,
+    "totalExenta": 0.00,
+    "totalGravada": 24.58,
+    "subTotalVentas": 24.58,
+    "TotalCompra": 0.0,
+    "descuNoSuj": 0.00,
+    "descuExenta": 0.00,
+    "descuGravada": 0.00,
+    "porcentajeDescuento": 0.00,
+    "totalDescu": 0.00,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 3.20
+      },
+      {
+        "codigo": "D1",
+        "descripcion": "FOVIAL ($0.20 Ctvs. por gal�n)",
+        "valor": 1.48
+      },
+      {
+        "codigo": "C8",
+        "descripcion": "COTRANS ($0.10 Ctvs. por gal�n)",
+        "valor": 0.74
+      }
+    ],
+    "totalIva": 0.0,
+    "subTotal": 24.58,
+    "ivaPerci1": 0.00,
+    "ivaRete1": 0.00,
+    "reteRenta": 0.00,
+    "fovial": 0.0,
+    "cotrans": 0.0,
+    "turismo": 0.0,
+    "adValorem": 0.0,
+    "montoTotalOperacion": 30.00,
+    "totalNoGravado": 0.00,
+    "totalPagar": 30.00,
+    "totalLetras": "TREINTA DOLARES EXACTOS",
+    "saldoFavor": 0.00,
+    "condicionOperacion": 1,
+    "pagos": [
+      {
+        "codigo": "01",
+        "montopago": 30.00,
+        "referencia": null,
+        "plazo": "01",
+        "periodo": 1
+      }
+    ],
+    "numPagoElectronico": null,
+    "totalSujetoRetencion": 0.0,
+    "totalIVAretenido": 0.0,
+    "totalIVAretenidoLetras": null
+  },
+  "extension": {
+    "nombEntrega": "MELKIN GERARDO MONTECINOS CHAVEZ",
+    "docuEntrega": "05567690-3",
+    "codEmpleado": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null,
+    "placaVehiculo": null,
+    "totalItems": 0.0,
+    "totalDescu": 0.0,
+    "autoFitoSanitaria": null
+  },
+  "apendice": null,
+  "responseMH": {
+    "version": 2,
+    "ambiente": "01",
+    "versionApp": 2,
+    "estado": "PROCESADO",
+    "codigoGeneracion": "8111CD80-71D4-4AB2-A531-AB200CD295DA",
+    "selloRecibido": "20249EA6B2DB590F40FCB89275E0B521E25D8QDK",
+    "fhProcesamiento": "19/08/2024 12:15:25",
+    "clasificaMsg": "10",
+    "codigoMsg": "002",
+    "descripcionMsg": "RECIBIDO CON OBSERVACIONES",
+    "observaciones": [
+      "resumen.tributos.codigo.D1 Valor inválido",
+      "resumen.tributos.codigo.C8 Valor inválido"
+    ]
+  },
+  "documento": null,
+  "motivo": null
+}

@@ -1,0 +1,298 @@
+{
+  "identificacion": {
+    "version": 3,
+    "ambiente": "01",
+    "tipoDte": "03",
+    "numeroControl": "DTE-03-S001C024-000000000000056",
+    "codigoGeneracion": "81C3F236-F4F4-43E4-A53A-982F277FAEA5",
+    "tipoOperacion": 1,
+    "tipoModelo": 1,
+    "tipoContingencia": null,
+    "motivoContin": null,
+    "tipoMoneda": "USD",
+    "fecEmi": "2024-09-12",
+    "horEmi": "08:16:41"
+  },
+  "documentoRelacionado": null,
+  "emisor": {
+    "nit": "14063110671010",
+    "nombre": "ANGEL ISRAEL REYES GRANADOS",
+    "tipoEstablecimiento": "02",
+    "telefono": "22789375",
+    "codEstable": "S001",
+    "codPuntoVenta": "C024",
+    "nrc": "810428",
+    "codActividad": "47111",
+    "descActividad": "Venta en supermercados",
+    "nombreComercial": "ANGEL ISRAEL REYES GRANADOS",
+    "direccion": {
+      "departamento": "05",
+      "municipio": "11",
+      "complemento": "CALLE EL BOQUERON, PASAJE \"H\", COLONIA JARDINES DEL VOLCAN, A-7, CIUDAD MERLIOT"
+    },
+    "codEstableMH": null,
+    "codPuntoVentaMH": null,
+    "correo": "superkeny@olimpoerp.net"
+  },
+  "receptor": {
+    "nit": "036182458",
+    "nombre": "WALTER ALEXANDER ARÉVALO SERRATO",
+    "nombreComercial": null,
+    "nrc": "1807166",
+    "codActividad": "68109",
+    "descActividad": "Actividades inmobiliarias realizadas con bienes propios o\narrendados n.c.p.",
+    "direccion": {
+      "departamento": "05",
+      "municipio": "11",
+      "complemento": "av. boqueron calle ayagualo #24 b jardines de merliot "
+    },
+    "telefono": "76818065",
+    "correo": "elmerguevara60@gmail.com"
+  },
+  "otrosDocumentos": null,
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "cantidad": 1.000000,
+      "codigo": "7410010348369",
+      "uniMedida": 99,
+      "descripcion": "JAB. KIMI LAVAPLATOS 12/1K",
+      "precioUni": 1.05309735,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 1.05309735,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 2,
+      "cantidad": 2.000000,
+      "codigo": "19082022",
+      "uniMedida": 99,
+      "descripcion": "MANTECA BALBOA CERDO LB",
+      "precioUni": 1.371681,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 2.743362,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 3,
+      "cantidad": 2.000000,
+      "codigo": "1119",
+      "uniMedida": 99,
+      "descripcion": "CILANTRO MANOJO",
+      "precioUni": 0.238938,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 0.477876,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 4,
+      "cantidad": 1.000000,
+      "codigo": "21346",
+      "uniMedida": 99,
+      "descripcion": "AGUACATE UNIDAD",
+      "precioUni": 0.469027,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 0.469027,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 5,
+      "cantidad": 2.000000,
+      "codigo": "1119",
+      "uniMedida": 99,
+      "descripcion": "CILANTRO MANOJO",
+      "precioUni": 0.238938,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 0.477876,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 6,
+      "cantidad": 1.000000,
+      "codigo": "21346",
+      "uniMedida": 99,
+      "descripcion": "AGUACATE UNIDAD",
+      "precioUni": 0.46902655,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 0.46902655,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 7,
+      "cantidad": 1.000000,
+      "codigo": "5583",
+      "uniMedida": 99,
+      "descripcion": "ALCOHOL M&G 90° GALON",
+      "precioUni": 6.85840708,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 6.85840708,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 8,
+      "cantidad": 3.000000,
+      "codigo": "738777140048",
+      "uniMedida": 99,
+      "descripcion": "MOSTAZA B&B 32/390 G",
+      "precioUni": 0.7699115,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 2.3097345,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 9,
+      "cantidad": 0.990000,
+      "codigo": "21001",
+      "uniMedida": 99,
+      "descripcion": "QUESO DURO BLANDO LB",
+      "precioUni": 3.707965,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 3.67088535,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    },
+    {
+      "numItem": 10,
+      "cantidad": 1.000000,
+      "codigo": "22100",
+      "uniMedida": 99,
+      "descripcion": "ATADO DE DULCE PANELA",
+      "precioUni": 0.87610619,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codTributo": null,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "psv": 0,
+      "montoDescu": 0.0,
+      "ventaGravada": 0.87610619,
+      "tributos": [
+        "20"
+      ],
+      "noGravado": 0
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0.0,
+    "descuNoSuj": 0.0,
+    "ivaRete1": 0.0,
+    "subTotalVentas": 19.41,
+    "subTotal": 19.41,
+    "reteRenta": 0,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 2.52
+      }
+    ],
+    "descuExenta": 0.0,
+    "descuGravada": 0.0,
+    "saldoFavor": 0,
+    "totalExenta": 0.0,
+    "totalGravada": 19.41,
+    "porcentajeDescuento": 0,
+    "totalDescu": 0.0,
+    "ivaPerci1": 0.0,
+    "montoTotalOperacion": 21.93,
+    "totalNoGravado": 0,
+    "totalPagar": 21.93,
+    "totalLetras": "Veintiuno 93.00/100 dólar estadounidenses.",
+    "condicionOperacion": 2,
+    "pagos": [
+      {
+        "codigo": "13",
+        "montoPago": 0,
+        "referencia": null,
+        "plazo": "01",
+        "periodo": 1
+      }
+    ],
+    "numPagoElectronico": null
+  },
+  "extension": null,
+  "apendice": null,
+  "firmaElectronica": "eyJhbGciOiJSUzUxMiJ9.ewogICJpZGVudGlmaWNhY2lvbiIgOiB7CiAgICAidmVyc2lvbiIgOiAzLAogICAgImFtYmllbnRlIiA6ICIwMSIsCiAgICAidGlwb0R0ZSIgOiAiMDMiLAogICAgIm51bWVyb0NvbnRyb2wiIDogIkRURS0wMy1TMDAxQzAyNC0wMDAwMDAwMDAwMDAwNTYiLAogICAgImNvZGlnb0dlbmVyYWNpb24iIDogIjgxQzNGMjM2LUY0RjQtNDNFNC1BNTNBLTk4MkYyNzdGQUVBNSIsCiAgICAidGlwb09wZXJhY2lvbiIgOiAxLAogICAgInRpcG9Nb2RlbG8iIDogMSwKICAgICJ0aXBvQ29udGluZ2VuY2lhIiA6IG51bGwsCiAgICAibW90aXZvQ29udGluIiA6IG51bGwsCiAgICAidGlwb01vbmVkYSIgOiAiVVNEIiwKICAgICJmZWNFbWkiIDogIjIwMjQtMDktMTIiLAogICAgImhvckVtaSIgOiAiMDg6MTY6NDEiCiAgfSwKICAiZG9jdW1lbnRvUmVsYWNpb25hZG8iIDogbnVsbCwKICAiZW1pc29yIiA6IHsKICAgICJuaXQiIDogIjE0MDYzMTEwNjcxMDEwIiwKICAgICJub21icmUiIDogIkFOR0VMIElTUkFFTCBSRVlFUyBHUkFOQURPUyIsCiAgICAidGlwb0VzdGFibGVjaW1pZW50byIgOiAiMDIiLAogICAgInRlbGVmb25vIiA6ICIyMjc4OTM3NSIsCiAgICAiY29kRXN0YWJsZSIgOiAiUzAwMSIsCiAgICAiY29kUHVudG9WZW50YSIgOiAiQzAyNCIsCiAgICAibnJjIiA6ICI4MTA0MjgiLAogICAgImNvZEFjdGl2aWRhZCIgOiAiNDcxMTEiLAogICAgImRlc2NBY3RpdmlkYWQiIDogIlZlbnRhIGVuIHN1cGVybWVyY2Fkb3MiLAogICAgIm5vbWJyZUNvbWVyY2lhbCIgOiAiQU5HRUwgSVNSQUVMIFJFWUVTIEdSQU5BRE9TIiwKICAgICJkaXJlY2Npb24iIDogewogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSIsCiAgICAgICJtdW5pY2lwaW8iIDogIjExIiwKICAgICAgImNvbXBsZW1lbnRvIiA6ICJDQUxMRSBFTCBCT1FVRVJPTiwgUEFTQUpFIFwiSFwiLCBDT0xPTklBIEpBUkRJTkVTIERFTCBWT0xDQU4sIEEtNywgQ0lVREFEIE1FUkxJT1QiCiAgICB9LAogICAgImNvZEVzdGFibGVNSCIgOiBudWxsLAogICAgImNvZFB1bnRvVmVudGFNSCIgOiBudWxsLAogICAgImNvcnJlbyIgOiAic3VwZXJrZW55QG9saW1wb2VycC5uZXQiCiAgfSwKICAicmVjZXB0b3IiIDogewogICAgIm5pdCIgOiAiMDM2MTgyNDU4IiwKICAgICJub21icmUiIDogIldBTFRFUiBBTEVYQU5ERVIgQVLDiVZBTE8gU0VSUkFUTyIsCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6IG51bGwsCiAgICAibnJjIiA6ICIxODA3MTY2IiwKICAgICJjb2RBY3RpdmlkYWQiIDogIjY4MTA5IiwKICAgICJkZXNjQWN0aXZpZGFkIiA6ICJBY3RpdmlkYWRlcyBpbm1vYmlsaWFyaWFzIHJlYWxpemFkYXMgY29uIGJpZW5lcyBwcm9waW9zIG9cbmFycmVuZGFkb3Mgbi5jLnAuIiwKICAgICJkaXJlY2Npb24iIDogewogICAgICAiZGVwYXJ0YW1lbnRvIiA6ICIwNSIsCiAgICAgICJtdW5pY2lwaW8iIDogIjExIiwKICAgICAgImNvbXBsZW1lbnRvIiA6ICJhdi4gYm9xdWVyb24gY2FsbGUgYXlhZ3VhbG8gIzI0IGIgamFyZGluZXMgZGUgbWVybGlvdCAiCiAgICB9LAogICAgInRlbGVmb25vIiA6ICI3NjgxODA2NSIsCiAgICAiY29ycmVvIiA6ICJlbG1lcmd1ZXZhcmE2MEBnbWFpbC5jb20iCiAgfSwKICAib3Ryb3NEb2N1bWVudG9zIiA6IG51bGwsCiAgInZlbnRhVGVyY2VybyIgOiBudWxsLAogICJjdWVycG9Eb2N1bWVudG8iIDogWyB7CiAgICAibnVtSXRlbSIgOiAxLAogICAgImNhbnRpZGFkIiA6IDEuMCwKICAgICJjb2RpZ28iIDogIjc0MTAwMTAzNDgzNjkiLAogICAgInVuaU1lZGlkYSIgOiA5OSwKICAgICJkZXNjcmlwY2lvbiIgOiAiSkFCLiBLSU1JIExBVkFQTEFUT1MgMTIvMUsiLAogICAgInByZWNpb1VuaSIgOiAxLjA1MzA5NzM1LAogICAgInRpcG9JdGVtIiA6IDEsCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6IG51bGwsCiAgICAiY29kVHJpYnV0byIgOiBudWxsLAogICAgInZlbnRhTm9TdWoiIDogMC4wLAogICAgInZlbnRhRXhlbnRhIiA6IDAuMCwKICAgICJwc3YiIDogMCwKICAgICJtb250b0Rlc2N1IiA6IDAuMCwKICAgICJ2ZW50YUdyYXZhZGEiIDogMS4wNTMwOTczNSwKICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwKICAgICJub0dyYXZhZG8iIDogMAogIH0sIHsKICAgICJudW1JdGVtIiA6IDIsCiAgICAiY2FudGlkYWQiIDogMi4wLAogICAgImNvZGlnbyIgOiAiMTkwODIwMjIiLAogICAgInVuaU1lZGlkYSIgOiA5OSwKICAgICJkZXNjcmlwY2lvbiIgOiAiTUFOVEVDQSBCQUxCT0EgQ0VSRE8gTEIiLAogICAgInByZWNpb1VuaSIgOiAxLjM3MTY4MSwKICAgICJ0aXBvSXRlbSIgOiAxLAogICAgIm51bWVyb0RvY3VtZW50byIgOiBudWxsLAogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwKICAgICJ2ZW50YU5vU3VqIiA6IDAuMCwKICAgICJ2ZW50YUV4ZW50YSIgOiAwLjAsCiAgICAicHN2IiA6IDAsCiAgICAibW9udG9EZXNjdSIgOiAwLjAsCiAgICAidmVudGFHcmF2YWRhIiA6IDIuNzQzMzYyLAogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLAogICAgIm5vR3JhdmFkbyIgOiAwCiAgfSwgewogICAgIm51bUl0ZW0iIDogMywKICAgICJjYW50aWRhZCIgOiAyLjAsCiAgICAiY29kaWdvIiA6ICIxMTE5IiwKICAgICJ1bmlNZWRpZGEiIDogOTksCiAgICAiZGVzY3JpcGNpb24iIDogIkNJTEFOVFJPIE1BTk9KTyIsCiAgICAicHJlY2lvVW5pIiA6IDAuMjM4OTM4LAogICAgInRpcG9JdGVtIiA6IDEsCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6IG51bGwsCiAgICAiY29kVHJpYnV0byIgOiBudWxsLAogICAgInZlbnRhTm9TdWoiIDogMC4wLAogICAgInZlbnRhRXhlbnRhIiA6IDAuMCwKICAgICJwc3YiIDogMCwKICAgICJtb250b0Rlc2N1IiA6IDAuMCwKICAgICJ2ZW50YUdyYXZhZGEiIDogMC40Nzc4NzYsCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sCiAgICAibm9HcmF2YWRvIiA6IDAKICB9LCB7CiAgICAibnVtSXRlbSIgOiA0LAogICAgImNhbnRpZGFkIiA6IDEuMCwKICAgICJjb2RpZ28iIDogIjIxMzQ2IiwKICAgICJ1bmlNZWRpZGEiIDogOTksCiAgICAiZGVzY3JpcGNpb24iIDogIkFHVUFDQVRFIFVOSURBRCIsCiAgICAicHJlY2lvVW5pIiA6IDAuNDY5MDI3LAogICAgInRpcG9JdGVtIiA6IDEsCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6IG51bGwsCiAgICAiY29kVHJpYnV0byIgOiBudWxsLAogICAgInZlbnRhTm9TdWoiIDogMC4wLAogICAgInZlbnRhRXhlbnRhIiA6IDAuMCwKICAgICJwc3YiIDogMCwKICAgICJtb250b0Rlc2N1IiA6IDAuMCwKICAgICJ2ZW50YUdyYXZhZGEiIDogMC40NjkwMjcsCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sCiAgICAibm9HcmF2YWRvIiA6IDAKICB9LCB7CiAgICAibnVtSXRlbSIgOiA1LAogICAgImNhbnRpZGFkIiA6IDIuMCwKICAgICJjb2RpZ28iIDogIjExMTkiLAogICAgInVuaU1lZGlkYSIgOiA5OSwKICAgICJkZXNjcmlwY2lvbiIgOiAiQ0lMQU5UUk8gTUFOT0pPIiwKICAgICJwcmVjaW9VbmkiIDogMC4yMzg5MzgsCiAgICAidGlwb0l0ZW0iIDogMSwKICAgICJudW1lcm9Eb2N1bWVudG8iIDogbnVsbCwKICAgICJjb2RUcmlidXRvIiA6IG51bGwsCiAgICAidmVudGFOb1N1aiIgOiAwLjAsCiAgICAidmVudGFFeGVudGEiIDogMC4wLAogICAgInBzdiIgOiAwLAogICAgIm1vbnRvRGVzY3UiIDogMC4wLAogICAgInZlbnRhR3JhdmFkYSIgOiAwLjQ3Nzg3NiwKICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwKICAgICJub0dyYXZhZG8iIDogMAogIH0sIHsKICAgICJudW1JdGVtIiA6IDYsCiAgICAiY2FudGlkYWQiIDogMS4wLAogICAgImNvZGlnbyIgOiAiMjEzNDYiLAogICAgInVuaU1lZGlkYSIgOiA5OSwKICAgICJkZXNjcmlwY2lvbiIgOiAiQUdVQUNBVEUgVU5JREFEIiwKICAgICJwcmVjaW9VbmkiIDogMC40NjkwMjY1NSwKICAgICJ0aXBvSXRlbSIgOiAxLAogICAgIm51bWVyb0RvY3VtZW50byIgOiBudWxsLAogICAgImNvZFRyaWJ1dG8iIDogbnVsbCwKICAgICJ2ZW50YU5vU3VqIiA6IDAuMCwKICAgICJ2ZW50YUV4ZW50YSIgOiAwLjAsCiAgICAicHN2IiA6IDAsCiAgICAibW9udG9EZXNjdSIgOiAwLjAsCiAgICAidmVudGFHcmF2YWRhIiA6IDAuNDY5MDI2NTUsCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sCiAgICAibm9HcmF2YWRvIiA6IDAKICB9LCB7CiAgICAibnVtSXRlbSIgOiA3LAogICAgImNhbnRpZGFkIiA6IDEuMCwKICAgICJjb2RpZ28iIDogIjU1ODMiLAogICAgInVuaU1lZGlkYSIgOiA5OSwKICAgICJkZXNjcmlwY2lvbiIgOiAiQUxDT0hPTCBNJkcgOTDCsCBHQUxPTiIsCiAgICAicHJlY2lvVW5pIiA6IDYuODU4NDA3MDgsCiAgICAidGlwb0l0ZW0iIDogMSwKICAgICJudW1lcm9Eb2N1bWVudG8iIDogbnVsbCwKICAgICJjb2RUcmlidXRvIiA6IG51bGwsCiAgICAidmVudGFOb1N1aiIgOiAwLjAsCiAgICAidmVudGFFeGVudGEiIDogMC4wLAogICAgInBzdiIgOiAwLAogICAgIm1vbnRvRGVzY3UiIDogMC4wLAogICAgInZlbnRhR3JhdmFkYSIgOiA2Ljg1ODQwNzA4LAogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLAogICAgIm5vR3JhdmFkbyIgOiAwCiAgfSwgewogICAgIm51bUl0ZW0iIDogOCwKICAgICJjYW50aWRhZCIgOiAzLjAsCiAgICAiY29kaWdvIiA6ICI3Mzg3NzcxNDAwNDgiLAogICAgInVuaU1lZGlkYSIgOiA5OSwKICAgICJkZXNjcmlwY2lvbiIgOiAiTU9TVEFaQSBCJkIgMzIvMzkwIEciLAogICAgInByZWNpb1VuaSIgOiAwLjc2OTkxMTUsCiAgICAidGlwb0l0ZW0iIDogMSwKICAgICJudW1lcm9Eb2N1bWVudG8iIDogbnVsbCwKICAgICJjb2RUcmlidXRvIiA6IG51bGwsCiAgICAidmVudGFOb1N1aiIgOiAwLjAsCiAgICAidmVudGFFeGVudGEiIDogMC4wLAogICAgInBzdiIgOiAwLAogICAgIm1vbnRvRGVzY3UiIDogMC4wLAogICAgInZlbnRhR3JhdmFkYSIgOiAyLjMwOTczNDUsCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sCiAgICAibm9HcmF2YWRvIiA6IDAKICB9LCB7CiAgICAibnVtSXRlbSIgOiA5LAogICAgImNhbnRpZGFkIiA6IDAuOTksCiAgICAiY29kaWdvIiA6ICIyMTAwMSIsCiAgICAidW5pTWVkaWRhIiA6IDk5LAogICAgImRlc2NyaXBjaW9uIiA6ICJRVUVTTyBEVVJPIEJMQU5ETyBMQiIsCiAgICAicHJlY2lvVW5pIiA6IDMuNzA3OTY1LAogICAgInRpcG9JdGVtIiA6IDEsCiAgICAibnVtZXJvRG9jdW1lbnRvIiA6IG51bGwsCiAgICAiY29kVHJpYnV0byIgOiBudWxsLAogICAgInZlbnRhTm9TdWoiIDogMC4wLAogICAgInZlbnRhRXhlbnRhIiA6IDAuMCwKICAgICJwc3YiIDogMCwKICAgICJtb250b0Rlc2N1IiA6IDAuMCwKICAgICJ2ZW50YUdyYXZhZGEiIDogMy42NzA4ODUzNSwKICAgICJ0cmlidXRvcyIgOiBbICIyMCIgXSwKICAgICJub0dyYXZhZG8iIDogMAogIH0sIHsKICAgICJudW1JdGVtIiA6IDEwLAogICAgImNhbnRpZGFkIiA6IDEuMCwKICAgICJjb2RpZ28iIDogIjIyMTAwIiwKICAgICJ1bmlNZWRpZGEiIDogOTksCiAgICAiZGVzY3JpcGNpb24iIDogIkFUQURPIERFIERVTENFIFBBTkVMQSIsCiAgICAicHJlY2lvVW5pIiA6IDAuODc2MTA2MTksCiAgICAidGlwb0l0ZW0iIDogMSwKICAgICJudW1lcm9Eb2N1bWVudG8iIDogbnVsbCwKICAgICJjb2RUcmlidXRvIiA6IG51bGwsCiAgICAidmVudGFOb1N1aiIgOiAwLjAsCiAgICAidmVudGFFeGVudGEiIDogMC4wLAogICAgInBzdiIgOiAwLAogICAgIm1vbnRvRGVzY3UiIDogMC4wLAogICAgInZlbnRhR3JhdmFkYSIgOiAwLjg3NjEwNjE5LAogICAgInRyaWJ1dG9zIiA6IFsgIjIwIiBdLAogICAgIm5vR3JhdmFkbyIgOiAwCiAgfSBdLAogICJyZXN1bWVuIiA6IHsKICAgICJ0b3RhbE5vU3VqIiA6IDAuMCwKICAgICJkZXNjdU5vU3VqIiA6IDAuMCwKICAgICJpdmFSZXRlMSIgOiAwLjAsCiAgICAic3ViVG90YWxWZW50YXMiIDogMTkuNDEsCiAgICAic3ViVG90YWwiIDogMTkuNDEsCiAgICAicmV0ZVJlbnRhIiA6IDAsCiAgICAidHJpYnV0b3MiIDogWyB7CiAgICAgICJjb2RpZ28iIDogIjIwIiwKICAgICAgImRlc2NyaXBjaW9uIiA6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLAogICAgICAidmFsb3IiIDogMi41MgogICAgfSBdLAogICAgImRlc2N1RXhlbnRhIiA6IDAuMCwKICAgICJkZXNjdUdyYXZhZGEiIDogMC4wLAogICAgInNhbGRvRmF2b3IiIDogMCwKICAgICJ0b3RhbEV4ZW50YSIgOiAwLjAsCiAgICAidG90YWxHcmF2YWRhIiA6IDE5LjQxLAogICAgInBvcmNlbnRhamVEZXNjdWVudG8iIDogMCwKICAgICJ0b3RhbERlc2N1IiA6IDAuMCwKICAgICJpdmFQZXJjaTEiIDogMC4wLAogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogMjEuOTMsCiAgICAidG90YWxOb0dyYXZhZG8iIDogMCwKICAgICJ0b3RhbFBhZ2FyIiA6IDIxLjkzLAogICAgInRvdGFsTGV0cmFzIiA6ICJWZWludGl1bm8gOTMuMDAvMTAwIGTDs2xhciBlc3RhZG91bmlkZW5zZXMuIiwKICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMiwKICAgICJwYWdvcyIgOiBbIHsKICAgICAgImNvZGlnbyIgOiAiMTMiLAogICAgICAibW9udG9QYWdvIiA6IDAsCiAgICAgICJyZWZlcmVuY2lhIiA6IG51bGwsCiAgICAgICJwbGF6byIgOiAiMDEiLAogICAgICAicGVyaW9kbyIgOiAxCiAgICB9IF0sCiAgICAibnVtUGFnb0VsZWN0cm9uaWNvIiA6IG51bGwKICB9LAogICJleHRlbnNpb24iIDogbnVsbCwKICAiYXBlbmRpY2UiIDogbnVsbAp9.CDiX8kk1P4kNF5yknwbIq4GAmUdFgBAnK4Wz6t7GAI7Er1VfN4SW_hsV8x9BXIu9MZcSj7msn_1F9JqUjJT-l-edn8TUSzeS6hEJuJWCU_qYXAktyp3Hx_Ms-0yaNuJx34R8Qm9RUQuZRHkR_1lA045B-_yj6hZ4YFL1Ddb7gJspYVjDoQdvogRvKNhcsCZNWi4Hq6RnOpYPtkzwuTLrTnXQzs0xoEtwYP1BmOyIQLu_bJ6rBRYHr3TmH13IyV7URJcHTwcu2gT7T9gLkD0zhutNczAINEin4DuOiYi57_SG1VukW5_XpwsV9RKpDb_sgtNiLd9pnlCKjXJvs3Vi5w",
+  "selloRecibido": "202468257ACB6B47418CB655770E5857D1D3NUJD"
+}

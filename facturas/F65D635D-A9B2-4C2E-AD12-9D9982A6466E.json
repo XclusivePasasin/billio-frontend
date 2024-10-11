@@ -1,0 +1,192 @@
+{
+  "identificacion": {
+    "version": 3,
+    "ambiente": "01",
+    "tipoDte": "03",
+    "numeroControl": "DTE-03-S003P003-000000000005500",
+    "codigoGeneracion": "F65D635D-A9B2-4C2E-AD12-9D9982A6466E",
+    "tipoModelo": 1,
+    "tipoOperacion": 1,
+    "tipoContingencia": null,
+    "motivoContin": null,
+    "fecEmi": "2024-09-11",
+    "horEmi": "11:14:02",
+    "tipoMoneda": "USD",
+    "fecAnula": null,
+    "horAnula": null
+  },
+  "documentoRelacionado": null,
+  "emisor": {
+    "nit": "06140307951051",
+    "nrc": "1116126",
+    "numFacturador": null,
+    "nombre": "ROCELI CONSULTORES S.A. DE C.V.",
+    "codActividad": "47300",
+    "descActividad": "Venta de combustibles, lubricantes y otros (gasolineras)",
+    "actividad1": null,
+    "actividad2": null,
+    "nombreComercial": "TEXACO SERVITEX",
+    "tipoEstablecimiento": "01",
+    "nomEstablecimiento": null,
+    "telefono": "22336800",
+    "codEstableMH": null,
+    "codEstable": "S003",
+    "codPuntoVentaMH": null,
+    "codPuntoVenta": "P003",
+    "codigoMH": null,
+    "codigo": null,
+    "puntoVentaMH": null,
+    "puntoVenta": null,
+    "correo": "facturacion.stx@roceli.com",
+    "direccion": {
+      "departamento": "06",
+      "municipio": "14",
+      "complemento": "4A C OTE KM11 19AV SUR ENTRE CARRILES NTE Y SUR C. PANAMERIC"
+    },
+    "categoria": 0,
+    "sucursal": null,
+    "medico": null,
+    "fecSujExcl": null,
+    "cartaVenta": null
+  },
+  "receptor": {
+    "tipoDocumento": null,
+    "numDocumento": null,
+    "nit": "036182458",
+    "nrc": "1807166",
+    "numFacturador": null,
+    "nombre": "WALTER ALEXANDER AR�VALO SERRATO",
+    "codactividad": "56108",
+    "descActividad": "Comedores",
+    "actividad": null,
+    "nombreComercial": "COLOMBIPOLLOS",
+    "direccion": {
+      "departamento": "05",
+      "municipio": "11",
+      "complemento": "Calle Daniel Hern�ndez local 1-2"
+    },
+    "categoria": 0,
+    "telefono": "76818065",
+    "correo": "elmerguevara60@gmail.com",
+    "fecSujExcl": null,
+    "numExencion": null
+  },
+  "sujetoexcluido": null,
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "tipoDte": null,
+      "tipoDoc": 0,
+      "numDocumento": null,
+      "fechaEmision": null,
+      "montoSujetoGrav": 0.0,
+      "codigoRetencionMH": null,
+      "ivaRetenido": 0.0,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "codigo": "0022",
+      "codTributo": null,
+      "descripcion": "REGULAR C/TECHRON S.S./AUTOSERVICIO",
+      "cantidad": 2.539,
+      "uniMedida": 22,
+      "precioUni": 3.221,
+      "montoDescu": 0.00,
+      "ventaNoSuj": 0.00,
+      "ventaExenta": 0.00,
+      "ventaGravada": 8.18,
+      "noGravado": 0.00,
+      "tributos": [
+        "20",
+        "D1",
+        "C8"
+      ],
+      "psv": 0.0
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0.00,
+    "totalExenta": 0.00,
+    "totalGravada": 8.18,
+    "subTotalVentas": 8.18,
+    "TotalCompra": 0.0,
+    "descuNoSuj": 0.00,
+    "descuExenta": 0.00,
+    "descuGravada": 0.00,
+    "porcentajeDescuento": 0.00,
+    "totalDescu": 0.00,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 1.06
+      },
+      {
+        "codigo": "D1",
+        "descripcion": "FOVIAL ($0.20 Ctvs. por gal�n)",
+        "valor": 0.51
+      },
+      {
+        "codigo": "C8",
+        "descripcion": "COTRANS ($0.10 Ctvs. por gal�n)",
+        "valor": 0.25
+      }
+    ],
+    "totalIva": 0.0,
+    "subTotal": 8.18,
+    "ivaPerci1": 0.00,
+    "ivaRete1": 0.00,
+    "reteRenta": 0.00,
+    "fovial": 0.0,
+    "cotrans": 0.0,
+    "turismo": 0.0,
+    "adValorem": 0.0,
+    "montoTotalOperacion": 10.00,
+    "totalNoGravado": 0.00,
+    "totalPagar": 10.00,
+    "totalLetras": "DIEZ DOLARES EXACTOS",
+    "saldoFavor": 0.00,
+    "condicionOperacion": 1,
+    "pagos": [
+      {
+        "codigo": "01",
+        "montopago": 10.00,
+        "referencia": null,
+        "plazo": "01",
+        "periodo": 1
+      }
+    ],
+    "numPagoElectronico": null,
+    "totalSujetoRetencion": 0.0,
+    "totalIVAretenido": 0.0,
+    "totalIVAretenidoLetras": null
+  },
+  "extension": {
+    "nombEntrega": "RAUL ERNESTO BURGOS SAAVEDRA",
+    "docuEntrega": "06998098-2",
+    "codEmpleado": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null,
+    "placaVehiculo": null,
+    "totalItems": 0.0,
+    "totalDescu": 0.0,
+    "autoFitoSanitaria": null
+  },
+  "apendice": null,
+  "responseMH": {
+    "version": 2,
+    "ambiente": "01",
+    "versionApp": 2,
+    "estado": "PROCESADO",
+    "codigoGeneracion": "F65D635D-A9B2-4C2E-AD12-9D9982A6466E",
+    "selloRecibido": "2024129009550E7E458EBA31E30A0C9969CEZLRI",
+    "fhProcesamiento": "11/09/2024 11:14:06",
+    "clasificaMsg": "10",
+    "codigoMsg": "001",
+    "descripcionMsg": "RECIBIDO",
+    "observaciones": []
+  },
+  "documento": null,
+  "motivo": null
+}

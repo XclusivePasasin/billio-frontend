@@ -1,0 +1,131 @@
+﻿{
+  "apendice": [
+    {
+      "campo": "NumeroInterno",
+      "etiqueta": "NumeroInterno",
+      "valor": "A-24TG039C-00001000"
+    }
+  ],
+  "cuerpoDocumento": [
+    {
+      "cantidad": 67.0,
+      "codigo": "GLP",
+      "codTributo": null,
+      "descripcion": "Gas Licuado de Petroleo",
+      "montoDescu": 0.0,
+      "noGravado": 0.0,
+      "numeroDocumento": null,
+      "numItem": 1,
+      "precioUni": 2.12,
+      "psv": 0.0,
+      "tipoItem": 1,
+      "tributos": [
+        "20"
+      ],
+      "uniMedida": 22,
+      "ventaExenta": 0.0,
+      "ventaGravada": 142.04,
+      "ventaNoSuj": 0.0
+    }
+  ],
+  "documentoRelacionado": null,
+  "emisor": {
+    "codActividad": "47300",
+    "codEstable": "0000",
+    "codEstableMH": "M001",
+    "codPuntoVenta": "VG039",
+    "codPuntoVentaMH": "P044",
+    "correo": "tropigas.factura@gmail.com",
+    "descActividad": "Venta de combustibles, lubricantes y otros (gasolineras)",
+    "direccion": {
+      "complemento": "Boulevard del Ejercito km. 4.5 calle a col. Monte Carmelo",
+      "departamento": "06",
+      "municipio": "17"
+    },
+    "nit": "96422206810012",
+    "nombre": "TROPIGAS DE EL SALVADOR, S.A.",
+    "nombreComercial": "TROPIGAS DE EL SALVADOR, S.A.",
+    "nrc": "6025",
+    "telefono": "22515500",
+    "tipoEstablecimiento": "01"
+  },
+  "extension": {
+    "docuEntrega": "03664192-9",
+    "docuRecibe": "036182458",
+    "nombEntrega": "Mario Antonio Lopez Ramírez",
+    "nombRecibe": "WALTER ALEXANDER AREVALO SERRATO",
+    "observaciones": null,
+    "placaVehiculo": null
+  },
+  "identificacion": {
+    "ambiente": "01",
+    "codigoGeneracion": "088C7E32-E1A1-4CBB-9037-8494112EA0ED",
+    "fecEmi": "2024-06-25",
+    "horEmi": "11:52:40",
+    "motivoContin": null,
+    "numeroControl": "DTE-03-M001P044-000000000001012",
+    "tipoContingencia": null,
+    "tipoDte": "03",
+    "tipoModelo": 1,
+    "tipoMoneda": "USD",
+    "tipoOperacion": 1,
+    "version": 3
+  },
+  "otrosDocumentos": null,
+  "receptor": {
+    "codActividad": "56108",
+    "correo": "elmerguevara60@gmail.com",
+    "descActividad": "Comedores",
+    "direccion": {
+      "complemento": ".: CALLE DANIEL HERNANDEZ LOCAL #1-2",
+      "departamento": "05",
+      "municipio": "11"
+    },
+    "nit": "036182458",
+    "nombre": "WALTER ALEXANDER AREVALO SERRATO",
+    "nombreComercial": "WALTER ALEXANDER AREVALO SERRATO",
+    "nrc": "1807166",
+    "telefono": "76818065"
+  },
+  "resumen": {
+    "condicionOperacion": 1,
+    "descuExenta": 0.0,
+    "descuGravada": 0.0,
+    "descuNoSuj": 0.0,
+    "ivaPerci1": 0.0,
+    "ivaRete1": 0.0,
+    "montoTotalOperacion": 160.51,
+    "numPagoElectronico": null,
+    "pagos": [
+      {
+        "codigo": "01",
+        "montoPago": 160.51,
+        "periodo": null,
+        "plazo": "01",
+        "referencia": "1"
+      }
+    ],
+    "porcentajeDescuento": 0.0,
+    "reteRenta": 0.0,
+    "saldoFavor": 0.0,
+    "subTotal": 142.04,
+    "subTotalVentas": 142.04,
+    "totalDescu": 0.0,
+    "totalExenta": 0.0,
+    "totalGravada": 142.04,
+    "totalLetras": "CIENTO SESENTA CON 51/100 USD",
+    "totalNoGravado": 0.0,
+    "totalNoSuj": 0.0,
+    "totalPagar": 160.51,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 18.47
+      }
+    ]
+  },
+  "ventaTercero": null,
+  "firmaElectronica": "eyJhbGciOiJSUzUxMiJ9.ew0KICAiYXBlbmRpY2UiIDogWyB7DQogICAgImNhbXBvIiA6ICJOdW1lcm9JbnRlcm5vIiwNCiAgICAiZXRpcXVldGEiIDogIk51bWVyb0ludGVybm8iLA0KICAgICJ2YWxvciIgOiAiQS0yNFRHMDM5Qy0wMDAwMTAwMCINCiAgfSBdLA0KICAiY3VlcnBvRG9jdW1lbnRvIiA6IFsgew0KICAgICJjYW50aWRhZCIgOiA2NywNCiAgICAiY29kaWdvIiA6ICJHTFAiLA0KICAgICJjb2RUcmlidXRvIiA6IG51bGwsDQogICAgImRlc2NyaXBjaW9uIiA6ICJHYXMgTGljdWFkbyBkZSBQZXRyb2xlbyIsDQogICAgIm1vbnRvRGVzY3UiIDogMCwNCiAgICAibm9HcmF2YWRvIiA6IDAsDQogICAgIm51bWVyb0RvY3VtZW50byIgOiBudWxsLA0KICAgICJudW1JdGVtIiA6IDEsDQogICAgInByZWNpb1VuaSIgOiAyLjEyLA0KICAgICJwc3YiIDogMCwNCiAgICAidGlwb0l0ZW0iIDogMSwNCiAgICAidHJpYnV0b3MiIDogWyAiMjAiIF0sDQogICAgInVuaU1lZGlkYSIgOiAyMiwNCiAgICAidmVudGFFeGVudGEiIDogMCwNCiAgICAidmVudGFHcmF2YWRhIiA6IDE0Mi4wNCwNCiAgICAidmVudGFOb1N1aiIgOiAwDQogIH0gXSwNCiAgImRvY3VtZW50b1JlbGFjaW9uYWRvIiA6IG51bGwsDQogICJlbWlzb3IiIDogew0KICAgICJjb2RBY3RpdmlkYWQiIDogIjQ3MzAwIiwNCiAgICAiY29kRXN0YWJsZSIgOiAiMDAwMCIsDQogICAgImNvZEVzdGFibGVNSCIgOiAiTTAwMSIsDQogICAgImNvZFB1bnRvVmVudGEiIDogIlZHMDM5IiwNCiAgICAiY29kUHVudG9WZW50YU1IIiA6ICJQMDQ0IiwNCiAgICAiY29ycmVvIiA6ICJ0cm9waWdhcy5mYWN0dXJhQGdtYWlsLmNvbSIsDQogICAgImRlc2NBY3RpdmlkYWQiIDogIlZlbnRhIGRlIGNvbWJ1c3RpYmxlcywgbHVicmljYW50ZXMgeSBvdHJvcyAoZ2Fzb2xpbmVyYXMpIiwNCiAgICAiZGlyZWNjaW9uIiA6IHsNCiAgICAgICJjb21wbGVtZW50byIgOiAiQm91bGV2YXJkIGRlbCBFamVyY2l0byBrbS4gNC41IGNhbGxlIGEgY29sLiBNb250ZSBDYXJtZWxvIiwNCiAgICAgICJkZXBhcnRhbWVudG8iIDogIjA2IiwNCiAgICAgICJtdW5pY2lwaW8iIDogIjE3Ig0KICAgIH0sDQogICAgIm5pdCIgOiAiOTY0MjIyMDY4MTAwMTIiLA0KICAgICJub21icmUiIDogIlRST1BJR0FTIERFIEVMIFNBTFZBRE9SLCBTLkEuIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJUUk9QSUdBUyBERSBFTCBTQUxWQURPUiwgUy5BLiIsDQogICAgIm5yYyIgOiAiNjAyNSIsDQogICAgInRlbGVmb25vIiA6ICIyMjUxNTUwMCIsDQogICAgInRpcG9Fc3RhYmxlY2ltaWVudG8iIDogIjAxIg0KICB9LA0KICAiZXh0ZW5zaW9uIiA6IHsNCiAgICAiZG9jdUVudHJlZ2EiIDogIjAzNjY0MTkyLTkiLA0KICAgICJkb2N1UmVjaWJlIiA6ICIwMzYxODI0NTgiLA0KICAgICJub21iRW50cmVnYSIgOiAiTWFyaW8gQW50b25pbyBMb3BleiBSYW3DrXJleiIsDQogICAgIm5vbWJSZWNpYmUiIDogIldBTFRFUiBBTEVYQU5ERVIgQVJFVkFMTyBTRVJSQVRPIiwNCiAgICAib2JzZXJ2YWNpb25lcyIgOiBudWxsLA0KICAgICJwbGFjYVZlaGljdWxvIiA6IG51bGwNCiAgfSwNCiAgImlkZW50aWZpY2FjaW9uIiA6IHsNCiAgICAiYW1iaWVudGUiIDogIjAxIiwNCiAgICAiY29kaWdvR2VuZXJhY2lvbiIgOiAiMDg4QzdFMzItRTFBMS00Q0JCLTkwMzctODQ5NDExMkVBMEVEIiwNCiAgICAiZmVjRW1pIiA6ICIyMDI0LTA2LTI1IiwNCiAgICAiaG9yRW1pIiA6ICIxMTo1Mjo0MCIsDQogICAgIm1vdGl2b0NvbnRpbiIgOiBudWxsLA0KICAgICJudW1lcm9Db250cm9sIiA6ICJEVEUtMDMtTTAwMVAwNDQtMDAwMDAwMDAwMDAxMDEyIiwNCiAgICAidGlwb0NvbnRpbmdlbmNpYSIgOiBudWxsLA0KICAgICJ0aXBvRHRlIiA6ICIwMyIsDQogICAgInRpcG9Nb2RlbG8iIDogMSwNCiAgICAidGlwb01vbmVkYSIgOiAiVVNEIiwNCiAgICAidGlwb09wZXJhY2lvbiIgOiAxLA0KICAgICJ2ZXJzaW9uIiA6IDMNCiAgfSwNCiAgIm90cm9zRG9jdW1lbnRvcyIgOiBudWxsLA0KICAicmVjZXB0b3IiIDogew0KICAgICJjb2RBY3RpdmlkYWQiIDogIjU2MTA4IiwNCiAgICAiY29ycmVvIiA6ICJlbG1lcmd1ZXZhcmE2MEBnbWFpbC5jb20iLA0KICAgICJkZXNjQWN0aXZpZGFkIiA6ICJDb21lZG9yZXMiLA0KICAgICJkaXJlY2Npb24iIDogew0KICAgICAgImNvbXBsZW1lbnRvIiA6ICIuOiBDQUxMRSBEQU5JRUwgSEVSTkFOREVaIExPQ0FMICMxLTIiLA0KICAgICAgImRlcGFydGFtZW50byIgOiAiMDUiLA0KICAgICAgIm11bmljaXBpbyIgOiAiMTEiDQogICAgfSwNCiAgICAibml0IiA6ICIwMzYxODI0NTgiLA0KICAgICJub21icmUiIDogIldBTFRFUiBBTEVYQU5ERVIgQVJFVkFMTyBTRVJSQVRPIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIiA6ICJXQUxURVIgQUxFWEFOREVSIEFSRVZBTE8gU0VSUkFUTyIsDQogICAgIm5yYyIgOiAiMTgwNzE2NiIsDQogICAgInRlbGVmb25vIiA6ICI3NjgxODA2NSINCiAgfSwNCiAgInJlc3VtZW4iIDogew0KICAgICJjb25kaWNpb25PcGVyYWNpb24iIDogMSwNCiAgICAiZGVzY3VFeGVudGEiIDogMCwNCiAgICAiZGVzY3VHcmF2YWRhIiA6IDAsDQogICAgImRlc2N1Tm9TdWoiIDogMCwNCiAgICAiaXZhUGVyY2kxIiA6IDAsDQogICAgIml2YVJldGUxIiA6IDAsDQogICAgIm1vbnRvVG90YWxPcGVyYWNpb24iIDogMTYwLjUxLA0KICAgICJudW1QYWdvRWxlY3Ryb25pY28iIDogbnVsbCwNCiAgICAicGFnb3MiIDogWyB7DQogICAgICAiY29kaWdvIiA6ICIwMSIsDQogICAgICAibW9udG9QYWdvIiA6IDE2MC41MSwNCiAgICAgICJwZXJpb2RvIiA6IG51bGwsDQogICAgICAicGxhem8iIDogIjAxIiwNCiAgICAgICJyZWZlcmVuY2lhIiA6ICIxIg0KICAgIH0gXSwNCiAgICAicG9yY2VudGFqZURlc2N1ZW50byIgOiAwLA0KICAgICJyZXRlUmVudGEiIDogMCwNCiAgICAic2FsZG9GYXZvciIgOiAwLA0KICAgICJzdWJUb3RhbCIgOiAxNDIuMDQsDQogICAgInN1YlRvdGFsVmVudGFzIiA6IDE0Mi4wNCwNCiAgICAidG90YWxEZXNjdSIgOiAwLA0KICAgICJ0b3RhbEV4ZW50YSIgOiAwLA0KICAgICJ0b3RhbEdyYXZhZGEiIDogMTQyLjA0LA0KICAgICJ0b3RhbExldHJhcyIgOiAiQ0lFTlRPIFNFU0VOVEEgQ09OIDUxLzEwMCBVU0QiLA0KICAgICJ0b3RhbE5vR3JhdmFkbyIgOiAwLA0KICAgICJ0b3RhbE5vU3VqIiA6IDAsDQogICAgInRvdGFsUGFnYXIiIDogMTYwLjUxLA0KICAgICJ0cmlidXRvcyIgOiBbIHsNCiAgICAgICJjb2RpZ28iIDogIjIwIiwNCiAgICAgICJkZXNjcmlwY2lvbiIgOiAiSW1wdWVzdG8gYWwgVmFsb3IgQWdyZWdhZG8gMTMlIiwNCiAgICAgICJ2YWxvciIgOiAxOC40Nw0KICAgIH0gXQ0KICB9LA0KICAidmVudGFUZXJjZXJvIiA6IG51bGwNCn0.QUcGumbzRiJYnDuN6Y51U1aWTApFxl07ZkyKuEE5_H6GU-1HLda4lAXhwry0_MdKvb5a4Yoyun5ix6opem8hXwubadWHMgO11qNkmXfWOQgAP859BqdwMNtTiIIlQcCDBv0p3U3NgvNCnTzJggjL0h0G5D2oJkmCdJoMJ59_Nw9fK5UzSewr0bMBJdzGtTKvyeK_zVfYENWoeRhD79dNxBanNV39LrwPGbyb2efv0ZZg79DAuBJSKNK0Q5IItegcQROzaB6aP44zoffhByFimXHvx1LAtms7T5JAl8Cfr8ASkTzK9HclCzgULHJE44K5bqkGYVPd9zfaoN-PYgMk0Q",
+  "selloRecibido": "2024E6D0E3CDC2FF46C4BAEA6097BB25F742RBGH"
+}
