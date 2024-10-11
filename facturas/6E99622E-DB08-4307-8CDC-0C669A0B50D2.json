@@ -1,0 +1,117 @@
+{
+  "identificacion": {
+    "version": 3,
+    "ambiente": "01",
+    "tipoDte": "03",
+    "numeroControl": "DTE-03-S029P012-000000000010059",
+    "codigoGeneracion": "6E99622E-DB08-4307-8CDC-0C669A0B50D2",
+    "tipoModelo": 1,
+    "tipoOperacion": 1,
+    "tipoContingencia": null,
+    "motivoContin": null,
+    "fecEmi": "2024-08-10",
+    "horEmi": "11:50:44",
+    "tipoMoneda": "USD"
+  },
+  "documentoRelacionado": null,
+  "emisor": {
+    "nit": "02101911710016",
+    "nrc": "27",
+    "nombre": "ALMACENES VIDRI S.A. DE C.V.",
+    "codActividad": "47522",
+    "descActividad": "Venta al por menor de artículos de ferretería",
+    "nombreComercial": "ALMACENES VIDRI S.A. DE C.V.",
+    "tipoEstablecimiento": "01",
+    "direccion": {
+      "departamento": "05",
+      "municipio": "01",
+      "complemento": "CALLE LIBERTAD Y BOULEVARD MERLIOT, CIUDAD MERLIOT"
+    },
+    "telefono": "2278-3033",
+    "correo": "sac.facturacion@vidri.com.sv",
+    "codEstableMH": "S029",
+    "codEstable": "S029",
+    "codPuntoVentaMH": "P012",
+    "codPuntoVenta": "P012"
+  },
+  "receptor": {
+    "nit": "036182458",
+    "nrc": "1807166",
+    "nombre": "arevalo serrato, walter alexander ",
+    "codActividad": "56108",
+    "descActividad": "COMEDORES",
+    "nombreComercial": null,
+    "direccion": {
+      "departamento": "06",
+      "municipio": "08",
+      "complemento": "av castro moran #10-b, mejicanos, san salvador "
+    },
+    "telefono": null,
+    "correo": "elmerguevara60@gmail.com"
+  },
+  "otrosDocumentos": null,
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 3.0,
+      "codigo": "132821",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "VENTILADOR DE PARED 18\" (45.72 CM) SUPER K",
+      "precioUni": 42.4336,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 127.3009,
+      "tributos": [
+        "20"
+      ],
+      "psv": 47.95,
+      "noGravado": 0.0
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0.0,
+    "totalExenta": 0.0,
+    "totalGravada": 127.3,
+    "subTotalVentas": 127.3,
+    "descuNoSuj": 0.0,
+    "descuExenta": 0.0,
+    "descuGravada": 0.0,
+    "porcentajeDescuento": 0.0,
+    "totalDescu": 0.0,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 16.55
+      }
+    ],
+    "subTotal": 127.3,
+    "ivaPerci1": 0.0,
+    "ivaRete1": 0.0,
+    "reteRenta": 0.0,
+    "montoTotalOperacion": 143.85,
+    "totalNoGravado": 0.0,
+    "totalPagar": 143.85,
+    "totalLetras": "CIENTO CUARENTA Y TRES 85/100",
+    "saldoFavor": 0.0,
+    "condicionOperacion": 1,
+    "pagos": null,
+    "numPagoElectronico": null
+  },
+  "extension": {
+    "nombEntrega": null,
+    "docuEntrega": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null,
+    "placaVehiculo": null
+  },
+  "apendice": null,
+  "firmaElectronica": "eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iOiB7DQogICAgInZlcnNpb24iOiAzLA0KICAgICJhbWJpZW50ZSI6ICIwMSIsDQogICAgInRpcG9EdGUiOiAiMDMiLA0KICAgICJudW1lcm9Db250cm9sIjogIkRURS0wMy1TMDI5UDAxMi0wMDAwMDAwMDAwMTAwNTkiLA0KICAgICJjb2RpZ29HZW5lcmFjaW9uIjogIjZFOTk2MjJFLURCMDgtNDMwNy04Q0RDLTBDNjY5QTBCNTBEMiIsDQogICAgInRpcG9Nb2RlbG8iOiAxLA0KICAgICJ0aXBvT3BlcmFjaW9uIjogMSwNCiAgICAidGlwb0NvbnRpbmdlbmNpYSI6IG51bGwsDQogICAgIm1vdGl2b0NvbnRpbiI6IG51bGwsDQogICAgImZlY0VtaSI6ICIyMDI0LTA4LTEwIiwNCiAgICAiaG9yRW1pIjogIjExOjUwOjQ0IiwNCiAgICAidGlwb01vbmVkYSI6ICJVU0QiDQogIH0sDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyI6IG51bGwsDQogICJlbWlzb3IiOiB7DQogICAgIm5pdCI6ICIwMjEwMTkxMTcxMDAxNiIsDQogICAgIm5yYyI6ICIyNyIsDQogICAgIm5vbWJyZSI6ICJBTE1BQ0VORVMgVklEUkkgUy5BLiBERSBDLlYuIiwNCiAgICAiY29kQWN0aXZpZGFkIjogIjQ3NTIyIiwNCiAgICAiZGVzY0FjdGl2aWRhZCI6ICJWZW50YSBhbCBwb3IgbWVub3IgZGUgYXJ0w61jdWxvcyBkZSBmZXJyZXRlcsOtYSIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCI6ICJBTE1BQ0VORVMgVklEUkkgUy5BLiBERSBDLlYuIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byI6ICIwMSIsDQogICAgImRpcmVjY2lvbiI6IHsNCiAgICAgICJkZXBhcnRhbWVudG8iOiAiMDUiLA0KICAgICAgIm11bmljaXBpbyI6ICIwMSIsDQogICAgICAiY29tcGxlbWVudG8iOiAiQ0FMTEUgTElCRVJUQUQgWSBCT1VMRVZBUkQgTUVSTElPVCwgQ0lVREFEIE1FUkxJT1QiDQogICAgfSwNCiAgICAidGVsZWZvbm8iOiAiMjI3OC0zMDMzIiwNCiAgICAiY29ycmVvIjogInNhYy5mYWN0dXJhY2lvbkB2aWRyaS5jb20uc3YiLA0KICAgICJjb2RFc3RhYmxlTUgiOiAiUzAyOSIsDQogICAgImNvZEVzdGFibGUiOiAiUzAyOSIsDQogICAgImNvZFB1bnRvVmVudGFNSCI6ICJQMDEyIiwNCiAgICAiY29kUHVudG9WZW50YSI6ICJQMDEyIg0KICB9LA0KICAicmVjZXB0b3IiOiB7DQogICAgIm5pdCI6ICIwMzYxODI0NTgiLA0KICAgICJucmMiOiAiMTgwNzE2NiIsDQogICAgIm5vbWJyZSI6ICJhcmV2YWxvIHNlcnJhdG8sIHdhbHRlciBhbGV4YW5kZXIgIiwNCiAgICAiY29kQWN0aXZpZGFkIjogIjU2MTA4IiwNCiAgICAiZGVzY0FjdGl2aWRhZCI6ICJDT01FRE9SRVMiLA0KICAgICJub21icmVDb21lcmNpYWwiOiBudWxsLA0KICAgICJkaXJlY2Npb24iOiB7DQogICAgICAiZGVwYXJ0YW1lbnRvIjogIjA2IiwNCiAgICAgICJtdW5pY2lwaW8iOiAiMDgiLA0KICAgICAgImNvbXBsZW1lbnRvIjogImF2IGNhc3RybyBtb3JhbiAjMTAtYiwgbWVqaWNhbm9zLCBzYW4gc2FsdmFkb3IgIg0KICAgIH0sDQogICAgInRlbGVmb25vIjogbnVsbCwNCiAgICAiY29ycmVvIjogImVsbWVyZ3VldmFyYTYwQGdtYWlsLmNvbSINCiAgfSwNCiAgIm90cm9zRG9jdW1lbnRvcyI6IG51bGwsDQogICJ2ZW50YVRlcmNlcm8iOiBudWxsLA0KICAiY3VlcnBvRG9jdW1lbnRvIjogWw0KICAgIHsNCiAgICAgICJudW1JdGVtIjogMSwNCiAgICAgICJ0aXBvSXRlbSI6IDEsDQogICAgICAibnVtZXJvRG9jdW1lbnRvIjogbnVsbCwNCiAgICAgICJjYW50aWRhZCI6IDMuMDAsDQogICAgICAiY29kaWdvIjogIjEzMjgyMSIsDQogICAgICAiY29kVHJpYnV0byI6IG51bGwsDQogICAgICAidW5pTWVkaWRhIjogNTksDQogICAgICAiZGVzY3JpcGNpb24iOiAiVkVOVElMQURPUiBERSBQQVJFRCAxOFwiICg0NS43MiBDTSkgU1VQRVIgSyIsDQogICAgICAicHJlY2lvVW5pIjogNDIuNDMzNiwNCiAgICAgICJtb250b0Rlc2N1IjogMC4wMDAwLA0KICAgICAgInZlbnRhTm9TdWoiOiAwLjAsDQogICAgICAidmVudGFFeGVudGEiOiAwLjAsDQogICAgICAidmVudGFHcmF2YWRhIjogMTI3LjMwMDksDQogICAgICAidHJpYnV0b3MiOiBbDQogICAgICAgICIyMCINCiAgICAgIF0sDQogICAgICAicHN2IjogNDcuOTUwMCwNCiAgICAgICJub0dyYXZhZG8iOiAwLjANCiAgICB9DQogIF0sDQogICJyZXN1bWVuIjogew0KICAgICJ0b3RhbE5vU3VqIjogMC4wMCwNCiAgICAidG90YWxFeGVudGEiOiAwLjAwLA0KICAgICJ0b3RhbEdyYXZhZGEiOiAxMjcuMzAsDQogICAgInN1YlRvdGFsVmVudGFzIjogMTI3LjMwLA0KICAgICJkZXNjdU5vU3VqIjogMC4wMCwNCiAgICAiZGVzY3VFeGVudGEiOiAwLjAwLA0KICAgICJkZXNjdUdyYXZhZGEiOiAwLjAwLA0KICAgICJwb3JjZW50YWplRGVzY3VlbnRvIjogMC4wMCwNCiAgICAidG90YWxEZXNjdSI6IDAuMDAsDQogICAgInRyaWJ1dG9zIjogWw0KICAgICAgew0KICAgICAgICAiY29kaWdvIjogIjIwIiwNCiAgICAgICAgImRlc2NyaXBjaW9uIjogIkltcHVlc3RvIGFsIFZhbG9yIEFncmVnYWRvIDEzJSIsDQogICAgICAgICJ2YWxvciI6IDE2LjU1DQogICAgICB9DQogICAgXSwNCiAgICAic3ViVG90YWwiOiAxMjcuMzAsDQogICAgIml2YVBlcmNpMSI6IDAuMCwNCiAgICAiaXZhUmV0ZTEiOiAwLjAwLA0KICAgICJyZXRlUmVudGEiOiAwLjAwLA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIjogMTQzLjg1LA0KICAgICJ0b3RhbE5vR3JhdmFkbyI6IDAuMDAsDQogICAgInRvdGFsUGFnYXIiOiAxNDMuODUsDQogICAgInRvdGFsTGV0cmFzIjogIkNJRU5UTyBDVUFSRU5UQSBZIFRSRVMgODUvMTAwIiwNCiAgICAic2FsZG9GYXZvciI6IDAuMDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiI6IDEsDQogICAgInBhZ29zIjogbnVsbCwNCiAgICAibnVtUGFnb0VsZWN0cm9uaWNvIjogbnVsbA0KICB9LA0KICAiZXh0ZW5zaW9uIjogew0KICAgICJub21iRW50cmVnYSI6IG51bGwsDQogICAgImRvY3VFbnRyZWdhIjogbnVsbCwNCiAgICAibm9tYlJlY2liZSI6IG51bGwsDQogICAgImRvY3VSZWNpYmUiOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIjogbnVsbCwNCiAgICAicGxhY2FWZWhpY3VsbyI6IG51bGwNCiAgfSwNCiAgImFwZW5kaWNlIjogbnVsbA0KfQ.Kk55VPevLvKXoE9H5wLF76NK49-6qb7pvoDqiymkqMqZDbi0pxfNQF0IMJWPMp6-dvS4GRcscVwbSdd76Ft9HBIa_XYrKgihYxNnr2SyYdw76p7YLPq7omzIrUxOVhIx_KDej5w4s-D5p3z5jAk8im73pu0v9SweprXx3jFnggagYeqfYzDJF2JOjWJ2JELLLxehuRBSmkejbmHJOl0MDrNgyIJI8vFv6Wc-KFYolXnE1AJR-nGY3yhcNxg1f2tWkbCqHDe6BKtahy4GEZwDUhlFTCdkuAgatNuBdzLCD-O6etVlFjHQUP_OtfFbYAz1RK92QF24lh2rV5PWlKN2Ow",
+  "selloRecibido": "20242A39DF1B9249414AAE6B1B91AEDBB483BSYP"
+}
