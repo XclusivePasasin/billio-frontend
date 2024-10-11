@@ -2,9 +2,8 @@
   <div class="flex h-screen bg-gray-100">
     <!-- Left panel -->
     <div class="w-3/5 h-full flex flex-col justify-center p-8 bg-white">
-      <h2 class="text-3xl font-semibold text-gray-700 mb-4">BIENVENID@</h2>
-      <h1 class="text-5xl font-bold text-[#334155] mb-6">Billio</h1>
-
+      <h1 class="text-5xl font-semibold text-gray-700 mb-4">Bienvenido</h1>
+      <br>
       <!-- Mensaje de error en rojo si las credenciales son incorrectas -->
       <p v-if="errorMessage" class="text-center text-red-500 mb-4">{{ errorMessage }}</p>
 
@@ -49,7 +48,7 @@
         <button type="submit" class="w-full bg-[#334155] text-white py-3 rounded-md hover:bg-[#1e293b] transition duration-300">Iniciar Sesion</button>
       </form>
 
-      <p class="text-center mt-8 text-sm text-gray-600">
+      <p class="text-center text-sm text-gray-600" style="top: 30%; position: relative;">
         Copyright © 2024 CodeDeploymentSystems, S.A. DE C.V.
       </p>
 
@@ -59,8 +58,7 @@
     <div class="w-2/5 h-full relative">
       <img src="../assets/fondoLogin2.jpg" alt="Background Image" class="absolute inset-0 h-full w-full object-cover opacity-50">
       <div class="relative z-10 h-full flex flex-col justify-center items-center px-8 bg-[#1E2A38] bg-opacity-95">
-        <img src="../assets/logoBillio.png" alt="Logo" class="mb-2 h-40 w-auto">
-        <h1 class="text-5xl font-bold text-white mb-4">BILLIO</h1>
+        <img src="../assets/logoBillio.png" alt="Logo" class="mb-2 h-60 w-auto">
       </div>
     </div>
   </div>

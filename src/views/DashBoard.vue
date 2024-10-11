@@ -16,7 +16,7 @@
                     <div class="flex flex-col items-center space-y-16">
                         <!-- Total DTE -->
                         <div class="bg-sky-600 text-white font-bold text-3xl rounded-lg py-8 px-24 shadow-lg">
-                            2650 DTE
+                            {{ totalDTE }} DTE
                         </div>
                     </div>
 
@@ -27,12 +27,12 @@
                     <div class="flex items-center justify-center space-x-24">
                         <!-- Procesadas -->
                         <div class="bg-gray-100 text-gray-800 font-bold text-xl rounded-lg py-6 px-16 shadow-md">
-                            2052 PROCESADAS
+                            {{ processedDTE}} PROCESADAS
                         </div>
                         
                         <!-- Sin procesar -->
                         <div class="bg-gray-100 text-gray-800 font-bold text-xl rounded-lg py-6 px-16 shadow-md">
-                            598 SIN PROCESAR
+                            {{ unprocessedDTE }} SIN PROCESAR
                         </div>
                     </div>
                 </div>
@@ -45,6 +45,7 @@
 <script>
 import SideBar from '../components/SideBar.vue'
 import HeaderComponent from '../components/HeaderComponent.vue' // Importamos el nuevo componente
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'DashBoard',
@@ -59,13 +60,18 @@ export default {
     },
     mounted() {
         this.getCurrentDate();
+        this.fetchDteSummary();
     },
     methods: {
+        ...mapActions('facturas', ['fetchDteSummary']),
         getCurrentDate() {
             const date = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             this.formatteDate = date.toLocaleDateString('es-ES', options);
         },
+    },
+    computed:{
+        ...mapGetters('facturas', ['totalDTE', 'processedDTE', 'unprocessedDTE'])
     }
 }
 </script>
