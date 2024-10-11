@@ -29,7 +29,8 @@
             Procesar
           </button>
           <button
-            class="flex px-6 py-2 bg-slate-600 text-white rounded-full font-semibold hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2">
+            class="flex px-6 py-2 bg-slate-600 text-white rounded-full font-semibold hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2"
+            @click="downloadFacturas">
             Descargar
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -231,6 +232,9 @@ import { ref, reactive, onMounted, watch, computed } from "vue";
 import { useStore } from "vuex";
 import SideBar from "../components/SideBar.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
+import InvoiceService from '../services/InvoiceService.js';  // Asegúrate de importar correctamente
+import JSZip from 'jszip'; // Importa JSZip para trabajar con archivos ZIP
+import Swal from 'sweetalert2'; // Asegúrate de importar SweetAlert
 
 // Acceder al store de Vuex
 const store = useStore();
@@ -247,7 +251,7 @@ const filters = reactive({
   codigoGeneracion: '',
   selloRecepcion: '',
   tipoDocumento: '',
-  procesamiento: ''
+  procesamiento: 'todas' // Inicializado a 'todas'
 });
 
 // Variables reactivas vinculadas al store para búsqueda y fechas
@@ -258,20 +262,12 @@ const endDate = ref("");
 // Computed properties para obtener los datos de la tabla y la paginación desde Vuex
 const tableData = computed(() => store.getters['facturas/invoices']);
 const pagination = computed(() => store.getters['facturas/pagination']);
-const page = ref(1); // Página actual
+const page = computed(() => store.state.facturas.page); // Usar la página del store
 
 // Función para obtener las facturas desde el backend
 const fetchFacturas = async () => {
   try {
-    await store.dispatch('facturas/fetchFacturas', { 
-      page: page.value, 
-      filters: { 
-        ...filters,
-        query: query.value,
-        startDate: startDate.value,
-        endDate: endDate.value
-      } 
-    });
+    await store.dispatch('facturas/fetchFacturas'); // Ya manejas los filtros en Vuex
   } catch (error) {
     console.error("Error fetching facturas:", error);
   }
@@ -287,20 +283,17 @@ watch([query, startDate, endDate], ([newQuery, newStartDate, newEndDate]) => {
   fetchFacturas();
 });
 
-
 // Funciones para paginación
 const prevPage = () => {
   if (page.value > 1) {
-    page.value -= 1;
-    store.dispatch('facturas/changePage', page.value);
+    store.dispatch('facturas/changePage', page.value - 1);
     fetchFacturas();
   }
 };
 
 const nextPage = () => {
   if (page.value < pagination.value.pages) {
-    page.value += 1;
-    store.dispatch('facturas/changePage', page.value);
+    store.dispatch('facturas/changePage', page.value + 1);
     fetchFacturas();
   }
 };
@@ -314,6 +307,7 @@ const closeFilterModal = () => {
   isFilterModalOpen.value = false;
 };
 
+// Función para aplicar los filtros avanzados
 const applyFilters = () => {
   const advancedFilters = {
     nombreEmpresa: filters.nombreEmpresa || '',    // Filtrar por nombre de la empresa
@@ -336,7 +330,6 @@ const applyFilters = () => {
   closeFilterModal();
 };
 
-
 // Función para limpiar los filtros avanzados
 const clearFilters = () => {
   Object.assign(filters, {
@@ -347,18 +340,101 @@ const clearFilters = () => {
     codigoGeneracion: '',
     selloRecepcion: '',
     tipoDocumento: '',
-    procesamiento: ''
+    procesamiento: 'todas' // Reiniciar a 'todas'
   });
   store.dispatch('facturas/clearAdvancedFilters');
   fetchFacturas();
   closeFilterModal();
-
 };
 
 // Cargar las facturas cuando se monta el componente
 onMounted(() => {
   fetchFacturas();
 });
+
+const downloadFacturas = async () => {
+  // Verificar si las fechas están vacías o no son válidas
+  if (!startDate.value || !endDate.value) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Debe ingresar un rango de fechas válido.'
+    });
+    return; // No enviar la solicitud a la API
+  }
+
+  try {
+    const response = await InvoiceService.downloadFacturas(
+      {
+        startDate: startDate.value,
+        endDate: endDate.value
+      },
+      { responseType: 'blob' } // Asegúrate de recibir como Blob
+    );
+
+    // Verifica si el tamaño del blob es mayor que cero
+    if (!response.data || !(response.data instanceof Blob)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'No se recibió un archivo válido. Por favor, verifica los datos de entrada.'
+      });
+      return;
+    }
+
+    // Verifica si el tamaño del blob es mayor que cero
+    if (response.data.size === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'El archivo ZIP está vacío. Por favor, verifica los datos de entrada.'
+      });
+      return;
+    }
+
+    // Convertir el Blob a texto usando FileReader
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      const text = event.target.result;
+
+      // Separar los archivos JSON
+      const jsonFiles = text.split('\n').filter(line => line.trim() !== '');
+
+      // Crear un nuevo ZIP
+      const zip = new JSZip();
+
+      // Agregar cada archivo JSON al ZIP
+      jsonFiles.forEach((json, index) => {
+        zip.file(`dte_${index + 1}.json`, json); // Nombrar archivos como dte_1.json, dte_2.json, etc.
+      });
+
+      // Generar el archivo ZIP
+      const content = await zip.generateAsync({ type: 'blob' });
+
+      // Crear un enlace para descargar el ZIP
+      const url = window.URL.createObjectURL(content);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `DTE´s_del_${startDate.value}_al_${endDate.value}.zip`; // Nombre del archivo ZIP
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    };
+
+    // Leer el contenido del blob como texto
+    reader.readAsText(response.data);
+
+  } catch (error) {
+    console.error('Error downloading facturas:', error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: error.message || 'Error al descargar las facturas.'
+    });
+  }
+};
+
 </script>
 
 <style scoped>
@@ -379,5 +455,19 @@ onMounted(() => {
 .scrollbar-none {
   -ms-overflow-style: none;  /* IE y Edge */
   scrollbar-width: none;     /* Firefox */
+}
+
+/* Estilos adicionales */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.table-section {
+  flex: 1;
 }
 </style>
