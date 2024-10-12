@@ -1,57 +1,58 @@
 <template>
   <div class="flex h-screen bg-gray-100">
     <!-- Left panel -->
-    <div class="w-3/5 h-full flex flex-col justify-center p-8 bg-white">
-      <h1 class="text-5xl font-semibold text-gray-700 mb-4">Bienvenido</h1>
-      <br>
-      <!-- Mensaje de error en rojo si las credenciales son incorrectas -->
-      <p v-if="errorMessage" class="text-center text-red-500 mb-4">{{ errorMessage }}</p>
+    <div class="w-3/5 h-full flex flex-col justify-center items-center p-8 bg-white">
+      <div class="w-full max-w-md">
+        <h1 class="text-5xl font-semibold text-gray-700 mb-4 text-center">Bienvenido</h1>
+        
+        <!-- Mensaje de error en rojo si las credenciales son incorrectas -->
+        <p v-if="errorMessage" class="text-center text-red-500 mb-4">{{ errorMessage }}</p>
 
-      <form @submit.prevent="login" class="space-y-4">
-        <div class="relative">
-          <!-- Input field -->
-          <input 
-            type="text" 
-            placeholder="Enter your email or username" 
-            class="w-full pr-10 pl-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
-            v-model="correo_o_usuario">
-          <span class="absolute inset-y-0 right-0 flex items-center pr-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-          </span>
-        </div>
-        <div class="relative">
-          <!-- Input field -->
-          <input 
-            type="password" 
-            placeholder="Password" 
-            class="w-full pr-10 pl-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" 
-            v-model="clave">
-          <span class="absolute inset-y-0 right-0 flex items-center pr-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="16" r="1"/>
-              <rect x="3" y="10" width="18" height="12" rx="2"/>
-              <path d="M7 10V7a5 5 0 0 1 10 0v3"/>
-            </svg>
-          </span>
-        </div>
-        <div class="flex items-center justify-between mb-6">
-          <div class="flex items-center">
-            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-red-500 focus:ring-red-500">
-            <label for="remember-me" class="ml-2 block text-sm text-gray-900">
-              Remember Me
-            </label>
+        <form @submit.prevent="login" class="space-y-6">
+          <div class="relative">
+            <!-- Input field -->
+            <input 
+              type="text" 
+              placeholder="Ingrese su usuario" 
+              class="w-full pr-10 pl-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500" 
+              v-model="correo_o_usuario">
+            <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round">
+                <circle cx="12" cy="8" r="5"/>
+                <path d="M20 21a8 8 0 0 0-16 0"/>
+              </svg>
+            </span>
           </div>
-        </div>
-        <button type="submit" class="w-full bg-[#334155] text-white py-3 rounded-md hover:bg-[#1e293b] transition duration-300">Iniciar Sesion</button>
-      </form>
 
-      <p class="text-center text-sm text-gray-600" style="top: 30%; position: relative;">
-        Copyright © 2024 CodeDeploymentSystems, S.A. DE C.V.
-      </p>
+          <div class="relative">
+            <!-- Input field -->
+            <input 
+              type="password" 
+              placeholder="Contraseña" 
+              class="w-full pr-10 pl-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500" 
+              v-model="clave">
+            <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rectangle-ellipsis">
+                <rect width="20" height="12" x="2" y="6" rx="2"/>
+                <path d="M12 12h.01"/>
+                <path d="M17 12h.01"/>
+                <path d="M7 12h.01"/>
+              </svg>
+            </span>
+          </div>
 
+          
+
+          <button type="submit" 
+          class="w-full font-semibold bg-[#334155] text-white py-3 rounded-md hover:bg-[#1e293b] transition duration-300">
+            Iniciar Sesión
+          </button>
+        </form>
+
+        <p class="text-center text-sm text-gray-600" style="top: 70%; position: relative;">
+          Development by DeplyCode Systems S.A. de C.V.
+        </p>
+      </div>
     </div>
 
     <!-- Right panel -->
@@ -63,6 +64,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import LoginService from '@/services/LoginService';
@@ -89,7 +91,7 @@ export default {
         // Verificamos si la respuesta fue exitosa
         if (response.status === 200) {
           // Si el login es exitoso, redirigir al dashboard
-          this.$router.push({ name: 'Dashboard' });
+          this.$router.push({ name: 'Inicio' });
         }
       } catch (error) {
         // Si el login falla, mostramos el mensaje de error en el formulario

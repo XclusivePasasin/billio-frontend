@@ -14,7 +14,11 @@
             <h2 class="text-2xl font-semibold mb-4">Información del Usuario</h2>
             <form class="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <div>
-                <label for="usuario" class="block text-sm font-medium text-gray-700 mb-1">Usuario</label>
+                <label
+                  for="usuario"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Usuario</label
+                >
                 <input
                   id="usuario"
                   value="Administrador"
@@ -24,7 +28,11 @@
                 />
               </div>
               <div>
-                <label for="correo" class="block text-sm font-medium text-gray-700 mb-1">Correo</label>
+                <label
+                  for="correo"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Correo</label
+                >
                 <input
                   id="correo"
                   value="Administrador@billio.com"
@@ -34,7 +42,11 @@
                 />
               </div>
               <div>
-                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                <label
+                  for="nombre"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nombre</label
+                >
                 <input
                   id="nombre"
                   value="DeployCode"
@@ -44,7 +56,11 @@
                 />
               </div>
               <div>
-                <label for="apellido" class="block text-sm font-medium text-gray-700 mb-1">Apellido</label>
+                <label
+                  for="apellido"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Apellido</label
+                >
                 <input
                   id="apellido"
                   value="Systems"
@@ -55,10 +71,16 @@
               </div>
 
               <!-- Información de la Empresa -->
-              <h2 class="col-span-2 text-2xl font-semibold">Información de la Empresa</h2>
+              <h2 class="col-span-2 text-2xl font-semibold">
+                Información de la Empresa
+              </h2>
 
               <div>
-                <label for="empresa" class="block text-sm font-medium text-gray-700 mb-1">Nombre de la Empresa</label>
+                <label
+                  for="empresa"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Nombre de la Empresa</label
+                >
                 <input
                   id="empresa"
                   value="DeployCode Systems S.A de C.V."
@@ -68,7 +90,11 @@
                 />
               </div>
               <div>
-                <label for="nit" class="block text-sm font-medium text-gray-700 mb-1">NIT</label>
+                <label
+                  for="nit"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >NIT</label
+                >
                 <input
                   id="nit"
                   value="06142222220002"
@@ -78,7 +104,11 @@
                 />
               </div>
               <div>
-                <label for="nrc" class="block text-sm font-medium text-gray-700 mb-1">NRC</label>
+                <label
+                  for="nrc"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >NRC</label
+                >
                 <input
                   id="nrc"
                   value="987654321"
@@ -88,7 +118,11 @@
                 />
               </div>
               <div>
-                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                <label
+                  for="telefono"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Teléfono</label
+                >
                 <input
                   id="telefono"
                   value="22446688"
@@ -98,7 +132,11 @@
                 />
               </div>
               <div>
-                <label for="correo_empresa" class="block text-sm font-medium text-gray-700 mb-1">Correo de la Empresa</label>
+                <label
+                  for="correo_empresa"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Correo de la Empresa</label
+                >
                 <input
                   id="correo_empresa"
                   value="info@deploycode.com"
@@ -108,7 +146,11 @@
                 />
               </div>
               <div>
-                <label for="cod_actividad" class="block text-sm font-medium text-gray-700 mb-1">Código de Actividad</label>
+                <label
+                  for="cod_actividad"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Código de Actividad</label
+                >
                 <input
                   id="cod_actividad"
                   value="B002"
@@ -117,11 +159,15 @@
                   readonly
                 />
               </div>
-              <div>
-                <label for="des_actividad" class="block text-sm font-medium text-gray-700 mb-1">Descripción de Actividad</label>
+              <div class="col-span-2 text-center">
+                <label
+                  for="des_actividad"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Descripción de Actividad</label
+                >
                 <input
                   id="des_actividad"
-                  value=""
+                  value="Empresa de Software"
                   type="text"
                   class="w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm text-gray-500 bg-gray-100"
                   readonly
@@ -136,6 +182,6 @@
 </template>
 
 <script setup>
-import SideBar from '../components/SideBar.vue'
-import HeaderComponent from '../components/HeaderComponent.vue'
+import SideBar from "../components/SideBar.vue";
+import HeaderComponent from "../components/HeaderComponent.vue";
 </script>

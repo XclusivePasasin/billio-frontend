@@ -77,14 +77,14 @@ const pageTitle = route.name
 watch(route, (newRoute) => {
     // Cambia el título según la ruta
     switch (newRoute.name) {
-        case 'DashBoard':
-            pageTitle.value = 'Dashboard'
+        case 'Dashboard':
+            pageTitle.value = 'Inicio'
             break
         case 'Profile':
             pageTitle.value = 'Perfil'
             break
         default:
-            pageTitle.value = 'Dashboard'
+            pageTitle.value = 'Inicio'
     }
 })
 
