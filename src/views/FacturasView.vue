@@ -77,6 +77,9 @@
             </svg>
           </button>
         </div>
+         <!-- Alertas -->
+         <AlertComponent v-if="alert.show" :type="alert.type" :title="alert.title" :message="alert.message" :list="alert.list" :show="alert.show" />
+
          <!-- Notificación de copiado (fuera de la tabla) -->
          <div
           v-if="isCopied"
@@ -392,8 +395,8 @@ import { ref, reactive, onMounted, watch, computed } from "vue";
 import { useStore } from "vuex";
 import SideBar from "../components/SideBar.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
-import InvoiceService from "../services/InvoiceService.js"; // Asegúrate de importar correctamente
-import Swal from "sweetalert2"; // Asegúrate de importar SweetAlert
+import InvoiceService from "../services/InvoiceService.js";
+import AlertComponent from "../components/AlertComponent.vue";
 
 // Acceder al store de Vuex
 const store = useStore();
@@ -410,52 +413,54 @@ const filters = reactive({
   codigoGeneracion: "",
   selloRecepcion: "",
   tipoDocumento: "",
-  procesamiento: "", // Inicializado a 'todas'
+  procesamiento: "",
 });
 
-const isCopied = ref(false); // Estado reactivo para mostrar la alerta
+// Estado reactivo para la alerta
+const alert = reactive({ show: false, type: "", title: "", message: "", list: [] });
+
+const showAlert = (type, title, message = "", list = []) => {
+  Object.assign(alert, { show: true, type, title, message, list });
+  setTimeout(() => (alert.show = false), 3000);
+};
+
+const isCopied = ref(false);
 
 const copyToClipboard = (text) => {
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      isCopied.value = true; // Mostrar la alerta
-
-      setTimeout(() => {
-        isCopied.value = false; // Ocultar la alerta después de 1.5 segundos
-      }, 1500); // Duración de la alerta
+      showAlert("success", "Texto copiado", "El texto se ha copiado correctamente.");
     })
     .catch((err) => {
+      showAlert("error", "Error", "No se pudo copiar el texto al portapapeles.");
       console.error("Error al copiar al portapapeles:", err);
     });
 };
 
-// Variables reactivas vinculadas al store para búsqueda y fechas
+// Variables para búsqueda y fechas
 const query = ref("");
 const startDate = ref("");
 const endDate = ref("");
 
-// Computed properties para obtener los datos de la tabla y la paginación desde Vuex
+// Computed properties
 const tableData = computed(() => store.getters["facturas/invoices"]);
 const pagination = computed(() => store.getters["facturas/pagination"]);
-const page = computed(() => store.state.facturas.page); // Usar la página del store
+const page = computed(() => store.state.facturas.page);
 
-// Función para obtener las facturas desde el backend
+// Obtener facturas
 const fetchFacturas = async () => {
   try {
-    await store.dispatch("facturas/fetchFacturas"); // Ya manejas los filtros en Vuex
+    await store.dispatch("facturas/fetchFacturas");
   } catch (error) {
+    showAlert("error", "Error", "Error al obtener las facturas.");
     console.error("Error fetching facturas:", error);
   }
 };
 
-// Watchers para filtros en tiempo real (búsqueda rápida)
+// Watchers para filtros en tiempo real
 watch([query, startDate, endDate], ([newQuery, newStartDate, newEndDate]) => {
-  store.dispatch("facturas/updateFilters", {
-    query: newQuery,
-    startDate: newStartDate,
-    endDate: newEndDate,
-  });
+  store.dispatch("facturas/updateFilters", { query: newQuery, startDate: newStartDate, endDate: newEndDate });
   fetchFacturas();
 });
 
@@ -474,40 +479,18 @@ const nextPage = () => {
   }
 };
 
-// Funciones para manejar el modal de filtros
-const openFilterModal = () => {
-  isFilterModalOpen.value = true;
-};
+// Manejo del modal de filtros
+const openFilterModal = () => (isFilterModalOpen.value = true);
+const closeFilterModal = () => (isFilterModalOpen.value = false);
 
-const closeFilterModal = () => {
-  isFilterModalOpen.value = false;
-};
-
-// Función para aplicar los filtros avanzados
+// Aplicar filtros avanzados
 const applyFilters = () => {
-  const advancedFilters = {
-    nombreEmpresa: filters.nombreEmpresa || "", // Filtrar por nombre de la empresa
-    nrcEmisor: filters.nrcEmisor || "", // Filtrar por NRC del emisor
-    nitEmisor: filters.nitEmisor || "", // Filtrar por NIT del emisor
-    numeroControl: filters.numeroControl || "", // Filtrar por número de control
-    codigoGeneracion: filters.codigoGeneracion || "", // Filtrar por código de generación
-    selloRecepcion: filters.selloRecepcion || "", // Filtrar por sello de recepción
-    tipoDte: filters.tipoDocumento || "", // Filtrar por tipo de documento
-    procesamiento:
-      filters.procesamiento !== "todas" ? filters.procesamiento : "", // Si es 'todas', lo pasamos como vacío
-  };
-
-  // Despacha los filtros al store
-  store.dispatch("facturas/applyAdvancedFilters", advancedFilters);
-
-  // Llama a la función para obtener las facturas filtradas
+  store.dispatch("facturas/applyAdvancedFilters", filters);
   fetchFacturas();
-
-  // Cierra el modal de filtros avanzados si está abierto
   closeFilterModal();
 };
 
-// Función para limpiar los filtros avanzados
+// Limpiar filtros
 const clearFilters = () => {
   Object.assign(filters, {
     nombreEmpresa: "",
@@ -517,126 +500,69 @@ const clearFilters = () => {
     codigoGeneracion: "",
     selloRecepcion: "",
     tipoDocumento: "",
-    procesamiento: "", // Reiniciar a 'todas'
+    procesamiento: "",
   });
   store.dispatch("facturas/clearAdvancedFilters");
   fetchFacturas();
   closeFilterModal();
 };
 
-// Cargar las facturas cuando se monta el componente
-onMounted(() => {
-  fetchFacturas();
-});
-
+// Descargar facturas
 const downloadFacturas = async () => {
-  // Verificar si las fechas están vacías o no son válidas
   if (!startDate.value || !endDate.value) {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Debe ingresar un rango de fechas válido.",
-    });
-    return; // No enviar la solicitud a la API
+    showAlert("error", "Error", "Debe ingresar un rango de fechas válido.");
+    return;
   }
-
   try {
     const response = await InvoiceService.downloadFacturas(
-      {
-        startDate: startDate.value,
-        endDate: endDate.value,
-      },
-      { responseType: "blob" } // Asegúrate de recibir como Blob
+      { startDate: startDate.value, endDate: endDate.value },
+      { responseType: "blob" }
     );
-
-    // Verifica si el tamaño del blob es mayor que cero
-    if (!response.data || !(response.data instanceof Blob)) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "No se recibió un archivo válido. Por favor, verifica los datos de entrada.",
-      });
-      return;
-    }
-
-    // Verifica si el tamaño del blob es mayor que cero
-    if (response.data.size === 0) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "El archivo ZIP está vacío. Por favor, verifica los datos de entrada.",
-      });
-      return;
-    }
-
-    // Descargar el archivo ZIP directamente sin procesarlo
-    const url = window.URL.createObjectURL(response.data);
+    const url = URL.createObjectURL(response.data);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `DTE´s_del_${startDate.value}_al_${endDate.value}.zip`; // Nombre del archivo ZIP
-    document.body.appendChild(link);
+    link.download = `Facturas_${startDate.value}_${endDate.value}.zip`;
     link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    URL.revokeObjectURL(url);
+    showAlert("success", "Éxito", "Descarga completada con éxito.");
   } catch (error) {
+    showAlert("error", "Error", "Error al descargar las facturas.");
     console.error("Error downloading facturas:", error);
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: error.message || "Error al descargar las facturas.",
-    });
   }
 };
 
-// actualizar facturas
-// Estado para almacenar los IDs de las facturas seleccionadas
+// Facturas seleccionadas
 const selectedFacturas = ref([]);
 
-// Función para manejar la selección de una factura
 const toggleSelection = (id) => {
   if (selectedFacturas.value.includes(id)) {
-    // Eliminar si ya está seleccionado
-    selectedFacturas.value = selectedFacturas.value.filter(
-      (selectedId) => selectedId !== id
-    );
+    selectedFacturas.value = selectedFacturas.value.filter((selectedId) => selectedId !== id);
   } else {
-    // Agregar si no está seleccionado
     selectedFacturas.value.push(id);
   }
 };
 
-// Función para procesar facturas seleccionadas
+// Procesar facturas seleccionadas
 const processSelectedFacturas = async () => {
-  if (selectedFacturas.value.length === 0) {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "No has seleccionado ninguna factura para procesar.",
-    });
+  if (!selectedFacturas.value.length) {
+    showAlert("error", "Error", "No has seleccionado ninguna factura para procesar.");
     return;
   }
-
   try {
-    // Llamar al servicio para actualizar las facturas seleccionadas
-    const response = await InvoiceService.updateFacturas(
-      selectedFacturas.value
-    );
-    Swal.fire({
-      icon: "success",
-      title: "Éxito",
-      text: response.data.message || "Facturas procesadas correctamente.",
-    });
-    // Limpia la selección después de procesar
+    await InvoiceService.updateFacturas(selectedFacturas.value);
+    showAlert("success", "Éxito", "Facturas procesadas correctamente.");
     selectedFacturas.value = [];
   } catch (error) {
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: error.message || "Ocurrió un error al procesar las facturas.",
-    });
+    showAlert("error", "Error", error.message || "Ocurrió un error al procesar las facturas.");
   }
 };
+
+// Montaje del componente
+onMounted(() => {
+  fetchFacturas();
+});
 </script>
+
 
 <style scoped>
 .modal-enter-active,

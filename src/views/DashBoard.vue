@@ -1,10 +1,10 @@
 <template>
-    <div class="flex h-screen bg-gray-100">
+    <div class="flex h-screen ">
         <SideBar />
         <div class="flex-1 flex flex-col overflow-hidden">
             <!-- HeaderComponent dinámico -->
             <HeaderComponent />
-            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100">
+            <main class="flex-1 overflow-x-hidden overflow-y-auto ">
                 <div class="flex flex-col items-center justify-center h-full bg-white relative">
                     <!-- Fecha -->
                     <div class="absolute top-6 left-10">

@@ -59,6 +59,11 @@ npm install
 ```bash
 npm install sweetalert2
 ```
+###  Instalación de JSONEditor
+
+```bash
+npm install @json-editor/json-editor
+```
 
 Para utilizarlo en tu proyecto, importa la biblioteca en los componentes donde lo necesites, por ejemplo, en `App.vue`:
 

@@ -22,7 +22,7 @@ const routes = [
   },
   {
     path: '/dashboard',
-    name: 'Dashboard',
+    name: 'Inicio',
     component: DashBoardView,
     meta: { requiresAuth: true } // Ruta protegida
   },

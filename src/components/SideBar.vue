@@ -5,7 +5,7 @@
       :class="[isOpen ? 'w-60' : 'w-24']"
     >
       <div class="p-8 flex justify-between items-center">
-        <h1 v-if="isOpen" class="text-xl font-bold">Billio</h1>
+        <h1 v-if="isOpen" class="text-3xl font-bold">Billio</h1>
         <button
           @click="toggleSidebar"
           class="text-white focus:outline-none"
@@ -17,10 +17,10 @@
       </div>
       <nav class="flex-1">
         <ul class="space-y-4 py-4">
-          <li v-for="item in menuItems" :key="item.name">
+          <li v-for="item in selectedMenuItems" :key="item.name">
             <a
               :href="item.href"
-              class="flex items-center py-4 text-gray-100 hover:text-white hover:rounded-full hover: transition-colors duration-500"
+              class="flex items-center py-4 text-gray-100 hover:text-white hover:rounded-full transition-colors duration-500"
               :title="item.name"
             >
               <component
@@ -28,9 +28,7 @@
                 class="h-6 w-6 flex-shrink-0"
                 :class="{ 'mr-4': isOpen }"
               />
-              <span v-if="isOpen" class="whitespace-nowrap">{{
-                item.name
-              }}</span>
+              <span v-if="isOpen" class="whitespace-nowrap">{{ item.name }}</span>
             </a>
           </li>
         </ul>
@@ -38,7 +36,6 @@
     </aside>
   </div>
 </template>
-
 
 <script setup>
 import { ref } from "vue";
@@ -52,7 +49,7 @@ import {
 } from "lucide-vue-next";
 
 // Elementos del menú
-const menuItems = [
+const selectedMenuItems = [
   { name: "Inicio", icon: HomeIcon, href: "/dashboard" },
   { name: "Facturas", icon: File, href: "/facturas" },
   { name: "Usuarios", icon: UserRound, href: "/usuarios" },
