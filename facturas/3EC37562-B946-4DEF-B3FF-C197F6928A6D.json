@@ -1,0 +1,237 @@
+{
+  "identificacion": {
+    "version": 3,
+    "ambiente": "01",
+    "tipoDte": "03",
+    "numeroControl": "DTE-03-S026P004-000000000048255",
+    "codigoGeneracion": "3EC37562-B946-4DEF-B3FF-C197F6928A6D",
+    "tipoModelo": 1,
+    "tipoOperacion": 1,
+    "tipoContingencia": null,
+    "motivoContin": null,
+    "fecEmi": "2024-09-18",
+    "horEmi": "11:13:24",
+    "tipoMoneda": "USD"
+  },
+  "documentoRelacionado": null,
+  "emisor": {
+    "nit": "02101911710016",
+    "nrc": "27",
+    "nombre": "ALMACENES VIDRI S.A. DE C.V.",
+    "codActividad": "47522",
+    "descActividad": "Venta al por menor de artículos de ferretería",
+    "nombreComercial": "ALMACENES VIDRI S.A. DE C.V.",
+    "tipoEstablecimiento": "01",
+    "direccion": {
+      "departamento": "06",
+      "municipio": "14",
+      "complemento": "29 CALLE PONIENTE Y 1A. AVE. NORTE NO. 207"
+    },
+    "telefono": "2225-9500",
+    "correo": "sac.facturacion@vidri.com.sv",
+    "codEstableMH": "S026",
+    "codEstable": "S026",
+    "codPuntoVentaMH": "P004",
+    "codPuntoVenta": "P004"
+  },
+  "receptor": {
+    "nit": "000938106",
+    "nrc": "2569332",
+    "nombre": "natanael lopez gomez",
+    "codActividad": "47524",
+    "descActividad": "VENTA AL POR MENOR EN VIDRIERIAS",
+    "nombreComercial": null,
+    "direccion": {
+      "departamento": "06",
+      "municipio": "14",
+      "complemento": "10 calle oriente #224-a s s"
+    },
+    "telefono": null,
+    "correo": "lopezgomeznatanael@gmail.com"
+  },
+  "otrosDocumentos": null,
+  "ventaTercero": null,
+  "cuerpoDocumento": [
+    {
+      "numItem": 1,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 2.0,
+      "codigo": "59105",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "BROCA PARA HIERRO 1/8\" ESMERILADA JBWMI0317",
+      "precioUni": 0.708,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 1.4159,
+      "tributos": [
+        "20"
+      ],
+      "psv": 0.8,
+      "noGravado": 0.0
+    },
+    {
+      "numItem": 2,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 1.0,
+      "codigo": "73019",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "BROCA DE COBALTO 1/8\" DEWALT DWA1208",
+      "precioUni": 2.8319,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 2.8319,
+      "tributos": [
+        "20"
+      ],
+      "psv": 3.2,
+      "noGravado": 0.0
+    },
+    {
+      "numItem": 3,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 1.0,
+      "codigo": "428790",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "CAJA PLASTICA PARA HERRAMIENTAS 7\" (17.78 CM) TACTIX 320900",
+      "precioUni": 3.4956,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 3.4956,
+      "tributos": [
+        "20"
+      ],
+      "psv": 3.95,
+      "noGravado": 0.0
+    },
+    {
+      "numItem": 4,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 1.0,
+      "codigo": "73025",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "BROCA DE COBALTO 1/4\" DEWALT DWA1216",
+      "precioUni": 5.0885,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 5.0885,
+      "tributos": [
+        "20"
+      ],
+      "psv": 5.75,
+      "noGravado": 0.0
+    },
+    {
+      "numItem": 5,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 10.0,
+      "codigo": "144979",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "CUCHILLA PARA VIDRIO ONSITE 711215 RPTO S/5",
+      "precioUni": 0.8407,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 8.4071,
+      "tributos": [
+        "20"
+      ],
+      "psv": 0.95,
+      "noGravado": 0.0
+    },
+    {
+      "numItem": 6,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 95.0,
+      "codigo": "14983",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "ARGOLLA ABIERTA GOLOSA (4.85 X 23 X 73 MM) 3\" ZP",
+      "precioUni": 0.2212,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 21.0177,
+      "tributos": [
+        "20"
+      ],
+      "psv": 0.25,
+      "noGravado": 0.0
+    },
+    {
+      "numItem": 7,
+      "tipoItem": 1,
+      "numeroDocumento": null,
+      "cantidad": 20.0,
+      "codigo": "163271",
+      "codTributo": null,
+      "uniMedida": 59,
+      "descripcion": "BROCA PARA CONCRETO 1/8\"X2\"X3-1/2\" HEX 1/4\" MILWAUKEE 48-20-9100",
+      "precioUni": 2.4336,
+      "montoDescu": 0.0,
+      "ventaNoSuj": 0.0,
+      "ventaExenta": 0.0,
+      "ventaGravada": 48.6726,
+      "tributos": [
+        "20"
+      ],
+      "psv": 2.75,
+      "noGravado": 0.0
+    }
+  ],
+  "resumen": {
+    "totalNoSuj": 0.0,
+    "totalExenta": 0.0,
+    "totalGravada": 90.93,
+    "subTotalVentas": 90.93,
+    "descuNoSuj": 0.0,
+    "descuExenta": 0.0,
+    "descuGravada": 0.0,
+    "porcentajeDescuento": 0.0,
+    "totalDescu": 0.0,
+    "tributos": [
+      {
+        "codigo": "20",
+        "descripcion": "Impuesto al Valor Agregado 13%",
+        "valor": 11.82
+      }
+    ],
+    "subTotal": 90.93,
+    "ivaPerci1": 0.0,
+    "ivaRete1": 0.0,
+    "reteRenta": 0.0,
+    "montoTotalOperacion": 102.75,
+    "totalNoGravado": 0.0,
+    "totalPagar": 102.75,
+    "totalLetras": "CIENTO DOS 75/100",
+    "saldoFavor": 0.0,
+    "condicionOperacion": 1,
+    "pagos": null,
+    "numPagoElectronico": null
+  },
+  "extension": {
+    "nombEntrega": null,
+    "docuEntrega": null,
+    "nombRecibe": null,
+    "docuRecibe": null,
+    "observaciones": null,
+    "placaVehiculo": null
+  },
+  "apendice": null,
+  "firmaElectronica": "eyJhbGciOiJSUzUxMiJ9.ew0KICAiaWRlbnRpZmljYWNpb24iOiB7DQogICAgInZlcnNpb24iOiAzLA0KICAgICJhbWJpZW50ZSI6ICIwMSIsDQogICAgInRpcG9EdGUiOiAiMDMiLA0KICAgICJudW1lcm9Db250cm9sIjogIkRURS0wMy1TMDI2UDAwNC0wMDAwMDAwMDAwNDgyNTUiLA0KICAgICJjb2RpZ29HZW5lcmFjaW9uIjogIjNFQzM3NTYyLUI5NDYtNERFRi1CM0ZGLUMxOTdGNjkyOEE2RCIsDQogICAgInRpcG9Nb2RlbG8iOiAxLA0KICAgICJ0aXBvT3BlcmFjaW9uIjogMSwNCiAgICAidGlwb0NvbnRpbmdlbmNpYSI6IG51bGwsDQogICAgIm1vdGl2b0NvbnRpbiI6IG51bGwsDQogICAgImZlY0VtaSI6ICIyMDI0LTA5LTE4IiwNCiAgICAiaG9yRW1pIjogIjExOjEzOjI0IiwNCiAgICAidGlwb01vbmVkYSI6ICJVU0QiDQogIH0sDQogICJkb2N1bWVudG9SZWxhY2lvbmFkbyI6IG51bGwsDQogICJlbWlzb3IiOiB7DQogICAgIm5pdCI6ICIwMjEwMTkxMTcxMDAxNiIsDQogICAgIm5yYyI6ICIyNyIsDQogICAgIm5vbWJyZSI6ICJBTE1BQ0VORVMgVklEUkkgUy5BLiBERSBDLlYuIiwNCiAgICAiY29kQWN0aXZpZGFkIjogIjQ3NTIyIiwNCiAgICAiZGVzY0FjdGl2aWRhZCI6ICJWZW50YSBhbCBwb3IgbWVub3IgZGUgYXJ0w61jdWxvcyBkZSBmZXJyZXRlcsOtYSIsDQogICAgIm5vbWJyZUNvbWVyY2lhbCI6ICJBTE1BQ0VORVMgVklEUkkgUy5BLiBERSBDLlYuIiwNCiAgICAidGlwb0VzdGFibGVjaW1pZW50byI6ICIwMSIsDQogICAgImRpcmVjY2lvbiI6IHsNCiAgICAgICJkZXBhcnRhbWVudG8iOiAiMDYiLA0KICAgICAgIm11bmljaXBpbyI6ICIxNCIsDQogICAgICAiY29tcGxlbWVudG8iOiAiMjkgQ0FMTEUgUE9OSUVOVEUgWSAxQS4gQVZFLiBOT1JURSBOTy4gMjA3Ig0KICAgIH0sDQogICAgInRlbGVmb25vIjogIjIyMjUtOTUwMCIsDQogICAgImNvcnJlbyI6ICJzYWMuZmFjdHVyYWNpb25AdmlkcmkuY29tLnN2IiwNCiAgICAiY29kRXN0YWJsZU1IIjogIlMwMjYiLA0KICAgICJjb2RFc3RhYmxlIjogIlMwMjYiLA0KICAgICJjb2RQdW50b1ZlbnRhTUgiOiAiUDAwNCIsDQogICAgImNvZFB1bnRvVmVudGEiOiAiUDAwNCINCiAgfSwNCiAgInJlY2VwdG9yIjogew0KICAgICJuaXQiOiAiMDAwOTM4MTA2IiwNCiAgICAibnJjIjogIjI1NjkzMzIiLA0KICAgICJub21icmUiOiAibmF0YW5hZWwgbG9wZXogZ29tZXoiLA0KICAgICJjb2RBY3RpdmlkYWQiOiAiNDc1MjQiLA0KICAgICJkZXNjQWN0aXZpZGFkIjogIlZFTlRBIEFMIFBPUiBNRU5PUiBFTiBWSURSSUVSSUFTIiwNCiAgICAibm9tYnJlQ29tZXJjaWFsIjogbnVsbCwNCiAgICAiZGlyZWNjaW9uIjogew0KICAgICAgImRlcGFydGFtZW50byI6ICIwNiIsDQogICAgICAibXVuaWNpcGlvIjogIjE0IiwNCiAgICAgICJjb21wbGVtZW50byI6ICIxMCBjYWxsZSBvcmllbnRlICMyMjQtYSBzIHMiDQogICAgfSwNCiAgICAidGVsZWZvbm8iOiBudWxsLA0KICAgICJjb3JyZW8iOiAibG9wZXpnb21lem5hdGFuYWVsQGdtYWlsLmNvbSINCiAgfSwNCiAgIm90cm9zRG9jdW1lbnRvcyI6IG51bGwsDQogICJ2ZW50YVRlcmNlcm8iOiBudWxsLA0KICAiY3VlcnBvRG9jdW1lbnRvIjogWw0KICAgIHsNCiAgICAgICJudW1JdGVtIjogMSwNCiAgICAgICJ0aXBvSXRlbSI6IDEsDQogICAgICAibnVtZXJvRG9jdW1lbnRvIjogbnVsbCwNCiAgICAgICJjYW50aWRhZCI6IDIuMDAwMCwNCiAgICAgICJjb2RpZ28iOiAiNTkxMDUiLA0KICAgICAgImNvZFRyaWJ1dG8iOiBudWxsLA0KICAgICAgInVuaU1lZGlkYSI6IDU5LA0KICAgICAgImRlc2NyaXBjaW9uIjogIkJST0NBIFBBUkEgSElFUlJPIDEvOFwiIEVTTUVSSUxBREEgSkJXTUkwMzE3IiwNCiAgICAgICJwcmVjaW9VbmkiOiAwLjcwODAsDQogICAgICAibW9udG9EZXNjdSI6IDAuMDAwMCwNCiAgICAgICJ2ZW50YU5vU3VqIjogMC4wLA0KICAgICAgInZlbnRhRXhlbnRhIjogMC4wLA0KICAgICAgInZlbnRhR3JhdmFkYSI6IDEuNDE1OSwNCiAgICAgICJ0cmlidXRvcyI6IFsNCiAgICAgICAgIjIwIg0KICAgICAgXSwNCiAgICAgICJwc3YiOiAwLjgwMDAsDQogICAgICAibm9HcmF2YWRvIjogMC4wDQogICAgfSwNCiAgICB7DQogICAgICAibnVtSXRlbSI6IDIsDQogICAgICAidGlwb0l0ZW0iOiAxLA0KICAgICAgIm51bWVyb0RvY3VtZW50byI6IG51bGwsDQogICAgICAiY2FudGlkYWQiOiAxLjAwMDAsDQogICAgICAiY29kaWdvIjogIjczMDE5IiwNCiAgICAgICJjb2RUcmlidXRvIjogbnVsbCwNCiAgICAgICJ1bmlNZWRpZGEiOiA1OSwNCiAgICAgICJkZXNjcmlwY2lvbiI6ICJCUk9DQSBERSBDT0JBTFRPIDEvOFwiIERFV0FMVCBEV0ExMjA4IiwNCiAgICAgICJwcmVjaW9VbmkiOiAyLjgzMTksDQogICAgICAibW9udG9EZXNjdSI6IDAuMDAwMCwNCiAgICAgICJ2ZW50YU5vU3VqIjogMC4wLA0KICAgICAgInZlbnRhRXhlbnRhIjogMC4wLA0KICAgICAgInZlbnRhR3JhdmFkYSI6IDIuODMxOSwNCiAgICAgICJ0cmlidXRvcyI6IFsNCiAgICAgICAgIjIwIg0KICAgICAgXSwNCiAgICAgICJwc3YiOiAzLjIwMDAsDQogICAgICAibm9HcmF2YWRvIjogMC4wDQogICAgfSwNCiAgICB7DQogICAgICAibnVtSXRlbSI6IDMsDQogICAgICAidGlwb0l0ZW0iOiAxLA0KICAgICAgIm51bWVyb0RvY3VtZW50byI6IG51bGwsDQogICAgICAiY2FudGlkYWQiOiAxLjAwMDAsDQogICAgICAiY29kaWdvIjogIjQyODc5MCIsDQogICAgICAiY29kVHJpYnV0byI6IG51bGwsDQogICAgICAidW5pTWVkaWRhIjogNTksDQogICAgICAiZGVzY3JpcGNpb24iOiAiQ0FKQSBQTEFTVElDQSBQQVJBIEhFUlJBTUlFTlRBUyA3XCIgKDE3Ljc4IENNKSBUQUNUSVggMzIwOTAwIiwNCiAgICAgICJwcmVjaW9VbmkiOiAzLjQ5NTYsDQogICAgICAibW9udG9EZXNjdSI6IDAuMDAwMCwNCiAgICAgICJ2ZW50YU5vU3VqIjogMC4wLA0KICAgICAgInZlbnRhRXhlbnRhIjogMC4wLA0KICAgICAgInZlbnRhR3JhdmFkYSI6IDMuNDk1NiwNCiAgICAgICJ0cmlidXRvcyI6IFsNCiAgICAgICAgIjIwIg0KICAgICAgXSwNCiAgICAgICJwc3YiOiAzLjk1MDAsDQogICAgICAibm9HcmF2YWRvIjogMC4wDQogICAgfSwNCiAgICB7DQogICAgICAibnVtSXRlbSI6IDQsDQogICAgICAidGlwb0l0ZW0iOiAxLA0KICAgICAgIm51bWVyb0RvY3VtZW50byI6IG51bGwsDQogICAgICAiY2FudGlkYWQiOiAxLjAwMDAsDQogICAgICAiY29kaWdvIjogIjczMDI1IiwNCiAgICAgICJjb2RUcmlidXRvIjogbnVsbCwNCiAgICAgICJ1bmlNZWRpZGEiOiA1OSwNCiAgICAgICJkZXNjcmlwY2lvbiI6ICJCUk9DQSBERSBDT0JBTFRPIDEvNFwiIERFV0FMVCBEV0ExMjE2IiwNCiAgICAgICJwcmVjaW9VbmkiOiA1LjA4ODUsDQogICAgICAibW9udG9EZXNjdSI6IDAuMDAwMCwNCiAgICAgICJ2ZW50YU5vU3VqIjogMC4wLA0KICAgICAgInZlbnRhRXhlbnRhIjogMC4wLA0KICAgICAgInZlbnRhR3JhdmFkYSI6IDUuMDg4NSwNCiAgICAgICJ0cmlidXRvcyI6IFsNCiAgICAgICAgIjIwIg0KICAgICAgXSwNCiAgICAgICJwc3YiOiA1Ljc1MDAsDQogICAgICAibm9HcmF2YWRvIjogMC4wDQogICAgfSwNCiAgICB7DQogICAgICAibnVtSXRlbSI6IDUsDQogICAgICAidGlwb0l0ZW0iOiAxLA0KICAgICAgIm51bWVyb0RvY3VtZW50byI6IG51bGwsDQogICAgICAiY2FudGlkYWQiOiAxMC4wMDAwLA0KICAgICAgImNvZGlnbyI6ICIxNDQ5NzkiLA0KICAgICAgImNvZFRyaWJ1dG8iOiBudWxsLA0KICAgICAgInVuaU1lZGlkYSI6IDU5LA0KICAgICAgImRlc2NyaXBjaW9uIjogIkNVQ0hJTExBIFBBUkEgVklEUklPIE9OU0lURSA3MTEyMTUgUlBUTyBTLzUiLA0KICAgICAgInByZWNpb1VuaSI6IDAuODQwNywNCiAgICAgICJtb250b0Rlc2N1IjogMC4wMDAwLA0KICAgICAgInZlbnRhTm9TdWoiOiAwLjAsDQogICAgICAidmVudGFFeGVudGEiOiAwLjAsDQogICAgICAidmVudGFHcmF2YWRhIjogOC40MDcxLA0KICAgICAgInRyaWJ1dG9zIjogWw0KICAgICAgICAiMjAiDQogICAgICBdLA0KICAgICAgInBzdiI6IDAuOTUwMCwNCiAgICAgICJub0dyYXZhZG8iOiAwLjANCiAgICB9LA0KICAgIHsNCiAgICAgICJudW1JdGVtIjogNiwNCiAgICAgICJ0aXBvSXRlbSI6IDEsDQogICAgICAibnVtZXJvRG9jdW1lbnRvIjogbnVsbCwNCiAgICAgICJjYW50aWRhZCI6IDk1LjAwMDAsDQogICAgICAiY29kaWdvIjogIjE0OTgzIiwNCiAgICAgICJjb2RUcmlidXRvIjogbnVsbCwNCiAgICAgICJ1bmlNZWRpZGEiOiA1OSwNCiAgICAgICJkZXNjcmlwY2lvbiI6ICJBUkdPTExBIEFCSUVSVEEgR09MT1NBICg0Ljg1IFggMjMgWCA3MyBNTSkgM1wiIFpQIiwNCiAgICAgICJwcmVjaW9VbmkiOiAwLjIyMTIsDQogICAgICAibW9udG9EZXNjdSI6IDAuMDAwMCwNCiAgICAgICJ2ZW50YU5vU3VqIjogMC4wLA0KICAgICAgInZlbnRhRXhlbnRhIjogMC4wLA0KICAgICAgInZlbnRhR3JhdmFkYSI6IDIxLjAxNzcsDQogICAgICAidHJpYnV0b3MiOiBbDQogICAgICAgICIyMCINCiAgICAgIF0sDQogICAgICAicHN2IjogMC4yNTAwLA0KICAgICAgIm5vR3JhdmFkbyI6IDAuMA0KICAgIH0sDQogICAgew0KICAgICAgIm51bUl0ZW0iOiA3LA0KICAgICAgInRpcG9JdGVtIjogMSwNCiAgICAgICJudW1lcm9Eb2N1bWVudG8iOiBudWxsLA0KICAgICAgImNhbnRpZGFkIjogMjAuMDAwMCwNCiAgICAgICJjb2RpZ28iOiAiMTYzMjcxIiwNCiAgICAgICJjb2RUcmlidXRvIjogbnVsbCwNCiAgICAgICJ1bmlNZWRpZGEiOiA1OSwNCiAgICAgICJkZXNjcmlwY2lvbiI6ICJCUk9DQSBQQVJBIENPTkNSRVRPIDEvOFwiWDJcIlgzLTEvMlwiIEhFWCAxLzRcIiBNSUxXQVVLRUUgNDgtMjAtOTEwMCIsDQogICAgICAicHJlY2lvVW5pIjogMi40MzM2LA0KICAgICAgIm1vbnRvRGVzY3UiOiAwLjAwMDAsDQogICAgICAidmVudGFOb1N1aiI6IDAuMCwNCiAgICAgICJ2ZW50YUV4ZW50YSI6IDAuMCwNCiAgICAgICJ2ZW50YUdyYXZhZGEiOiA0OC42NzI2LA0KICAgICAgInRyaWJ1dG9zIjogWw0KICAgICAgICAiMjAiDQogICAgICBdLA0KICAgICAgInBzdiI6IDIuNzUwMCwNCiAgICAgICJub0dyYXZhZG8iOiAwLjANCiAgICB9DQogIF0sDQogICJyZXN1bWVuIjogew0KICAgICJ0b3RhbE5vU3VqIjogMC4wMCwNCiAgICAidG90YWxFeGVudGEiOiAwLjAwLA0KICAgICJ0b3RhbEdyYXZhZGEiOiA5MC45MywNCiAgICAic3ViVG90YWxWZW50YXMiOiA5MC45MywNCiAgICAiZGVzY3VOb1N1aiI6IDAuMDAsDQogICAgImRlc2N1RXhlbnRhIjogMC4wMCwNCiAgICAiZGVzY3VHcmF2YWRhIjogMC4wMCwNCiAgICAicG9yY2VudGFqZURlc2N1ZW50byI6IDAuMDAsDQogICAgInRvdGFsRGVzY3UiOiAwLjAwLA0KICAgICJ0cmlidXRvcyI6IFsNCiAgICAgIHsNCiAgICAgICAgImNvZGlnbyI6ICIyMCIsDQogICAgICAgICJkZXNjcmlwY2lvbiI6ICJJbXB1ZXN0byBhbCBWYWxvciBBZ3JlZ2FkbyAxMyUiLA0KICAgICAgICAidmFsb3IiOiAxMS44Mg0KICAgICAgfQ0KICAgIF0sDQogICAgInN1YlRvdGFsIjogOTAuOTMsDQogICAgIml2YVBlcmNpMSI6IDAuMCwNCiAgICAiaXZhUmV0ZTEiOiAwLjAwLA0KICAgICJyZXRlUmVudGEiOiAwLjAwLA0KICAgICJtb250b1RvdGFsT3BlcmFjaW9uIjogMTAyLjc1LA0KICAgICJ0b3RhbE5vR3JhdmFkbyI6IDAuMDAsDQogICAgInRvdGFsUGFnYXIiOiAxMDIuNzUsDQogICAgInRvdGFsTGV0cmFzIjogIkNJRU5UTyBET1MgNzUvMTAwIiwNCiAgICAic2FsZG9GYXZvciI6IDAuMDAsDQogICAgImNvbmRpY2lvbk9wZXJhY2lvbiI6IDEsDQogICAgInBhZ29zIjogbnVsbCwNCiAgICAibnVtUGFnb0VsZWN0cm9uaWNvIjogbnVsbA0KICB9LA0KICAiZXh0ZW5zaW9uIjogew0KICAgICJub21iRW50cmVnYSI6IG51bGwsDQogICAgImRvY3VFbnRyZWdhIjogbnVsbCwNCiAgICAibm9tYlJlY2liZSI6IG51bGwsDQogICAgImRvY3VSZWNpYmUiOiBudWxsLA0KICAgICJvYnNlcnZhY2lvbmVzIjogbnVsbCwNCiAgICAicGxhY2FWZWhpY3VsbyI6IG51bGwNCiAgfSwNCiAgImFwZW5kaWNlIjogbnVsbA0KfQ.KDZ4AyhoGmWEZJbV0C2FW0SXHb-JcuioKhqaOQR5pDWKoTrpWCDDt7ccP75loVn5tYU7sVBWvTSx2_2Vh7C1Ujen46MztwUkuLu225Gtx-Y6m7Fm0yEHCGtW4CStkhYiFxQPtILBm8G2N3Te-JTWiKzyz85ObWLccWSiQV4h8F4uGxlOx6f7j0RMcyBHwjVb4a0kOccpQb_gVt-KOJ7lqsvMz0xiAuvXVLGvnJBsFTv-YBk5goXiLDol-xy9VSGvJ1WhvJkxC_n4tqEtcW3EYUOXFmpl_7ne71KSjwcH2mV4igwObsa9dHFr3SMppg4M9ruvSjLZl4Yi9lYAYKfxnQ",
+  "selloRecibido": "20246F56A1868C1E469B8E2A1235ACBE35F54OYS"
+}
