@@ -1,0 +1,116 @@
+{
+  "identificacion" : {
+    "version" : 3,
+    "ambiente" : "01",
+    "tipoDte" : "03",
+    "numeroControl" : "DTE-03-00120012-000000000144696",
+    "codigoGeneracion" : "EB9F5B3D-AAE6-47E8-89EE-B16F7ADA1B6C",
+    "tipoModelo" : 1,
+    "tipoOperacion" : 1,
+    "tipoContingencia" : null,
+    "motivoContin" : null,
+    "fecEmi" : "2024-10-05",
+    "horEmi" : "09:42:13",
+    "tipoMoneda" : "USD"
+  },
+  "documentoRelacionado" : null,
+  "emisor" : {
+    "nit" : "06143006630016",
+    "nrc" : "5460",
+    "nombre" : "INDUSTRIAS CONSOLIDADAS, LTDA. DE C.V. ",
+    "codActividad" : "23101",
+    "descActividad" : "Fabricación de vidrio",
+    "nombreComercial" : "INCO,  LTDA. DE C.V.",
+    "tipoEstablecimiento" : "01",
+    "direccion" : {
+      "departamento" : "06",
+      "municipio" : "02",
+      "complemento" : "Carretera Troncal del Norte,  Kilometro 12 1/2 ,Barrio San Sebastian, Apopa"
+    },
+    "telefono" : "22076183",
+    "correo" : "apopa@inco.com.sv",
+    "codEstableMH" : null,
+    "codEstable" : "0012",
+    "codPuntoVentaMH" : null,
+    "codPuntoVenta" : "0012"
+  },
+  "receptor" : {
+    "nit" : "06041312600010",
+    "nrc" : "2569332",
+    "nombre" : "LOPEZ GOMEZ, NATANAEL",
+    "codActividad" : "46633",
+    "descActividad" : "Vidrierías",
+    "nombreComercial" : null,
+    "direccion" : {
+      "departamento" : "06",
+      "municipio" : "02",
+      "complemento" : "10 CALLE ORIENTE, #224-A, SAN SALVADOR, SAN SALVADOR, SAN SALVADOR"
+    },
+    "telefono" : "503   -7711-9355           ",
+    "correo" : "lopezgomeznatanael@gmail.com"
+  },
+  "otrosDocumentos" : null,
+  "ventaTercero" : null,
+  "cuerpoDocumento" : [ {
+    "numItem" : 1,
+    "tipoItem" : 1,
+    "numeroDocumento" : null,
+    "codigo" : "11115801",
+    "codTributo" : null,
+    "descripcion" : "VIDRIO NEVADO MALLADO CLARO 6MM",
+    "cantidad" : 1,
+    "uniMedida" : 59,
+    "precioUni" : 92.92,
+    "montoDescu" : 0,
+    "ventaNoSuj" : 0,
+    "ventaExenta" : 0,
+    "ventaGravada" : 92.92,
+    "tributos" : [ "20" ],
+    "psv" : 0,
+    "noGravado" : 0
+  } ],
+  "resumen" : {
+    "totalNoSuj" : 0,
+    "totalExenta" : 0,
+    "totalGravada" : 92.92,
+    "subTotalVentas" : 92.92,
+    "descuNoSuj" : 0,
+    "descuExenta" : 0,
+    "descuGravada" : 0,
+    "porcentajeDescuento" : 0,
+    "totalDescu" : 0,
+    "tributos" : [ {
+      "codigo" : "20",
+      "descripcion" : "Impuesto al Valor Agregado 13%",
+      "valor" : 12.08
+    } ],
+    "subTotal" : 92.92,
+    "ivaPerci1" : 0,
+    "ivaRete1" : 0,
+    "reteRenta" : 0,
+    "montoTotalOperacion" : 105,
+    "totalNoGravado" : 0,
+    "totalPagar" : 105,
+    "totalLetras" : "CIENTO CINCO  DOLARES",
+    "saldoFavor" : 0,
+    "condicionOperacion" : 1,
+    "pagos" : [ {
+      "codigo" : "05",
+      "montoPago" : 105,
+      "referencia" : null,
+      "periodo" : null,
+      "plazo" : null
+    } ],
+    "numPagoElectronico" : "0"
+  },
+  "extension" : {
+    "nombEntrega" : "WILFREDO ANTONIO MEJIA DE PAZ           ",
+    "docuEntrega" : "05167099-7          ",
+    "nombRecibe" : null,
+    "docuRecibe" : null,
+    "observaciones" : "2 CORTES 1)0.663 X 1.85 1) 0.667 X 1.85\n",
+    "placaVehiculo" : null
+  },
+  "apendice" : null,
+  "selloRecepcion" : "2024C974275E4FD54CC6954FC601A78A8917J45A"
+}
