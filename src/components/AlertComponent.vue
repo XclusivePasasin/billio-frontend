@@ -1,10 +1,14 @@
 <template>
-  <div v-if="show" :class="['alert-container', alertClass]" role="alert">
-    <div class="flex items-center justify-center space-x-4">
+  <div 
+    v-if="show" 
+    :class="['alert-container', alertClass]" 
+    role="alert"
+  >
+    <div class="flex items-center space-x-4">
       <div class="py-1">
         <slot name="icon"></slot>
       </div>
-      <div class="text-center align">
+      <div class="text-center">
         <p class="font-bold">{{ title }}</p>
         <p v-if="message" class="text-sm">{{ message }}</p>
         <ul v-if="list" class="list-disc list-inside">
@@ -27,7 +31,7 @@ export default {
   computed: {
     alertClass() {
       if (this.type === 'success') {
-        return 'bg-green-500 text-white';
+        return 'bg-emerald-600 text-white';
       } else if (this.type === 'error') {
         return 'bg-red-500 text-white';
       } else if (this.type === 'warning') {
@@ -42,15 +46,17 @@ export default {
 <style scoped>
 .alert-container {
   position: fixed;
-  top: 9%;
-  right: 12%;
+  top: 12%; /* Mantiene la alerta ligeramente por debajo de la parte superior */
+  right: 8px; /* Cambiado para que la alerta esté más hacia la derecha */
   max-width: 300px;
   z-index: 1000;
-  padding: 10px;
+  padding: 7px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center; /* Asegura que todo esté alineado verticalmente */
-  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Alineación vertical */
+  justify-content: flex-start; /* Alineación del contenido hacia la izquierda */
+  transition: right 0.3s ease-in-out; /* Transición suave al aparecer */
 }
+
 </style>

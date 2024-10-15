@@ -95,6 +95,8 @@ const actions = {
         estadoFiltro = '1';
       } else if (state.procesamiento === '0') {
         estadoFiltro = '0';
+      }  else if (state.procesamiento === '2') {
+        estadoFiltro = '2';
       }
       // Si es 'todas', dejamos el filtro vacío
 
