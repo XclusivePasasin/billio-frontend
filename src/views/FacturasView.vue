@@ -8,49 +8,91 @@
       <!-- Filtros de búsqueda -->
       <div class="container mx-auto p-6 flex-1 flex flex-col overflow-y-auto">
         <div class="flex space-x-4 mb-6">
-          <input v-model="query" type="text" placeholder="Buscar"
-            class="w-54 px-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input v-model="startDate" type="date" placeholder="Desde"
-            class="w-50 px-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input v-model="endDate" type="date" placeholder="Hasta"
-            class="w-50 px-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <input
+            v-model="query"
+            type="text"
+            placeholder="Buscar"
+            class="w-54 px-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
+          <input
+            v-model="startDate"
+            type="date"
+            placeholder="Desde"
+            class="w-50 px-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
+          <input
+            v-model="endDate"
+            type="date"
+            placeholder="Hasta"
+            class="w-50 px-4 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
           <!-- Botón para filtrar facturas -->
-          <button @click="openFilterModal"
-            class="flex items-center w-35 px-6 py-2 bg-slate-600 text-white rounded-full font-semibold hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-filter mr-2">
+          <button
+            @click="openFilterModal"
+            class="flex items-center w-35 px-6 py-2 bg-slate-600 text-white rounded-full font-semibold hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-filter mr-2"
+            >
               <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
             </svg>
             Filtrar
           </button>
           <button
             class="px-6 py-2 bg-slate-600 text-white rounded-full hover:bg-slate-700 font-semibold focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
-            @click="processSelectedFacturas">
+            @click="processSelectedFacturas"
+          >
             Procesar
           </button>
 
           <button
             class="flex px-6 py-2 bg-slate-600 text-white rounded-full font-semibold hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-800 focus:ring-offset-2"
-            @click="downloadFacturas">
+            @click="downloadFacturas"
+          >
             Descargar
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-download ml-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-download ml-2"
+            >
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" x2="12" y1="15" y2="3" />
             </svg>
           </button>
           <!-- Alertas -->
-          <AlertComponent v-if="alert.show" :type="alert.type" :title="alert.title" :message="alert.message"
-            :list="alert.list" :show="alert.show" />
+          <AlertComponent
+            v-if="alert.show"
+            :type="alert.type"
+            :title="alert.title"
+            :message="alert.message"
+            :list="alert.list"
+            :show="alert.show"
+          />
         </div>
 
         <!-- Notificación de copiado (fuera de la tabla) -->
-        <div v-if="isCopied"
-          class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg transition-opacity duration-500 ease-in-out"
-          :class="{ 'opacity-0': !isCopied, 'opacity-100': isCopied }">
+        <div
+          v-if="isCopied"
+          class="text-white px-4 py-2 rounded-lg shadow-lg transition-opacity duration-500 ease-in-out"
+          :class="{ 'opacity-0': !isCopied, 'opacity-90': isCopied }"
+        >
           ¡Texto copiado!
         </div>
         <!-- Tabla con scroll invisible -->
@@ -58,77 +100,167 @@
           <table class="w-full bg-white shadow-md rounded-lg overflow-y-auto">
             <thead class="bg-gray-100 sticky top-0 z-10">
               <tr>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Nombre de emisor
                 </th>
-                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   NRC Emisor
                 </th>
-                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   NIT Emisor
                 </th>
-                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Fecha
                 </th>
-                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Número de control
                 </th>
-                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Código Generación
                 </th>
-                <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Sello de Recepción
                 </th>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Monto
                 </th>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Detalle
+                </th>
+                <th
+                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Procesar
                 </th>
-                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Acciones
                 </th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-200">
-              <tr v-for="(item, index) in tableData" :key="index" :class="index % 2 === 0 ? 'bg-white' : 'bg-gray-50'">
-                <td @click="copyToClipboard(item.nom_emisor)" class="px-4 py-4 w-48 break-words text-sm text-gray-900">
+              <tr
+                v-for="(item, index) in tableData"
+                :key="index"
+                :class="index % 2 === 0 ? 'bg-white' : 'bg-gray-50'"
+              >
+                <td
+                  @click="copyToClipboard(item.nom_emisor)"
+                  class="px-4 py-4 w-48 break-words text-sm text-gray-900"
+                >
                   {{ item.nom_emisor }}
                 </td>
-                <td @click="copyToClipboard(item.nrc_emisor)" class="px-4 py-4 w-40 break-words text-sm text-gray-900">
+                <td
+                  @click="copyToClipboard(item.nrc_emisor)"
+                  class="px-4 py-4 w-40 break-words text-sm text-gray-900"
+                >
                   {{ item.nrc_emisor }}
                 </td>
-                <td @click="copyToClipboard(item.nit_emisor)" class="px-4 py-4 w-40 break-words text-sm text-gray-900">
+                <td
+                  @click="copyToClipboard(item.nit_emisor)"
+                  class="px-4 py-4 w-40 break-words text-sm text-gray-900"
+                >
                   {{ item.nit_emisor }}
                 </td>
-                <td class="px-4 py-4 w-40 break-words text-sm text-gray-900">
+                <td
+                  @click="copyToClipboard(item.fecha_emision)"
+                  class="px-4 py-4 w-40 break-words text-sm text-gray-900"
+                >
                   {{ item.fecha_emision }}
                 </td>
-                <td @click="copyToClipboard(item.num_control)" class="px-4 py-4 w-40 break-words text-sm text-gray-900">
+                <td
+                  @click="copyToClipboard(item.num_control)"
+                  class="px-4 py-4 w-40 break-words text-sm text-gray-900"
+                >
                   {{ item.num_control }}
                 </td>
-                <td @click="copyToClipboard(item.cod_gen)" class="px-4 py-4 w-50 break-words text-sm text-gray-900">
+                <td
+                  @click="copyToClipboard(item.cod_gen)"
+                  class="px-4 py-4 w-50 break-words text-sm text-gray-900"
+                >
                   {{ item.cod_gen }}
                 </td>
-                <td @click="copyToClipboard(item.sello_recepcion)"
-                  class="px-4 py-4 w-40 text-center text-sm text-gray-900 break-all overflow-wrap break-word">
+                <td
+                  @click="copyToClipboard(item.sello_recepcion)"
+                  class="px-4 py-4 w-40 text-center text-sm text-gray-900 break-all overflow-wrap break-word"
+                >
                   {{ item.sello_recepcion }}
                 </td>
-                <td @click="copyToClipboard(item.monto)" class="px-4 py-4 w-30 break-words text-sm text-gray-900">
+                <td
+                  @click="copyToClipboard(item.monto)"
+                  class="px-4 py-4 w-30 break-words text-sm text-gray-900"
+                >
                   {{ item.monto }}
                 </td>
+                <td
+                  class="px-4 py-4 w-40 text-center text-sm text-gray-900 break-all overflow-wrap break-word"
+                >
+                  <Button
+                    @click="openDetailsModal(item)"
+                    class="text-sky-500 rounded-full hover:text-sky-600"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-file-text"
+                    >
+                      <path
+                        d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+                      />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                      <path d="M10 9H8" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" />
+                    </svg>
+                  </Button>
+                </td>
                 <td class="px-4 py-4 text-sm text-gray-900">
-                  <input type="checkbox" class="form-checkbox h-5 w-5" :value="item.id"
-                    @change="toggleSelection(item.id)" :checked="selectedFacturas.includes(item.id)"
-                    :disabled="item.procesada === '1'" />
+                  <input
+                    type="checkbox"
+                    class="form-checkbox h-5 w-5"
+                    :value="item.id"
+                    @change="toggleSelection(item.id)"
+                    :checked="selectedFacturas.includes(item.id)"
+                    :disabled="item.procesada === '1'"
+                  />
                 </td>
 
                 <td class="px-4 py-4 text-sm text-gray-900">
                   <div class="flex flex-col space-y-2">
-                    <button class="px-4 py-2 bg-sky-600 text-white rounded-full hover:bg-sky-700">
+                    <button
+                      class="px-4 py-2 bg-sky-600 text-white rounded-full hover:bg-sky-700"
+                    >
                       PDF
                     </button>
-                    <button class="px-4 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700">
+                    <button
+                      class="px-4 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
+                    >
                       DTE
                     </button>
                   </div>
@@ -138,17 +270,137 @@
           </table>
         </div>
 
+        <!-- Modal para ver Subtotal, IVA y otros detalles -->
+        <transition name="modal">
+          <div
+            v-if="isDetailsModalOpen"
+            class="fixed inset-0 flex items-center justify-center z-50"
+          >
+            <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
+            <div class="bg-white w-full max-w-md p-6 rounded-lg shadow-lg z-50">
+              <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Detalle de Factura</h2>
+                <button @click="closeDetailsModal">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-x"
+                  >
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Tipo de Documento -->
+              <div class="mb-4">
+                <p class="text-lg font-semibold">Tipo de Documento:</p>
+                <p
+                  class="text-gray-800 cursor-pointer"
+                  @click="copyToClipboard(selectedFactura.tipo_dte)"
+                >
+                  {{ selectedFactura.tipo_dte }}
+                </p>
+              </div>
+
+              <!-- NIT Emisor -->
+              <div class="mb-4">
+                <p class="text-lg font-semibold">NIT del Emisor:</p>
+                <p
+                  class="text-gray-800 cursor-pointer"
+                  @click="copyToClipboard(selectedFactura.nit_emisor)"
+                >
+                  {{ selectedFactura.nit_emisor }}
+                </p>
+              </div>
+
+              <!-- NRC Emisor -->
+              <div class="mb-4">
+                <p class="text-lg font-semibold">NRC del Emisor:</p>
+                <p
+                  class="text-gray-800 cursor-pointer"
+                  @click="copyToClipboard(selectedFactura.nrc_emisor)"
+                >
+                  {{ selectedFactura.nrc_emisor }}
+                </p>
+              </div>
+
+              <!-- Nombre del Emisor -->
+              <div class="mb-4">
+                <p class="text-lg font-semibold">Nombre del Emisor:</p>
+                <p
+                  class="text-gray-800 cursor-pointer"
+                  @click="copyToClipboard(selectedFactura.nom_emisor)"
+                >
+                  {{ selectedFactura.nom_emisor }}
+                </p>
+              </div>
+
+              <!-- Subtotal -->
+              <div class="mb-4">
+                <p class="text-lg font-semibold">Subtotal:</p>
+                <p
+                  class="text-gray-800 cursor-pointer"
+                  @click="copyToClipboard(selectedFactura.subtotal)"
+                >
+                  {{ selectedFactura.subtotal }}
+                </p>
+              </div>
+
+              <!-- IVA -->
+              <div class="mb-4">
+                <p class="text-lg font-semibold">IVA (13%):</p>
+                <p
+                  class="text-gray-800 cursor-pointer"
+                  @click="copyToClipboard(selectedFactura.iva)"
+                >
+                  {{ selectedFactura.iva }}
+                </p>
+              </div>
+
+              <!-- Botón para cerrar el modal -->
+              <div class="flex justify-end">
+                <button
+                  @click="closeDetailsModal"
+                  class="px-6 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </transition>
+
         <!-- Modal de Filtros Avanzados -->
         <transition name="modal">
-          <div v-if="isFilterModalOpen" class="fixed inset-0 flex items-center justify-center z-50">
+          <div
+            v-if="isFilterModalOpen"
+            class="fixed inset-0 flex items-center justify-center z-50"
+          >
             <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
             <div class="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg z-50">
               <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Filtros Avanzados</h2>
                 <button @click="closeFilterModal">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-x">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-x"
+                  >
                     <path d="M18 6 6 18" />
                     <path d="m6 6 12 12" />
                   </svg>
@@ -157,44 +409,70 @@
 
               <!-- Campo Buscar por nombre de la empresa -->
               <div class="mb-6 relative">
-                <input type="text" v-model="filters.nombreEmpresa" placeholder="Buscar por nombre de la empresa"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none" />
+                <input
+                  type="text"
+                  v-model="filters.nombreEmpresa"
+                  placeholder="Buscar por nombre de la empresa"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                />
               </div>
 
               <!-- Campo Buscar por NRC Emisor -->
               <div class="mb-6 relative">
-                <input type="text" v-model="filters.nrcEmisor" placeholder="Buscar por NRC Emisor"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none" />
+                <input
+                  type="text"
+                  v-model="filters.nrcEmisor"
+                  placeholder="Buscar por NRC Emisor"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                />
               </div>
 
               <!-- Campo Buscar por NIT Emisor -->
               <div class="mb-6 relative">
-                <input type="text" v-model="filters.nitEmisor" placeholder="Buscar por NIT Emisor"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none" />
+                <input
+                  type="text"
+                  v-model="filters.nitEmisor"
+                  placeholder="Buscar por NIT Emisor"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                />
               </div>
 
               <!-- Campo Buscar por Número de Control -->
               <div class="mb-6 relative">
-                <input type="text" v-model="filters.numeroControl" placeholder="Buscar por Número de Control"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none" />
+                <input
+                  type="text"
+                  v-model="filters.numeroControl"
+                  placeholder="Buscar por Número de Control"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                />
               </div>
 
               <!-- Campo Buscar por Código de Generación -->
               <div class="mb-6 relative">
-                <input type="text" v-model="filters.codigoGeneracion" placeholder="Buscar por Código de Generación"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none" />
+                <input
+                  type="text"
+                  v-model="filters.codigoGeneracion"
+                  placeholder="Buscar por Código de Generación"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                />
               </div>
 
               <!-- Campo Buscar por Sello de Recepción -->
               <div class="mb-6 relative">
-                <input type="text" v-model="filters.selloRecepcion" placeholder="Buscar por Sello de Recepción"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none" />
+                <input
+                  type="text"
+                  v-model="filters.selloRecepcion"
+                  placeholder="Buscar por Sello de Recepción"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                />
               </div>
 
               <!-- Seleccionar tipo de documento -->
               <div class="mb-6 relative">
-                <select v-model="filters.tipoDocumento"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none">
+                <select
+                  v-model="filters.tipoDocumento"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                >
                   <option value="" disabled selected>
                     Seleccione el tipo de documento
                   </option>
@@ -205,12 +483,14 @@
 
               <!-- Seleccionar por procesamiento -->
               <div class="mb-6 relative">
-                <select v-model="filters.procesamiento"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none">
+                <select
+                  v-model="filters.procesamiento"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none"
+                >
                   <option value="" disabled selected>
                     Seleccione el tipo de procesamiento
                   </option>
-                  <option value="todas">Todas</option>
+                  <option value="2">Todas</option>
                   <option value="0">No procesadas</option>
                   <option value="1">Procesadas</option>
                 </select>
@@ -218,10 +498,16 @@
 
               <!-- Botones de acción -->
               <div class="flex justify-center space-x-4">
-                <button @click="clearFilters" class="px-8 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700">
+                <button
+                  @click="clearFilters"
+                  class="px-8 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-700"
+                >
                   Limpiar filtros
                 </button>
-                <button @click="applyFilters" class="px-8 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                <button
+                  @click="applyFilters"
+                  class="px-8 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700"
+                >
                   Aplicar Filtros
                 </button>
               </div>
@@ -231,15 +517,21 @@
 
         <!-- Controles de Paginación -->
         <div class="flex justify-between items-center mt-4">
-          <button :disabled="page === 1" @click="prevPage"
-            class="px-4 py-2 bg-gray-300 text-gray-800 rounded-full hover:bg-gray-400 disabled:bg-gray-200">
+          <button
+            :disabled="page === 1"
+            @click="prevPage"
+            class="px-4 py-2 bg-gray-300 text-gray-800 rounded-full hover:bg-gray-400 disabled:bg-gray-200"
+          >
             Anterior
           </button>
           <div class="text-gray-800">
             Página {{ page }} de {{ pagination.pages }}
           </div>
-          <button :disabled="page === pagination.pages" @click="nextPage"
-            class="px-4 py-2 bg-gray-300 text-gray-800 rounded-full hover:bg-gray-400 disabled:bg-gray-200">
+          <button
+            :disabled="page === pagination.pages"
+            @click="nextPage"
+            class="px-4 py-2 bg-gray-300 text-gray-800 rounded-full hover:bg-gray-400 disabled:bg-gray-200"
+          >
             Siguiente
           </button>
         </div>
@@ -275,7 +567,13 @@ const filters = reactive({
 });
 
 // Estado reactivo para la alerta
-const alert = reactive({ show: false, type: "", title: "", message: "", list: [] });
+const alert = reactive({
+  show: false,
+  type: "",
+  title: "",
+  message: "",
+  list: [],
+});
 
 const showAlert = (type, title, message = "", list = []) => {
   Object.assign(alert, { show: true, type, title, message, list });
@@ -283,15 +581,24 @@ const showAlert = (type, title, message = "", list = []) => {
 };
 
 const isCopied = ref(false);
+const isDetailsModalOpen = ref(false);
 
 const copyToClipboard = (text) => {
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      showAlert("success", "Texto copiado", "El texto se ha copiado correctamente.");
+      showAlert(
+        "success",
+        "Texto copiado",
+        "El texto se ha copiado correctamente."
+      );
     })
     .catch((err) => {
-      showAlert("error", "Error", "No se pudo copiar el texto al portapapeles.");
+      showAlert(
+        "error",
+        "Error",
+        "No se pudo copiar el texto al portapapeles."
+      );
       console.error("Error al copiar al portapapeles:", err);
     });
 };
@@ -318,7 +625,11 @@ const fetchFacturas = async () => {
 
 // Watchers para filtros en tiempo real
 watch([query, startDate, endDate], ([newQuery, newStartDate, newEndDate]) => {
-  store.dispatch("facturas/updateFilters", { query: newQuery, startDate: newStartDate, endDate: newEndDate });
+  store.dispatch("facturas/updateFilters", {
+    query: newQuery,
+    startDate: newStartDate,
+    endDate: newEndDate,
+  });
   fetchFacturas();
 });
 
@@ -346,6 +657,44 @@ const applyFilters = () => {
   store.dispatch("facturas/applyAdvancedFilters", filters);
   fetchFacturas();
   closeFilterModal();
+};
+
+// Estado reactivo para almacenar los detalles de la factura seleccionada
+const selectedFactura = reactive({
+  subtotal: 0,
+  iva: 0,
+  tipo_dte: "",
+  nit_emisor: "",
+  nrc_emisor: "",
+  nom_emisor: "",
+});
+
+const parseTipoDte = (codigo) => {
+  const tiposDte = {
+    "03": "Comprobante de crédito",
+    "05": "Nota de crédito",
+    "06": "Nota de débito",
+    11: "Factura de exportación",
+    12: "Declaración de mercancía",
+    13: "Mandamiento de ingreso",
+  };
+  return tiposDte[codigo] || "Tipo de documento desconocido";
+};
+
+// Función para abrir el modal con los detalles de la factura seleccionada
+const openDetailsModal = (factura) => {
+  selectedFactura.subtotal = factura.subtotal;
+  selectedFactura.iva = factura.iva;
+  selectedFactura.tipo_dte = parseTipoDte(factura.tipo_dte); // Parsear tipo_dte
+  selectedFactura.nit_emisor = factura.nit_emisor;
+  selectedFactura.nrc_emisor = factura.nrc_emisor;
+  selectedFactura.nom_emisor = factura.nom_emisor;
+  isDetailsModalOpen.value = true;
+};
+
+// Función para cerrar el modal
+const closeDetailsModal = () => {
+  isDetailsModalOpen.value = false;
 };
 
 // Limpiar filtros
@@ -394,7 +743,9 @@ const selectedFacturas = ref([]);
 
 const toggleSelection = (id) => {
   if (selectedFacturas.value.includes(id)) {
-    selectedFacturas.value = selectedFacturas.value.filter((selectedId) => selectedId !== id);
+    selectedFacturas.value = selectedFacturas.value.filter(
+      (selectedId) => selectedId !== id
+    );
   } else {
     selectedFacturas.value.push(id);
   }
@@ -403,16 +754,24 @@ const toggleSelection = (id) => {
 // Procesar facturas seleccionadas
 const processSelectedFacturas = async () => {
   if (!selectedFacturas.value.length) {
-    showAlert("error", "Error", "No has seleccionado ninguna factura para procesar.");
+    showAlert(
+      "error",
+      "Error",
+      "No has seleccionado ninguna factura para procesar."
+    );
     return;
   }
   try {
     await InvoiceService.updateFacturas(selectedFacturas.value);
     showAlert("success", "Éxito", "Facturas procesadas correctamente.");
     selectedFacturas.value = [];
-    fetchFacturas();// Actualizar la lista de facturas
+    fetchFacturas(); // Actualizar la lista de facturas
   } catch (error) {
-    showAlert("error", "Error", error.message || "Ocurrió un error al procesar las facturas.");
+    showAlert(
+      "error",
+      "Error",
+      error.message || "Ocurrió un error al procesar las facturas."
+    );
   }
 };
 
@@ -421,7 +780,6 @@ onMounted(() => {
   fetchFacturas();
 });
 </script>
-
 
 <style scoped>
 .modal-enter-active,
