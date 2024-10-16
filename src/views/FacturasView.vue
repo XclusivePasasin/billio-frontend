@@ -161,7 +161,7 @@
         <transition name="modal">
           <div v-if="isPDFModalOpen" class="fixed inset-0 flex items-center justify-center z-50">
             <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
-            <div class="bg-white w-full max-w-5xl p-6 rounded-lg shadow-lg z-50">
+            <div class="bg-white w-full max-w-7xl p-6 rounded-lg shadow-lg z-50">
               <!-- max-w-5xl agranda el ancho del modal -->
               <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Vista Previa del PDF</h2>
@@ -183,7 +183,7 @@
         <transition name="modal">
           <div v-if="isDteModalOpen" class="fixed inset-0 flex items-center justify-center z-50">
             <div class="absolute inset-0 bg-gray-900 opacity-50"></div>
-            <div class="bg-white w-full max-w-5xl p-6 rounded-lg shadow-lg z-50"> <!-- max-w-5xl agranda el modal -->
+            <div class="bg-white w-full max-w-7xl p-6 rounded-lg shadow-lg z-50">
               <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold">Vista Previa del DTE</h2>
                 <button @click="closeDteModal">
@@ -195,10 +195,8 @@
                   </svg>
                 </button>
               </div>
-              <!-- Aplicamos un estilo de código con colores para mejorar la legibilidad del JSON -->
-              <pre class="bg-gray-100 p-4 rounded-lg overflow-auto max-h-[600px] text-sm" style="color: #0c0c0d;">
-                <code v-html="formattedDteContent"></code>
-              </pre>
+              <!-- Aquí se incluirá el editor JSON -->
+              <div id="jsoneditor" class="bg-gray-100 p-4 rounded-lg overflow-auto max-h-[600px] text-sm"></div>
             </div>
           </div>
         </transition>
@@ -391,19 +389,20 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted, watch, computed } from "vue";
+import { ref, reactive, onMounted, watch, computed, onBeforeMount, nextTick } from "vue";
 import { useStore } from "vuex";
 import SideBar from "../components/SideBar.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
 import InvoiceService from "../services/InvoiceService.js";
 import AlertComponent from "../components/AlertComponent.vue";
+import { createJSONEditor } from 'vanilla-jsoneditor'
 
 // Variables reactivas
 const pdfUrl = ref("");
 const isPDFModalOpen = ref(false);
 const dteContent = ref(null);
 const isDteModalOpen = ref(false);
-const formattedDteContent = ref('');
+let editor = null; // Variable para almacenar la instancia del editor
 
 // Acceder al store de Vuex
 const store = useStore();
@@ -656,49 +655,55 @@ const closePDFModal = () => {
   pdfUrl.value = ""; // Limpiar la URL cuando se cierre el modal
 };
 
-// Función para abrir el modal y formatear el JSON
+// Función para abrir el modal y cargar el JSON en el editor
 const openDteModal = async (codigoGeneracion) => {
   try {
     const response = await InvoiceService.viewDte(codigoGeneracion);
     dteContent.value = response.data;
-    
-    // Formatear el JSON
-    formattedDteContent.value = syntaxHighlight(JSON.stringify(dteContent.value, null, 2));
 
+    // Mostrar el modal
     isDteModalOpen.value = true;
+
+    await nextTick(); // Esperar a que el DOM se actualice
+
+    const jsonEditorContainer = document.getElementById('jsoneditor');
+    if (jsonEditorContainer) {
+      editor = createJSONEditor({
+        target: jsonEditorContainer,
+        props: {
+          content: { json: dteContent.value },
+          onChange: (updatedContent) => {
+            dteContent.value = updatedContent.json;
+          }
+        }
+      });
+    } else {
+      console.error("El contenedor del editor JSON no se encontró.");
+    }
   } catch (error) {
     console.error("Error al abrir el DTE:", error);
     showAlert("error", "Error", "Error al abrir el DTE.");
   }
 };
 
-// Función para colorear el JSON
-function syntaxHighlight(json) {
-  json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|\d+)/g, function (match) {
-    let cls = 'text-red-600'; // Clase para las claves
-    if (/^"/.test(match)) {
-      if (/:$/.test(match)) {
-        cls = 'text-green-600'; // Clase para los valores tipo string
-      } else {
-        cls = 'text-blue-600'; // Clase para las claves
-      }
-    } else if (/true|false/.test(match)) {
-      cls = 'text-indigo-600'; // Clase para booleanos
-    } else if (/null/.test(match)) {
-      cls = 'text-gray-600'; // Clase para null
-    } else {
-      cls = 'text-purple-600'; // Clase para números
-    }
-    return `<span class="${cls}">${match}</span>`;
-  });
-}
-
-
+// Función para cerrar el modal y destruir el editor
 const closeDteModal = () => {
   isDteModalOpen.value = false;
+
+  // Destruir la instancia del editor cuando se cierre el modal
+  if (editor) {
+    editor.destroy();
+    editor = null;
+  }
 };
 
+// Limpiar el editor al desmontar el componente
+onBeforeMount(() => {
+  if (editor) {
+    editor.destroy();
+    editor = null;
+  }
+});
 </script>
 
 <style scoped>
