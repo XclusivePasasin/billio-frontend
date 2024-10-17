@@ -104,9 +104,9 @@
                 <td @click="copyToClipboard(item.nit_emisor)" class="px-4 py-4 w-40 break-words text-sm text-gray-900">
                   {{ item.nit_emisor }}
                 </td>
-                <td @click="copyToClipboard(item.fecha_emision)"
+                <td @click="copyToClipboard(formatDate(item.fecha_emision))"
                   class="px-4 py-4 w-40 break-words text-sm text-gray-900">
-                  {{ item.fecha_emision }}
+                  {{ formatDate(item.fecha_emision) }}
                 </td>
                 <td @click="copyToClipboard(item.num_control)" class="px-4 py-4 w-40 break-words text-sm text-gray-900">
                   {{ item.num_control }}
@@ -226,27 +226,11 @@
                 </p>
               </div>
 
-              <!-- NIT Emisor -->
+              <!-- Total -->
               <div class="mb-4">
-                <p class="text-lg font-semibold">NIT del Emisor:</p>
-                <p class="text-gray-800 cursor-pointer" @click="copyToClipboard(selectedFactura.nit_emisor)">
-                  {{ selectedFactura.nit_emisor }}
-                </p>
-              </div>
-
-              <!-- NRC Emisor -->
-              <div class="mb-4">
-                <p class="text-lg font-semibold">NRC del Emisor:</p>
-                <p class="text-gray-800 cursor-pointer" @click="copyToClipboard(selectedFactura.nrc_emisor)">
-                  {{ selectedFactura.nrc_emisor }}
-                </p>
-              </div>
-
-              <!-- Nombre del Emisor -->
-              <div class="mb-4">
-                <p class="text-lg font-semibold">Nombre del Emisor:</p>
-                <p class="text-gray-800 cursor-pointer" @click="copyToClipboard(selectedFactura.nom_emisor)">
-                  {{ selectedFactura.nom_emisor }}
+                <p class="text-lg font-semibold">Total:</p>
+                <p class="text-gray-800 cursor-pointer" @click="copyToClipboard(selectedFactura.total)">
+                  {{ selectedFactura.total }}
                 </p>
               </div>
 
@@ -333,13 +317,17 @@
 
               <!-- Seleccionar tipo de documento -->
               <div class="mb-6 relative">
-                <select v-model="filters.tipoDocumento"
+                <select v-model="filters.tipoDte"
                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 focus:border-blue-500 outline-none">
                   <option value="" disabled selected>
                     Seleccione el tipo de documento
                   </option>
-                  <option value="factura">Factura</option>
-                  <option value="credito_fiscal">Crédito Fiscal</option>
+                  <option value="03">Comprobante de Crédito</option>
+                  <option value="05">Nota de Crédito</option>
+                  <option value="06">Nota de Débito</option>
+                  <option value="11">Factura de Exportación</option>
+                  <option value="12">Declaración de Mercancía</option>
+                  <option value="13">Mandamiento de Ingreso</option>
                 </select>
               </div>
 
@@ -419,6 +407,7 @@ const filters = reactive({
   codigoGeneracion: "",
   selloRecepcion: "",
   tipoDocumento: "",
+  tipoDte: "",
   procesamiento: "",
 });
 
@@ -517,12 +506,10 @@ const applyFilters = () => {
 
 // Estado reactivo para almacenar los detalles de la factura seleccionada
 const selectedFactura = reactive({
+  total: 0,
   subtotal: 0,
   iva: 0,
   tipo_dte: "",
-  nit_emisor: "",
-  nrc_emisor: "",
-  nom_emisor: "",
 });
 
 const parseTipoDte = (codigo) => {
@@ -530,21 +517,19 @@ const parseTipoDte = (codigo) => {
     "03": "Comprobante de crédito",
     "05": "Nota de crédito",
     "06": "Nota de débito",
-    11: "Factura de exportación",
-    12: "Declaración de mercancía",
-    13: "Mandamiento de ingreso",
+    "11": "Factura de exportación",
+    "12": "Declaración de mercancía",
+    "13": "Mandamiento de ingreso",
   };
   return tiposDte[codigo] || "Tipo de documento desconocido";
 };
 
 // Función para abrir el modal con los detalles de la factura seleccionada
 const openDetailsModal = (factura) => {
+  selectedFactura.total = factura.monto;
   selectedFactura.subtotal = factura.subtotal;
   selectedFactura.iva = factura.iva;
   selectedFactura.tipo_dte = parseTipoDte(factura.tipo_dte); // Parsear tipo_dte
-  selectedFactura.nit_emisor = factura.nit_emisor;
-  selectedFactura.nrc_emisor = factura.nrc_emisor;
-  selectedFactura.nom_emisor = factura.nom_emisor;
   isDetailsModalOpen.value = true;
 };
 
@@ -704,6 +689,16 @@ onBeforeMount(() => {
     editor = null;
   }
 });
+
+// Función para formatear la fecha
+const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+};
 </script>
 
 <style scoped>

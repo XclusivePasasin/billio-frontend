@@ -99,6 +99,7 @@ const actions = {
         estadoFiltro = '2';
       }
       // Si es 'todas', dejamos el filtro vacío
+      
 
       const response = await InvoiceService.getFacturas({
         query: state.query,
@@ -142,7 +143,7 @@ const actions = {
     commit('SET_TIPO_DOCUMENTO', filters.tipoDocumento || '');
     
     // Asegurarse de que 'procesamiento' sea un valor aceptado: '0', '1' o vacío para todas
-    commit('SET_PROCESAMIENTO', filters.procesamiento || 'todas');
+    commit('SET_PROCESAMIENTO', filters.procesamiento || '0');
     
     commit('SET_TIPO_DTE', filters.tipoDte || '');
     commit('SET_ESTADO_FACTURAS', filters.estadoFacturas || '');
