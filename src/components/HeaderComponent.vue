@@ -52,14 +52,11 @@ onMounted(async () => {
                 'correo': storedUser.correo || '',
                 'usuario': storedUser.usuario || ''
             });
-            console.log('Test dashboard"', response)
 
             // Asegúrate de que la respuesta sea válida y que contenga el array data
             if (response.data && response.data && response.data.length > 0) {
                 const userData = response.data[0]; // Obtiene el primer elemento del array data
-                console.log('UserData:',userData)
                 user.value = userData; // Actualiza el estado del usuario con los datos recibidos
-                console.log(user.value)
             } else {
                 console.error('No se encontraron datos de usuario en la respuesta.');
             }
@@ -70,6 +67,7 @@ onMounted(async () => {
         console.error('Error al obtener los datos del usuario:', error);
     }
 });
+
 // Título dinámico basado en la ruta
 const route = useRoute()
 const pageTitle = route.name
@@ -96,8 +94,6 @@ const toggleDropdown = () => {
 
 // Lógica para cerrar sesión
 const router = useRouter()
-
-
 
 const logout = async () => {
     try {
