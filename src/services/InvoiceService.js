@@ -15,5 +15,18 @@ export default {
   },
   getDteSummary() {
     return api.get("facturas/dte/summary");
+  },
+  configureRoute(ruta){
+    return api.post("facturas/configurar/ruta-pdf", { ruta });
+  },
+  viewFacturaPDF(codGen) { 
+    // Esto apunta a la ruta que muestra el PDF
+    return api.get(`facturas/pdf/${codGen}.pdf`, {
+      responseType: 'blob' // Para manejar el archivo PDF correctamente
+    });
+  },
+  viewDte(codGen) {
+    // Esta API devuelve el DTE según el código de generación
+    return api.get(`facturas/dte/${codGen}`);
   }
 };

@@ -21,7 +21,7 @@
                 >
                 <input
                   id="usuario"
-                  value="Administrador"
+                  :value="user.usuario"
                   type="text"
                   class="w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm text-gray-500 bg-gray-100"
                   readonly
@@ -35,7 +35,7 @@
                 >
                 <input
                   id="correo"
-                  value="Administrador@billio.com"
+                  :value="user.correo"
                   type="email"
                   class="w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm text-gray-500 bg-gray-100"
                   readonly
@@ -49,7 +49,7 @@
                 >
                 <input
                   id="nombre"
-                  value="DeployCode"
+                  :value="user.nombre"
                   type="text"
                   class="w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm text-gray-500 bg-gray-100"
                   readonly
@@ -63,7 +63,7 @@
                 >
                 <input
                   id="apellido"
-                  value="Systems"
+                  :value="user.apellido"
                   type="text"
                   class="w-full px-3 py-1 border border-gray-300 rounded-md shadow-sm text-gray-500 bg-gray-100"
                   readonly
@@ -183,5 +183,48 @@
 
 <script setup>
 import SideBar from "../components/SideBar.vue";
+import { ref, onMounted, nextTick } from 'vue';
 import HeaderComponent from "../components/HeaderComponent.vue";
+import UserService from '../services/UsersService';
+
+const user = ref({
+    id: '',
+    correo: '',
+    usuario: '',
+    nombre: '',
+    apellido: '',
+});
+
+onMounted(async () => {
+    try {
+        // Aseguramos que el DOM esté listo antes de realizar cualquier operación
+        await nextTick();
+        
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+
+        if (storedUser && (storedUser.correo || storedUser.usuario)) {
+            const response = await UserService.get_user_by_identifier({
+                'correo': storedUser.correo || '',
+                'usuario': storedUser.usuario || ''
+            });
+
+            if (response.data && response.data.length > 0) {
+                const userData = response.data[0];
+                user.value = {
+                    id: userData.id,
+                    correo: userData.correo,
+                    usuario: userData.usuario,
+                    nombre: userData.nombre,
+                    apellido: userData.apellido,
+                };
+            } else {
+                console.error('No se encontraron datos de usuario en la respuesta.');
+            }
+        } else {
+            console.error('No se encontró el correo o nombre de usuario en LocalStorage');
+        }
+    } catch (error) {
+        console.error('Error al obtener los datos del usuario:', error);
+    }
+});
 </script>
